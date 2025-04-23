@@ -92,7 +92,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="pt-16 pb-16 bg-gradient-to-r from-brand-dark via-brand to-brand-light text-white overflow-hidden relative">
+      <section className="pt-16 pb-16 bg-linear-to-r from-brand-dark via-brand to-brand-light text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
           <motion.div
             className="absolute h-64 w-64 rounded-full bg-brand-accent"
@@ -151,7 +151,7 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white p-8 rounded-xl shadow-sm"
+              className="bg-white p-8 rounded-xl shadow-xs"
             >
               <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
               <Form {...form}>
@@ -302,7 +302,7 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="space-y-8"
             >
-              <div className="bg-white p-8 rounded-xl shadow-sm">
+              <div className="bg-white p-8 rounded-xl shadow-xs">
                 <h2 className="text-2xl font-bold mb-6">Our Locations</h2>
                 <div className="grid gap-8">
                   {locations.map((location) => (
@@ -315,7 +315,7 @@ export default function ContactPage() {
                           className="object-cover"
                           unoptimized={true}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-brand/80 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-brand/80 to-transparent" />
                         <div className="absolute bottom-4 left-4 text-white">
                           <h3 className="font-bold text-lg">{location.city}</h3>
                         </div>
@@ -344,7 +344,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-brand to-brand-light text-white p-8 rounded-xl">
+              <div className="bg-linear-to-r from-brand to-brand-light text-white p-8 rounded-xl">
                 <h3 className="text-xl font-bold mb-3">
                   International Clients
                 </h3>
@@ -403,7 +403,7 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-xl shadow-sm"
+                  className="bg-white p-6 rounded-xl shadow-xs"
                 >
                   <h3 className="font-bold text-lg mb-2">{faq.q}</h3>
                   <p className="text-muted-foreground">{faq.a}</p>

@@ -132,7 +132,7 @@ const popularPosts = [
 export default function BlogPage() {
   return (
     <>
-      <section className="pt-24 pb-10 bg-gradient-to-b from-sky-50 to-background">
+      <section className="pt-24 pb-10 bg-linear-to-b from-sky-50 to-background">
         <div className="container max-w-6xl">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 relative">
@@ -212,7 +212,7 @@ export default function BlogPage() {
                   {recentPosts.map((post) => (
                     <Card
                       key={post.id}
-                      className="overflow-hidden border shadow hover:shadow-md transition-shadow"
+                      className="overflow-hidden border shadow-sm hover:shadow-md transition-shadow"
                     >
                       <div className="relative h-48 w-full">
                         <Image

@@ -114,7 +114,7 @@ export default function AboutPage() {
   return (
     <main className="flex-1">
       {/* About Hero Section */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-slate-50 to-white">
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-linear-to-b from-slate-50 to-white">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <motion.div
             className="absolute h-64 w-64 rounded-full bg-brand-accent"
@@ -289,7 +289,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-sm overflow-hidden"
+                className="bg-white rounded-xl shadow-xs overflow-hidden"
               >
                 <div className="relative h-48">
                   {member.image.startsWith("/") ? (
@@ -347,7 +347,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-sm overflow-hidden"
+                className="bg-white rounded-xl shadow-xs overflow-hidden"
               >
                 <div className="relative h-64">
                   <Image

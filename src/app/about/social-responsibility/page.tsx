@@ -75,7 +75,7 @@ export default function SocialResponsibilityPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -156,10 +156,10 @@ export default function SocialResponsibilityPage() {
               {initiatives.map((initiative) => (
                 <div
                   key={`initiative-${initiative.title.replace(/\s+/g, "-").toLowerCase()}`}
-                  className="bg-white p-6 rounded-xl shadow-sm"
+                  className="bg-white p-6 rounded-xl shadow-xs"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-4">
-                    <div className="flex-grow">
+                    <div className="grow">
                       <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                         {initiative.title}
                       </h3>
@@ -167,7 +167,7 @@ export default function SocialResponsibilityPage() {
                         {initiative.description}
                       </p>
                     </div>
-                    <div className="md:flex-shrink-0">
+                    <div className="md:shrink-0">
                       <span className="bg-[#09d8f5]/20 text-[#0f2c4a] text-sm font-medium py-2 px-4 rounded-full block text-center">
                         {initiative.impact}
                       </span>
@@ -198,7 +198,7 @@ export default function SocialResponsibilityPage() {
                   className="bg-slate-50 p-6 rounded-xl border border-slate-100"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-4">
-                    <div className="flex-grow">
+                    <div className="grow">
                       <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                         {program.title}
                       </h3>
@@ -206,7 +206,7 @@ export default function SocialResponsibilityPage() {
                         {program.description}
                       </p>
                     </div>
-                    <div className="md:flex-shrink-0">
+                    <div className="md:shrink-0">
                       <span className="bg-[#0f2c4a] text-white text-sm font-medium py-2 px-4 rounded-full block text-center">
                         {program.target}
                       </span>
@@ -234,7 +234,7 @@ export default function SocialResponsibilityPage() {
               {workplaceInitiatives.map((item) => (
                 <div
                   key={`workplace-${item.title.replace(/\s+/g, "-").toLowerCase()}`}
-                  className="bg-white p-6 rounded-xl shadow-sm"
+                  className="bg-white p-6 rounded-xl shadow-xs"
                 >
                   <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                     {item.title}

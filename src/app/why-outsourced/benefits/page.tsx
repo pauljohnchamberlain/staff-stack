@@ -71,7 +71,7 @@ export default function BenefitsPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -100,7 +100,7 @@ export default function BenefitsPage() {
             {benefits.map((benefit) => (
               <div
                 key={benefit.id}
-                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all border border-slate-100"
+                className="bg-white p-6 rounded-lg shadow-xs hover:shadow-md transition-all border border-slate-100"
               >
                 <div className="mb-4">
                   {benefit.icon}
@@ -147,7 +147,7 @@ export default function BenefitsPage() {
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white p-8 md:p-10 rounded-xl shadow-sm border border-slate-100">
+            <div className="bg-white p-8 md:p-10 rounded-xl shadow-xs border border-slate-100">
               <h2 className="text-2xl md:text-3xl font-lexend font-bold text-[#0f2c4a] mb-6 text-center">
                 Calculate Your Potential Savings
               </h2>

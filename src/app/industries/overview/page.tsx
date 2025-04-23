@@ -98,7 +98,7 @@ export default function IndustryOverviewPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -132,7 +132,7 @@ export default function IndustryOverviewPage() {
                 className="bg-white rounded-lg border border-slate-100 p-6 hover:shadow-md transition-shadow group"
               >
                 <div className="flex items-start gap-4">
-                  <div className="h-12 w-12 rounded-lg bg-[#0f2c4a]/5 flex items-center justify-center flex-shrink-0">
+                  <div className="h-12 w-12 rounded-lg bg-[#0f2c4a]/5 flex items-center justify-center shrink-0">
                     <div className="h-6 w-6 text-[#09d8f5]">
                       {/* Placeholder for industry icon */}
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

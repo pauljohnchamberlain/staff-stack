@@ -98,7 +98,7 @@ export default function CoreValuesPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -151,7 +151,7 @@ export default function CoreValuesPage() {
                     </div>
                   </div>
                   <div className="md:w-2/3">
-                    <div className="bg-white p-6 rounded-xl shadow-sm">
+                    <div className="bg-white p-6 rounded-xl shadow-xs">
                       <p className="text-lg text-slate-700 mb-6">
                         {value.description}
                       </p>
@@ -160,7 +160,7 @@ export default function CoreValuesPage() {
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
                           {value.commitments.map((commitment, idx) => (
                             <li key={idx} className="flex items-start gap-2">
-                              <div className="h-5 w-5 rounded-full bg-[#09d8f5] flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <div className="h-5 w-5 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-0.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                   <polyline points="20 6 9 17 4 12" />
                                 </svg>
@@ -231,7 +231,7 @@ export default function CoreValuesPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="bg-white p-6 rounded-xl shadow-xs">
                 <div className="flex items-start gap-3 mb-4">
                   <div className="text-4xl text-[#09d8f5] font-serif">"</div>
                   <p className="italic text-slate-700">
@@ -244,7 +244,7 @@ export default function CoreValuesPage() {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="bg-white p-6 rounded-xl shadow-xs">
                 <div className="flex items-start gap-3 mb-4">
                   <div className="text-4xl text-[#09d8f5] font-serif">"</div>
                   <p className="italic text-slate-700">
@@ -257,7 +257,7 @@ export default function CoreValuesPage() {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="bg-white p-6 rounded-xl shadow-xs">
                 <div className="flex items-start gap-3 mb-4">
                   <div className="text-4xl text-[#09d8f5] font-serif">"</div>
                   <p className="italic text-slate-700">
@@ -270,7 +270,7 @@ export default function CoreValuesPage() {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="bg-white p-6 rounded-xl shadow-xs">
                 <div className="flex items-start gap-3 mb-4">
                   <div className="text-4xl text-[#09d8f5] font-serif">"</div>
                   <p className="italic text-slate-700">

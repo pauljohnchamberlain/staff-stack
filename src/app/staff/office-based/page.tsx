@@ -71,7 +71,7 @@ export default function OfficeBasedTeamsPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -131,7 +131,7 @@ export default function OfficeBasedTeamsPage() {
                       key={`feature-${feature.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`}
                       className="flex items-start gap-3"
                     >
-                      <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
@@ -207,7 +207,7 @@ export default function OfficeBasedTeamsPage() {
             <h2 className="text-3xl font-lexend font-bold text-[#0f2c4a] mb-8">
               What Our Clients Say
             </h2>
-            <div className="bg-white p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
                 "I was impressed when I visited our team at Staff Stack's office in Manila. The facilities are first-class – on par with our headquarters in Sydney. Our staff have everything they need, from cutting-edge technology to comfortable workspaces. The security measures and professional environment give us complete confidence when dealing with sensitive client information. Most importantly, our team loves working there, which has resulted in excellent retention rates."
               </p>

@@ -116,7 +116,7 @@ const categories = [
 export default function ServicesPage() {
   return (
     <>
-      <section className="pt-16 pb-16 md:pb-24 bg-gradient-to-r from-brand-dark via-brand to-brand-light text-white overflow-hidden relative">
+      <section className="pt-16 pb-16 md:pb-24 bg-linear-to-r from-brand-dark via-brand to-brand-light text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
           <motion.div
             className="absolute h-64 w-64 rounded-full bg-brand-accent"
@@ -240,7 +240,7 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                className="border rounded-xl p-6 shadow-xs hover:shadow-md transition-shadow"
               >
                 <div className="flex flex-col md:flex-row gap-6 md:items-center">
                   <div
@@ -260,7 +260,7 @@ export default function ServicesPage() {
                           key={`${category.id}-benefit-${idx}`}
                           className="flex items-start gap-2"
                         >
-                          <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                           <span className="text-sm">{benefit}</span>
                         </div>
                       ))}

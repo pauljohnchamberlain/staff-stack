@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <section className="pt-24 pb-10 bg-gradient-to-b from-sky-50 to-background">
+      <section className="pt-24 pb-10 bg-linear-to-b from-sky-50 to-background">
         <div className="container max-w-4xl">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">
             Privacy Policy

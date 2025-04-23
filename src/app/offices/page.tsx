@@ -60,7 +60,7 @@ export default function OfficesPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -195,7 +195,7 @@ export default function OfficesPage() {
             <h2 className="text-3xl font-lexend font-bold text-[#0f2c4a] mb-8">
               What Our Clients Say
             </h2>
-            <div className="bg-white p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
                 "When I visited Staff Stack's offices in Manila, I was genuinely impressed by the quality of their facilities. The workspace is modern, professional, and on par with any tech company in Silicon Valley. The infrastructure is robust, with redundant systems that ensure my team can work without interruption. It's clear that they've invested significantly in creating an environment where staff can thrive."
               </p>

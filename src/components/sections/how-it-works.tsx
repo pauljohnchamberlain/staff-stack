@@ -65,7 +65,7 @@ export function HowItWorksSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-lg p-6 shadow-sm relative border border-muted overflow-hidden group hover:border-brand hover:shadow-md transition-all"
+              className="bg-white rounded-lg p-6 shadow-xs relative border border-muted overflow-hidden group hover:border-brand hover:shadow-md transition-all"
             >
               <div className="flex flex-col h-full">
                 <div className="flex-none">
@@ -74,7 +74,7 @@ export function HowItWorksSection() {
                   </div>
                   <h3 className="text-xl font-lexend font-semibold mb-3">{step.title}</h3>
                 </div>
-                <p className="text-muted-foreground mb-4 flex-grow font-inter">
+                <p className="text-muted-foreground mb-4 grow font-inter">
                   {step.description}
                 </p>
                 <div className="text-sm font-lexend font-medium text-brand flex items-center">

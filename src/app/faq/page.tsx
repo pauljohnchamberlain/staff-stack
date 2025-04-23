@@ -118,7 +118,7 @@ export default function FAQPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -220,7 +220,7 @@ export default function FAQPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+              <div className="bg-white p-6 rounded-xl shadow-xs border border-slate-100">
                 <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                   How It Works
                 </h3>
@@ -236,7 +236,7 @@ export default function FAQPage() {
                 </Button>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+              <div className="bg-white p-6 rounded-xl shadow-xs border border-slate-100">
                 <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                   Roles We Staff
                 </h3>
@@ -252,7 +252,7 @@ export default function FAQPage() {
                 </Button>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+              <div className="bg-white p-6 rounded-xl shadow-xs border border-slate-100">
                 <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                   Client Testimonials
                 </h3>

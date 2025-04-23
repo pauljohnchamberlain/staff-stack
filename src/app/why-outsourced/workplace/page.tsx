@@ -59,7 +59,7 @@ export default function WorkplacePage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -163,9 +163,9 @@ export default function WorkplacePage() {
               {benefits.map((benefit) => (
                 <div
                   key={benefit.id}
-                  className="bg-white p-4 rounded-lg shadow-sm flex items-center gap-3"
+                  className="bg-white p-4 rounded-lg shadow-xs flex items-center gap-3"
                 >
-                  <div className="h-8 w-8 rounded-full bg-[#09d8f5]/20 text-[#09d8f5] flex items-center justify-center flex-shrink-0">
+                  <div className="h-8 w-8 rounded-full bg-[#09d8f5]/20 text-[#09d8f5] flex items-center justify-center shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M20 6L9 17l-5-5" />
                     </svg>

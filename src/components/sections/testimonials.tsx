@@ -107,7 +107,7 @@ export function TestimonialsSection() {
                 className="md:basis-1/2 lg:basis-1/3 pl-4"
               >
                 <div className="h-full">
-                  <Card className="border-none shadow-sm h-full">
+                  <Card className="border-none shadow-xs h-full">
                     <CardContent className="p-6">
                       <div className="space-y-4">
                         <div className="flex items-center gap-2">

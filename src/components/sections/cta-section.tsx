@@ -16,7 +16,7 @@ export function CtaSection() {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="bg-gradient-to-r from-brand to-brand-light rounded-2xl text-white overflow-hidden shadow-xl">
+          <div className="bg-linear-to-r from-brand to-brand-light rounded-2xl text-white overflow-hidden shadow-xl">
             <div className="p-8 md:p-12 relative">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
@@ -35,7 +35,7 @@ export function CtaSection() {
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                  <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg flex items-start gap-3">
+                  <div className="bg-white/10 backdrop-blur-xs p-4 rounded-lg flex items-start gap-3">
                     <Phone className="h-5 w-5 text-brand-accent mt-1" />
                     <div>
                       <h3 className="font-lexend font-semibold text-sm mb-1">Call Us</h3>
@@ -43,7 +43,7 @@ export function CtaSection() {
                     </div>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg flex items-start gap-3">
+                  <div className="bg-white/10 backdrop-blur-xs p-4 rounded-lg flex items-start gap-3">
                     <Mail className="h-5 w-5 text-brand-accent mt-1" />
                     <div>
                       <h3 className="font-lexend font-semibold text-sm mb-1">Email Us</h3>
@@ -53,7 +53,7 @@ export function CtaSection() {
                     </div>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg flex items-start gap-3">
+                  <div className="bg-white/10 backdrop-blur-xs p-4 rounded-lg flex items-start gap-3">
                     <CalendarClock className="h-5 w-5 text-brand-accent mt-1" />
                     <div>
                       <h3 className="font-lexend font-semibold text-sm mb-1">

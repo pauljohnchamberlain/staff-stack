@@ -235,7 +235,7 @@ const coreValues = [
 export default function JobsPage() {
   return (
     <>
-      <section className="pt-24 pb-12 bg-gradient-to-b from-sky-50 to-background">
+      <section className="pt-24 pb-12 bg-linear-to-b from-sky-50 to-background">
         <div className="container max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -267,7 +267,7 @@ export default function JobsPage() {
               Search Jobs by Job Title
             </h2>
             <div className="flex max-w-xl">
-              <div className="relative flex-grow">
+              <div className="relative grow">
                 <Input placeholder="e.g. Developer" className="pr-10 h-12" />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                   <Search className="h-5 w-5 text-gray-400" />
@@ -372,7 +372,7 @@ export default function JobsPage() {
             {perks.map((perk, index) => (
               <Card
                 key={`perk-${perk.title.toLowerCase().replace(/\s+/g, "-")}`}
-                className="border-none shadow-sm bg-white"
+                className="border-none shadow-xs bg-white"
               >
                 <CardHeader className="pb-2">
                   <div className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center mb-2">
@@ -387,8 +387,8 @@ export default function JobsPage() {
             ))}
           </div>
 
-          <div className="flex flex-col md:flex-row gap-8 items-center bg-white p-6 rounded-xl shadow-sm">
-            <div className="flex-shrink-0">
+          <div className="flex flex-col md:flex-row gap-8 items-center bg-white p-6 rounded-xl shadow-xs">
+            <div className="shrink-0">
               <Image
                 src="https://ext.same-assets.com/2377162884/2687197341.svg"
                 alt="Great Place to Work Certified"
@@ -515,7 +515,7 @@ export default function JobsPage() {
               {[1, 2, 3, 4, 5, 6].map((index) => (
                 <div
                   key={index}
-                  className="relative h-40 md:h-56 rounded-lg overflow-hidden shadow-sm"
+                  className="relative h-40 md:h-56 rounded-lg overflow-hidden shadow-xs"
                 >
                   <Image
                     src={`/images/team-event-${index}.jpg`}
@@ -540,7 +540,7 @@ export default function JobsPage() {
             {testimonials.map((testimonial) => (
               <Card
                 key={`testimonial-${testimonial.id}`}
-                className="border-none shadow-sm"
+                className="border-none shadow-xs"
               >
                 <CardHeader className="pb-2">
                   <CardTitle className="text-lg">{testimonial.name}</CardTitle>

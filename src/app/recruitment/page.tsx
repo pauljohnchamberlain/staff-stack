@@ -127,7 +127,7 @@ export default function RecruitmentPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -194,7 +194,7 @@ export default function RecruitmentPage() {
 
                   {/* Step content */}
                   <div className="md:w-3/4">
-                    <div className="bg-white p-6 rounded-xl shadow-sm">
+                    <div className="bg-white p-6 rounded-xl shadow-xs">
                       <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                         {step.title}
                       </h3>
@@ -206,7 +206,7 @@ export default function RecruitmentPage() {
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
                           {step.keyPoints.map((point, idx) => (
                             <li key={idx} className="flex items-start gap-2">
-                              <div className="h-5 w-5 rounded-full bg-[#09d8f5] flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <div className="h-5 w-5 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-0.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                   <polyline points="20 6 9 17 4 12" />
                                 </svg>
@@ -285,7 +285,7 @@ export default function RecruitmentPage() {
             <h2 className="text-3xl font-lexend font-bold text-[#0f2c4a] mb-8">
               What Our Clients Say
             </h2>
-            <div className="bg-white p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
                 "Staff Stack's recruitment process impressed us from day one. The quality of candidates they presented was exceptional - each person was not only technically qualified but also aligned with our company culture. Their thorough screening process saved us countless hours and helped us build a high-performing offshore team faster than we thought possible."
               </p>

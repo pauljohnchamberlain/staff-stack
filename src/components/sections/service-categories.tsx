@@ -270,7 +270,7 @@ export function ServiceCategories() {
 
                 <motion.div
                   variants={itemVariants}
-                  className="col-span-1 md:col-span-3 bg-white rounded-xl p-6 shadow-sm"
+                  className="col-span-1 md:col-span-3 bg-white rounded-xl p-6 shadow-xs"
                 >
                   <h4 className="text-lg font-lexend font-medium mb-4">
                     Popular {category.name} Roles

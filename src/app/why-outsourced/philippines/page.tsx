@@ -55,7 +55,7 @@ export default function PhilippinesPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -104,7 +104,7 @@ export default function PhilippinesPage() {
               {advantages.map((advantage, index) => (
                 <div
                   key={advantage.id}
-                  className="bg-slate-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-slate-50 p-6 rounded-lg shadow-xs hover:shadow-md transition-shadow"
                 >
                   <div className="h-12 w-12 rounded-full bg-[#09d8f5]/20 text-[#09d8f5] flex items-center justify-center mb-4">
                     <span className="text-xl font-lexend font-bold">{index + 1}</span>
@@ -133,7 +133,7 @@ export default function PhilippinesPage() {
                 {skills.map((skill) => (
                   <span
                     key={skill.id}
-                    className="bg-white py-2 px-4 rounded-full text-[#0f2c4a] font-lexend shadow-sm"
+                    className="bg-white py-2 px-4 rounded-full text-[#0f2c4a] font-lexend shadow-xs"
                   >
                     {skill.name}
                   </span>

@@ -204,7 +204,7 @@ const industries = [
 export default function IndustriesPage() {
   return (
     <>
-      <section className="pt-24 pb-16 bg-gradient-to-b from-sky-50 to-background">
+      <section className="pt-24 pb-16 bg-linear-to-b from-sky-50 to-background">
         <div className="container max-w-6xl">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -297,7 +297,7 @@ export default function IndustriesPage() {
                               key={`service-${service.toLowerCase().replace(/\s+/g, "-")}`}
                               className="flex items-start gap-2"
                             >
-                              <CheckCircle className="h-5 w-5 text-brand flex-shrink-0 mt-0.5" />
+                              <CheckCircle className="h-5 w-5 text-brand shrink-0 mt-0.5" />
                               <span>{service}</span>
                             </li>
                           ))}
@@ -314,7 +314,7 @@ export default function IndustriesPage() {
                               key={`benefit-${benefit.toLowerCase().replace(/\s+/g, "-")}`}
                               className="flex items-start gap-2"
                             >
-                              <CheckCircle className="h-5 w-5 text-brand flex-shrink-0 mt-0.5" />
+                              <CheckCircle className="h-5 w-5 text-brand shrink-0 mt-0.5" />
                               <span>{benefit}</span>
                             </li>
                           ))}
@@ -354,7 +354,7 @@ export default function IndustriesPage() {
                       <CardContent className="pt-6">
                         <ul className="space-y-4">
                           <li className="flex items-start gap-2">
-                            <CheckCircle className="h-5 w-5 text-brand flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="h-5 w-5 text-brand shrink-0 mt-0.5" />
                             <div>
                               <p className="font-medium">Industry Expertise</p>
                               <p className="text-sm text-muted-foreground">
@@ -365,7 +365,7 @@ export default function IndustriesPage() {
                             </div>
                           </li>
                           <li className="flex items-start gap-2">
-                            <CheckCircle className="h-5 w-5 text-brand flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="h-5 w-5 text-brand shrink-0 mt-0.5" />
                             <div>
                               <p className="font-medium">Quality Assurance</p>
                               <p className="text-sm text-muted-foreground">
@@ -375,7 +375,7 @@ export default function IndustriesPage() {
                             </div>
                           </li>
                           <li className="flex items-start gap-2">
-                            <CheckCircle className="h-5 w-5 text-brand flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="h-5 w-5 text-brand shrink-0 mt-0.5" />
                             <div>
                               <p className="font-medium">Scalable Teams</p>
                               <p className="text-sm text-muted-foreground">
@@ -385,7 +385,7 @@ export default function IndustriesPage() {
                             </div>
                           </li>
                           <li className="flex items-start gap-2">
-                            <CheckCircle className="h-5 w-5 text-brand flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="h-5 w-5 text-brand shrink-0 mt-0.5" />
                             <div>
                               <p className="font-medium">Data Security</p>
                               <p className="text-sm text-muted-foreground">
@@ -395,7 +395,7 @@ export default function IndustriesPage() {
                             </div>
                           </li>
                           <li className="flex items-start gap-2">
-                            <CheckCircle className="h-5 w-5 text-brand flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="h-5 w-5 text-brand shrink-0 mt-0.5" />
                             <div>
                               <p className="font-medium">
                                 Cost-Effective Solutions

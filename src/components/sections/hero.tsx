@@ -35,7 +35,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand to-brand-light text-white">
+    <section className="relative overflow-hidden bg-linear-to-br from-brand-dark via-brand to-brand-light text-white">
       <div className="container relative z-10 pt-28 pb-16 md:pt-32 md:pb-20 lg:pt-40 lg:pb-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -92,7 +92,7 @@ export function Hero() {
                     className="flex items-center gap-2"
                     variants={itemVariants}
                   >
-                    <div className="rounded-full bg-brand-accent/20 p-1 flex-shrink-0">
+                    <div className="rounded-full bg-brand-accent/20 p-1 shrink-0">
                       <Check className="h-3 w-3 text-brand-accent" />
                     </div>
                     <span className="text-sm md:text-base font-inter">{item.text}</span>
@@ -109,7 +109,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             {/* Replace with the new team illustration image */}
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+            <div className="relative bg-white/10 backdrop-blur-xs rounded-2xl p-8 shadow-lg">
               <Image
                 src="/images/team-illustration.png"
                 alt="Staff Stack Team Illustration"
@@ -119,7 +119,7 @@ export function Hero() {
                 priority
                 crossOrigin="anonymous"
               />
-              <div className="absolute bottom-8 left-0 right-0 mx-auto max-w-[90%] bg-white/90 rounded-lg p-4 text-brand-dark text-center backdrop-blur-sm shadow-lg">
+              <div className="absolute bottom-8 left-0 right-0 mx-auto max-w-[90%] bg-white/90 rounded-lg p-4 text-brand-dark text-center backdrop-blur-xs shadow-lg">
                 <p className="font-lexend font-medium text-sm mb-2">
                   Join 250+ companies with staff in the Philippines
                 </p>

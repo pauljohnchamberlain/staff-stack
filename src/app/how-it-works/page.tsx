@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 export default function HowItWorksPage() {
   return (
     <>
-      <section className="pt-24 pb-12 bg-gradient-to-b from-sky-50 to-background">
+      <section className="pt-24 pb-12 bg-linear-to-b from-sky-50 to-background">
         <div className="container max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -111,7 +111,7 @@ export default function HowItWorksPage() {
                   },
                 ].map((step, index) => (
                   <li key={`step-${index + 1}`} className="mb-2">
-                    <span className="absolute -left-4 flex items-center justify-center w-8 h-8 bg-brand text-white rounded-full font-bold text-lg shadow">
+                    <span className="absolute -left-4 flex items-center justify-center w-8 h-8 bg-brand text-white rounded-full font-bold text-lg shadow-sm">
                       {index + 1}
                     </span>
                     <div className="ml-6">
@@ -184,7 +184,7 @@ export default function HowItWorksPage() {
               ].map((step) => (
                 <div
                   key={step.id}
-                  className="bg-white rounded-lg p-6 shadow-sm relative border border-muted overflow-hidden group hover:border-brand hover:shadow-md transition-all"
+                  className="bg-white rounded-lg p-6 shadow-xs relative border border-muted overflow-hidden group hover:border-brand hover:shadow-md transition-all"
                 >
                   <div className="flex flex-col h-full">
                     <div className="flex-none">
@@ -195,7 +195,7 @@ export default function HowItWorksPage() {
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-muted-foreground mb-4 flex-grow">
+                    <p className="text-muted-foreground mb-4 grow">
                       {step.description}
                     </p>
                     <div className="text-sm font-medium text-brand flex items-center">
@@ -251,7 +251,7 @@ export default function HowItWorksPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <Card className="border-2 border-brand/20 shadow-sm">
+            <Card className="border-2 border-brand/20 shadow-xs">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <CheckCircle className="h-6 w-6 text-brand" />
@@ -264,7 +264,7 @@ export default function HowItWorksPage() {
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>
@@ -272,7 +272,7 @@ export default function HowItWorksPage() {
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>
@@ -280,13 +280,13 @@ export default function HowItWorksPage() {
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>Redundant fiber internet connections</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>
@@ -297,7 +297,7 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-brand/20 shadow-sm">
+            <Card className="border-2 border-brand/20 shadow-xs">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Shield className="h-6 w-6 text-brand" />
@@ -310,7 +310,7 @@ export default function HowItWorksPage() {
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>
@@ -318,19 +318,19 @@ export default function HowItWorksPage() {
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>Secure VPN solutions and end-to-end encryption</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>GDPR and data privacy compliance</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>Regular security audits and penetration testing</span>
@@ -339,7 +339,7 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-brand/20 shadow-sm">
+            <Card className="border-2 border-brand/20 shadow-xs">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <BarChart3 className="h-6 w-6 text-brand" />
@@ -352,25 +352,25 @@ export default function HowItWorksPage() {
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>Customizable productivity monitoring dashboards</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>Regular performance reports and analytics</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>Time tracking and attendance management</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>Quality assurance and continuous improvement</span>
@@ -379,7 +379,7 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-brand/20 shadow-sm">
+            <Card className="border-2 border-brand/20 shadow-xs">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Users className="h-6 w-6 text-brand" />
@@ -392,7 +392,7 @@ export default function HowItWorksPage() {
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>
@@ -400,19 +400,19 @@ export default function HowItWorksPage() {
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>Payroll administration and benefits management</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>Performance management and career development</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                     <span>Employee engagement and wellness programs</span>
@@ -437,7 +437,7 @@ export default function HowItWorksPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-2 border-brand/20 shadow-sm">
+            <Card className="border-2 border-brand/20 shadow-xs">
               <CardHeader className="text-center pb-2">
                 <div className="w-16 h-16 mx-auto mb-4 bg-blue-50 rounded-full flex items-center justify-center">
                   <Globe className="h-8 w-8 text-blue-500" />
@@ -450,31 +450,31 @@ export default function HowItWorksPage() {
               <CardContent>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Enterprise-grade equipment provided</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Secure home office setup</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Productivity monitoring software</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Backup internet connections</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Full HR and technical support</span>
@@ -483,7 +483,7 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-brand/20 shadow-sm">
+            <Card className="border-2 border-brand/20 shadow-xs">
               <CardHeader className="text-center pb-2">
                 <div className="w-16 h-16 mx-auto mb-4 bg-green-50 rounded-full flex items-center justify-center">
                   <Users className="h-8 w-8 text-green-500" />
@@ -496,31 +496,31 @@ export default function HowItWorksPage() {
               <CardContent>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Split days between office and home</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Dedicated desk at our facility</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Equipment for both locations</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Scheduled team collaboration days</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Customizable schedule options</span>
@@ -529,7 +529,7 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-brand/20 shadow-sm">
+            <Card className="border-2 border-brand/20 shadow-xs">
               <CardHeader className="text-center pb-2">
                 <div className="w-16 h-16 mx-auto mb-4 bg-purple-50 rounded-full flex items-center justify-center">
                   <Shield className="h-8 w-8 text-purple-500" />
@@ -542,31 +542,31 @@ export default function HowItWorksPage() {
               <CardContent>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Premium office environment</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Enhanced security protocols</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Direct supervision and management</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Team building and company culture</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 flex-shrink-0 mt-0.5">
+                    <div className="h-5 w-5 shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                     <span>Private meeting rooms and facilities</span>
@@ -589,7 +589,7 @@ export default function HowItWorksPage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow p-8">
+          <div className="bg-white rounded-xl shadow-sm p-8">
             <h4 className="font-medium mb-2">What is outsourcing?</h4>
             <p className="text-muted-foreground mb-6">
               Outsourcing is the business practice of hiring a party outside a

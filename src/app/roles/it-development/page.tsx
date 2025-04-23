@@ -49,7 +49,7 @@ export default function ITDevelopmentPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -82,7 +82,7 @@ export default function ITDevelopmentPage() {
                   <ul className="space-y-3">
                     {roles.slice(0, 6).map((role) => (
                       <li key={`role-${role.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-3">
-                        <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center flex-shrink-0 mt-1">
+                        <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
                           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
@@ -99,7 +99,7 @@ export default function ITDevelopmentPage() {
                   <ul className="space-y-3">
                     {roles.slice(6, 12).map((role) => (
                       <li key={`role-${role.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-3">
-                        <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center flex-shrink-0 mt-1">
+                        <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
                           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
@@ -133,7 +133,7 @@ export default function ITDevelopmentPage() {
               <ul className="space-y-6 mb-10">
                 {benefits.map((benefit, index) => (
                   <li key={`benefit-${benefit.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-[#09d8f5] text-white font-lexend font-bold flex items-center justify-center">
+                    <div className="shrink-0 h-10 w-10 rounded-full bg-[#09d8f5] text-white font-lexend font-bold flex items-center justify-center">
                       {index + 1}
                     </div>
                     <div>
@@ -182,7 +182,7 @@ export default function ITDevelopmentPage() {
             <h2 className="text-3xl font-lexend font-bold text-[#0f2c4a] mb-8">
               What Our Clients Say
             </h2>
-            <div className="bg-white p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
                 "Staff Stack has been instrumental in helping us build our engineering team. The developers we've hired are not just technically proficient but also great communicators who integrate seamlessly with our in-house team. We've been able to accelerate our product development significantly while maintaining high quality standards."
               </p>

@@ -74,7 +74,7 @@ export default function OurPeoplePage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -129,7 +129,7 @@ export default function OurPeoplePage() {
               {leadershipTeam.map((leader) => (
                 <div
                   key={`leader-${leader.name.replace(/\s+/g, "-").toLowerCase()}`}
-                  className="bg-white p-6 rounded-xl shadow-sm"
+                  className="bg-white p-6 rounded-xl shadow-xs"
                 >
                   <h3 className="text-2xl font-lexend font-semibold text-[#0f2c4a] mb-1">
                     {leader.name}
@@ -198,7 +198,7 @@ export default function OurPeoplePage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-              <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="bg-white p-6 rounded-xl shadow-xs">
                 <div className="h-14 w-14 bg-[#0f2c4a] rounded-full flex items-center justify-center mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#09d8f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
@@ -211,7 +211,7 @@ export default function OurPeoplePage() {
                 <p className="text-slate-700">We promote a healthy balance between professional achievement and personal well-being through flexible work arrangements and wellness programs.</p>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="bg-white p-6 rounded-xl shadow-xs">
                 <div className="h-14 w-14 bg-[#0f2c4a] rounded-full flex items-center justify-center mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#09d8f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
@@ -222,7 +222,7 @@ export default function OurPeoplePage() {
                 <p className="text-slate-700">We invest in ongoing professional development through training programs, mentorship opportunities, and clear career advancement pathways.</p>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm">
+              <div className="bg-white p-6 rounded-xl shadow-xs">
                 <div className="h-14 w-14 bg-[#0f2c4a] rounded-full flex items-center justify-center mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#09d8f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />

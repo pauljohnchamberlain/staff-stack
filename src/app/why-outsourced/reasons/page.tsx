@@ -33,7 +33,7 @@ export default function ReasonsPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -52,7 +52,7 @@ export default function ReasonsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
             {reasons.map((reason, index) => (
               <div key={`reason-${index}-${reason.substring(0, 10)}`} className="flex items-start gap-4">
-                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-[#09d8f5] text-white font-lexend font-bold flex items-center justify-center">
+                <div className="shrink-0 h-10 w-10 rounded-full bg-[#09d8f5] text-white font-lexend font-bold flex items-center justify-center">
                   {index + 1}
                 </div>
                 <div>
@@ -96,7 +96,7 @@ export default function ReasonsPage() {
             <h2 className="text-3xl font-lexend font-bold text-[#0f2c4a] mb-8">
               What Our Clients Say
             </h2>
-            <div className="bg-white p-8 rounded-xl shadow-sm">
+            <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
                 "Staff Stack has completely transformed our business operations. The quality of talent we've accessed through their platform is exceptional. We've been able to scale our operations rapidly while maintaining top-tier service levels. The cost savings have been substantial, but the real value is in the dedicated professionals now working as an integral part of our team."
               </p>

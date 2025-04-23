@@ -221,7 +221,7 @@ const relatedPosts = [
 export default function BlogPostPage({ params }: { params: { id: string } }) {
   return (
     <>
-      <section className="pt-24 pb-10 bg-gradient-to-b from-sky-50 to-background">
+      <section className="pt-24 pb-10 bg-linear-to-b from-sky-50 to-background">
         <div className="container max-w-6xl">
           <div className="flex flex-col max-w-3xl mx-auto">
             <div className="flex items-center gap-2 mb-4">
@@ -401,7 +401,7 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
                   {relatedPosts.map((relatedPost) => (
                     <Card
                       key={relatedPost.id}
-                      className="overflow-hidden border shadow hover:shadow-md transition-shadow"
+                      className="overflow-hidden border shadow-sm hover:shadow-md transition-shadow"
                     >
                       <div className="relative h-40 w-full">
                         <Image

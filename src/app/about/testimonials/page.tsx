@@ -128,7 +128,7 @@ export default function TestimonialsPage() {
   return (
     <main className="pt-28">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
@@ -182,7 +182,7 @@ export default function TestimonialsPage() {
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="bg-white p-8 rounded-xl shadow-sm"
+                  className="bg-white p-8 rounded-xl shadow-xs"
                 >
                   <div className="flex items-start gap-4 mb-6">
                     <div className="text-5xl text-[#09d8f5] font-serif">"</div>
@@ -230,7 +230,7 @@ export default function TestimonialsPage() {
                       className="w-full aspect-video object-cover"
                     />
                     <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                      <div className="h-16 w-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <div className="h-16 w-16 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center">
                         <div className="h-12 w-12 rounded-full bg-[#e60b8a] flex items-center justify-center pl-1">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none">
                             <polygon points="5 3 19 12 5 21" />
@@ -265,7 +265,7 @@ export default function TestimonialsPage() {
               {clientLogos.map((client) => (
                 <div
                   key={client.id}
-                  className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center justify-center"
+                  className="bg-white p-6 rounded-xl shadow-xs flex flex-col items-center justify-center"
                 >
                   <div className="h-16 w-16 bg-[#0f2c4a]/10 rounded-full flex items-center justify-center mb-3">
                     <span className="text-2xl font-bold text-[#0f2c4a]">
