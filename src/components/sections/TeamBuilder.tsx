@@ -152,51 +152,63 @@ export default function TeamBuilder() {
 	}, [searchTerm]);
 
 	return (
-		<div className='space-y-8 pb-16'>
-			<div className='text-center mb-10'>
-				<h1 className='text-4xl font-bold text-blue-600 mb-2'>Team Builder</h1>
-				<p className='text-lg text-muted-foreground'>Hire top talent fast, for much less than you expect.</p>
+		<div className='container mx-auto max-w-6xl space-y-12 pb-20'>
+			{/* Header */}
+			<div className='text-center my-12'>
+				<h1 className='text-5xl font-extrabold text-blue-600 mb-4 tracking-tight'>Team Builder</h1>
+				<p className='text-xl text-muted-foreground max-w-2xl mx-auto'>Hire top talent fast, for much less than you expect.</p>
 			</div>
 
-			<div className='flex justify-between items-center mb-6 flex-wrap gap-4'>
+			{/* Controls Row */}
+			<div className='flex flex-wrap justify-between items-center mb-8 gap-4'>
+				{/* Add Member Dialog */}
 				<Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
 					<DialogTrigger asChild>
-						<Button className='bg-blue-600 hover:bg-blue-700 text-white'>Add Team Member</Button>
+						<Button size='lg' className='bg-blue-600 hover:bg-blue-700 text-white font-medium px-6'>
+							Add Team Member
+						</Button>
 					</DialogTrigger>
-					<DialogContent className='sm:max-w-[600px] max-h-[80vh] flex flex-col'>
+					<DialogContent className='sm:max-w-[650px] max-h-[80vh] flex flex-col'>
 						<DialogHeader>
-							<DialogTitle className='text-2xl font-bold text-center mb-4'>Add Team Member</DialogTitle>
+							<DialogTitle className='text-2xl font-bold text-center mb-6'>Add Team Member</DialogTitle>
 						</DialogHeader>
-						<div className='relative mb-4'>
+						<div className='relative mb-5'>
 							<Search className='absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground' />
-							<Input type='text' placeholder='Search staff...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className='pl-10 w-full' />
+							<Input type='text' placeholder='Search staff...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className='pl-10 w-full py-6 text-base' />
 						</div>
 						<div className='flex-grow overflow-y-auto pr-2 space-y-3'>
 							{filteredRoles.length > 0 ? (
 								filteredRoles.map((role) => (
-									<button key={role.id} onClick={() => addTeamMember(role.id)} className='block w-full text-left p-4 rounded-lg hover:bg-accent transition-colors border'>
+									<button
+										key={role.id}
+										onClick={() => addTeamMember(role.id)}
+										className='block w-full text-left p-5 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-800'
+									>
 										<p className='font-semibold text-lg mb-1'>{role.name}</p>
 										<p className='text-sm text-muted-foreground'>{role.description || 'No description available.'}</p>
 									</button>
 								))
 							) : (
-								<p className='text-center text-muted-foreground py-4'>No roles found matching "{searchTerm}".</p>
+								<div className='text-center py-8 rounded-lg border border-dashed border-gray-300 dark:border-gray-700'>
+									<p className='text-muted-foreground'>No roles found matching "{searchTerm}"</p>
+								</div>
 							)}
 						</div>
 					</DialogContent>
 				</Dialog>
 
+				{/* Dropdowns */}
 				<div className='flex items-center gap-4'>
 					<DropdownMenu>
 						<DropdownMenuTrigger asChild>
-							<Button variant='outline'>
+							<Button variant='outline' className='border-gray-300 dark:border-gray-600 font-medium'>
 								{selectedWorkSetup}
-								<ChevronDown className='ml-2 h-4 w-4' />
+								<ChevronDown className='ml-2 h-4 w-4 opacity-70' />
 							</Button>
 						</DropdownMenuTrigger>
-						<DropdownMenuContent align='end'>
+						<DropdownMenuContent align='end' className='min-w-[160px]'>
 							{workSetups.map((setup) => (
-								<DropdownMenuItem key={setup} onSelect={() => setSelectedWorkSetup(setup)}>
+								<DropdownMenuItem key={setup} onSelect={() => setSelectedWorkSetup(setup)} className='cursor-pointer'>
 									{setup}
 								</DropdownMenuItem>
 							))}
@@ -205,14 +217,14 @@ export default function TeamBuilder() {
 
 					<DropdownMenu>
 						<DropdownMenuTrigger asChild>
-							<Button variant='outline'>
+							<Button variant='outline' className='border-gray-300 dark:border-gray-600 font-medium'>
 								{selectedCountry.label}
-								<ChevronDown className='ml-2 h-4 w-4' />
+								<ChevronDown className='ml-2 h-4 w-4 opacity-70' />
 							</Button>
 						</DropdownMenuTrigger>
-						<DropdownMenuContent align='end'>
+						<DropdownMenuContent align='end' className='min-w-[180px]'>
 							{countries.map((country) => (
-								<DropdownMenuItem key={country.value} onSelect={() => setSelectedCountry(country)}>
+								<DropdownMenuItem key={country.value} onSelect={() => setSelectedCountry(country)} className='cursor-pointer'>
 									{country.label}
 								</DropdownMenuItem>
 							))}
@@ -221,19 +233,22 @@ export default function TeamBuilder() {
 				</div>
 			</div>
 
-			<Card className='overflow-hidden'>
+			{/* Team Builder Table Card */}
+			<Card className='overflow-hidden shadow-md rounded-xl border-gray-200 dark:border-gray-800'>
 				<CardContent className='p-0'>
 					<div className='overflow-x-auto'>
 						<div className='min-w-full divide-y divide-gray-200 dark:divide-gray-700'>
-							<div className='grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] gap-4 px-6 py-3 bg-gray-50 dark:bg-gray-800 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider'>
+							{/* Header Row */}
+							<div className='grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] gap-4 px-6 py-4 bg-gray-50 dark:bg-gray-800/50 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider'>
 								<div className='col-span-1'>Role</div>
-								<div>Staff Required</div>
+								<div className='text-center'>Staff Required</div>
 								<div>Experience Level</div>
-								<div>Your Savings</div>
-								<div>Hire Onshore</div>
-								<div>Hire with StaffStack</div>
+								<div className='text-right'>Your Savings</div>
+								<div className='text-right'>Hire Onshore</div>
+								<div className='text-right'>Hire with StaffStack</div>
 							</div>
 
+							{/* Data Rows */}
 							<div className='divide-y divide-gray-200 dark:divide-gray-700'>
 								{teamMembers.map((member) => {
 									const costs = getRoleCosts(member.roleId, member.experienceLevel);
@@ -241,51 +256,65 @@ export default function TeamBuilder() {
 									const roleData = availableRoles.find((r) => r.id === member.roleId);
 
 									return (
-										<div key={member.id} className='grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] gap-4 px-6 py-4 items-center text-sm'>
+										<div key={member.id} className='grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] gap-4 px-6 py-5 items-center text-sm hover:bg-gray-50/50 dark:hover:bg-gray-800/20'>
+											{/* Role */}
 											<div className='col-span-1 font-medium flex flex-col items-start'>
 												<DropdownMenu>
 													<DropdownMenuTrigger asChild>
-														<button className='w-full justify-start text-left font-semibold p-1 rounded hover:bg-accent focus:outline-none focus-visible:ring-1 focus-visible:ring-ring'>
+														<button className='w-full justify-start text-left font-semibold p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus-visible:ring-1 focus-visible:ring-ring'>
 															{roleData?.name || 'Select Role'}
 														</button>
 													</DropdownMenuTrigger>
-													<DropdownMenuContent className='w-[300px]'>
+													<DropdownMenuContent className='w-[320px] max-h-[280px] overflow-y-auto'>
 														{availableRoles.map((role) => (
-															<DropdownMenuItem key={role.id} onSelect={() => updateTeamMember(member.id, 'roleId', role.id)}>
+															<DropdownMenuItem key={role.id} onSelect={() => updateTeamMember(member.id, 'roleId', role.id)} className='cursor-pointer py-2'>
 																{role.name}
 															</DropdownMenuItem>
 														))}
 													</DropdownMenuContent>
 												</DropdownMenu>
-												<Button variant='ghost' size='icon' onClick={() => removeTeamMember(member.id)} className='text-red-500 hover:text-red-700 h-6 w-6 mt-1'>
+												<Button
+													variant='ghost'
+													size='icon'
+													onClick={() => removeTeamMember(member.id)}
+													className='text-red-500 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-950/20 h-6 w-6 mt-1.5 rounded-full'
+												>
 													<XCircle className='h-4 w-4' />
 												</Button>
 											</div>
 
+											{/* Staff Count */}
 											<div className='flex items-center space-x-1 justify-center'>
-												<Button variant='ghost' size='icon' onClick={() => decrementStaff(member.id)} disabled={member.staffCount <= 1} className='h-6 w-6'>
+												<Button
+													variant='ghost'
+													size='icon'
+													onClick={() => decrementStaff(member.id)}
+													disabled={member.staffCount <= 1}
+													className='h-7 w-7 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800'
+												>
 													<MinusCircle className='h-4 w-4' />
 												</Button>
 												<Input
 													type='number'
-													className='h-8 w-10 text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none p-1'
+													className='h-8 w-12 text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none p-1 border-gray-300 dark:border-gray-700'
 													value={member.staffCount}
 													onChange={(e) => updateTeamMember(member.id, 'staffCount', Math.max(1, parseInt(e.target.value, 10) || 1))}
 													min='1'
 												/>
-												<Button variant='ghost' size='icon' onClick={() => incrementStaff(member.id)} className='h-6 w-6'>
+												<Button variant='ghost' size='icon' onClick={() => incrementStaff(member.id)} className='h-7 w-7 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800'>
 													<PlusCircle className='h-4 w-4' />
 												</Button>
 											</div>
 
+											{/* Experience Level */}
 											<div>
 												<Select value={member.experienceLevel} onValueChange={(value: ExperienceLevel) => updateTeamMember(member.id, 'experienceLevel', value)}>
-													<SelectTrigger className='h-8 text-xs px-2'>
+													<SelectTrigger className='h-9 text-xs px-3 border-gray-300 dark:border-gray-700 focus:ring-blue-500'>
 														<SelectValue placeholder='Select Level' />
 													</SelectTrigger>
 													<SelectContent>
 														{experienceLevels.map((level) => (
-															<SelectItem key={level} value={level} className='text-xs'>
+															<SelectItem key={level} value={level} className='text-sm cursor-pointer'>
 																{level}
 															</SelectItem>
 														))}
@@ -293,6 +322,7 @@ export default function TeamBuilder() {
 												</Select>
 											</div>
 
+											{/* Financial Data */}
 											<div className='font-medium text-green-600 dark:text-green-400 text-right'>{formatCurrency(savings * member.staffCount)}</div>
 											<div className='font-medium text-right'>{costs ? formatCurrency(costs.hireOnshore * member.staffCount) : '-'}</div>
 											<div className='font-medium text-blue-600 dark:text-blue-400 text-right'>{costs ? formatCurrency(costs.hireWithStaffStack * member.staffCount) : '-'}</div>
@@ -305,31 +335,35 @@ export default function TeamBuilder() {
 				</CardContent>
 			</Card>
 
-			<Card>
-				<CardContent className='pt-6 space-y-4'>
-					<div className='flex justify-between items-center'>
-						<span className='text-muted-foreground'>Monthly cost of hiring yourself</span>
-						<span className='font-semibold'>{formatCurrency(totals.totalOnshore)}</span>
+			{/* Summary Card */}
+			<Card className='shadow-md rounded-xl border-gray-200 dark:border-gray-800 overflow-hidden'>
+				<CardContent className='pt-8 space-y-5'>
+					<div className='flex justify-between items-center py-2.5'>
+						<span className='text-gray-600 dark:text-gray-300'>Monthly cost of hiring yourself</span>
+						<span className='font-semibold text-lg'>{formatCurrency(totals.totalOnshore)}</span>
 					</div>
-					<Separator />
-					<div className='flex justify-between items-center'>
-						<span className='text-muted-foreground'>Monthly savings with StaffStack</span>
-						<span className='font-semibold text-green-600 dark:text-green-400'>{formatCurrency(totals.totalSavings)}</span>
+					<Separator className='bg-gray-200 dark:bg-gray-700' />
+					<div className='flex justify-between items-center py-2.5'>
+						<span className='text-gray-600 dark:text-gray-300'>Monthly savings with StaffStack</span>
+						<span className='font-semibold text-lg text-green-600 dark:text-green-400'>{formatCurrency(totals.totalSavings)}</span>
 					</div>
-					<Separator />
-					<div className='flex justify-between items-center'>
-						<span className='text-muted-foreground'>You could be saving</span>
-						<span className='font-semibold text-green-600 dark:text-green-400'>{totals.savingsPercentage}%</span>
+					<Separator className='bg-gray-200 dark:bg-gray-700' />
+					<div className='flex justify-between items-center py-2.5'>
+						<span className='text-gray-600 dark:text-gray-300'>You could be saving</span>
+						<span className='font-semibold text-lg text-green-600 dark:text-green-400'>{totals.savingsPercentage}%</span>
 					</div>
-					<Separator />
-					<div className='mt-6 text-center'>
-						<p className='text-muted-foreground'>Estimated Monthly Cost:</p>
-						<p className='text-4xl font-bold text-blue-600 dark:text-blue-400'>{formatCurrency(totals.totalStaffStack)}</p>
+					<Separator className='bg-gray-200 dark:bg-gray-700' />
+
+					{/* Cost Summary */}
+					<div className='mt-10 py-6 text-center'>
+						<p className='text-gray-500 dark:text-gray-400 mb-3'>Estimated Monthly Cost:</p>
+						<p className='text-5xl font-bold text-blue-600 dark:text-blue-400 tracking-tight'>{formatCurrency(totals.totalStaffStack)}</p>
 					</div>
 
-					<div className='mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 text-center space-y-6'>
-						<div className='flex justify-center items-center gap-2 flex-wrap'>
-							<Button asChild className='bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-3 text-base'>
+					{/* Action Buttons */}
+					<div className='mt-10 pt-6 border-t border-gray-200 dark:border-gray-700 text-center space-y-8'>
+						<div className='flex flex-wrap justify-center items-center gap-4'>
+							<Button asChild size='lg' className='bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-6 text-base font-medium shadow-sm hover:shadow-md transition-all'>
 								<Link href='/contact-us'>
 									Get more information
 									<MessageCircle className='ml-2 h-5 w-5' />
@@ -338,24 +372,26 @@ export default function TeamBuilder() {
 							<Button
 								asChild
 								variant='outline'
-								className='border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 dark:text-blue-400 dark:border-blue-500 rounded-full px-6 py-3 text-base'
+								size='lg'
+								className='border-blue-600 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 dark:text-blue-400 dark:border-blue-500 rounded-full px-8 py-6 text-base font-medium'
 							>
 								<Link href='/roles'>View Our Ready Talents</Link>
 							</Button>
 						</div>
 
-						<div className='flex justify-center items-center gap-4 text-sm text-muted-foreground'>
-							<button onClick={scrollToTop} className='flex items-center gap-1 hover:text-primary'>
+						{/* Utility Links */}
+						<div className='flex justify-center items-center gap-6 text-sm text-gray-500 dark:text-gray-400'>
+							<button onClick={scrollToTop} className='flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-1'>
 								<ArrowUp className='h-4 w-4' />
 								Top
 							</button>
-							<Separator orientation='vertical' className='h-4' />
-							<button onClick={resetTeam} className='flex items-center gap-1 hover:text-primary'>
+							<Separator orientation='vertical' className='h-5 bg-gray-300 dark:bg-gray-600' />
+							<button onClick={resetTeam} className='flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-1'>
 								<RefreshCw className='h-4 w-4' />
 								Reset
 							</button>
-							<Separator orientation='vertical' className='h-4' />
-							<button onClick={shareTeam} className='flex items-center gap-1 hover:text-primary'>
+							<Separator orientation='vertical' className='h-5 bg-gray-300 dark:bg-gray-600' />
+							<button onClick={shareTeam} className='flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-1'>
 								<Share2 className='h-4 w-4' />
 								Share Team
 							</button>
@@ -364,7 +400,8 @@ export default function TeamBuilder() {
 				</CardContent>
 			</Card>
 
-			<div className='mt-10 text-xs text-muted-foreground space-y-3 px-4'>
+			{/* Disclaimer Section */}
+			<div className='mt-12 text-xs text-gray-500 dark:text-gray-400 space-y-3 px-4 max-w-5xl mx-auto'>
 				<p>
 					This calculator provides the approximate monthly savings of hiring staff in the cloud with StaffStack versus hiring locally. It provides indicative pricing only and is not an official quote.
 				</p>
