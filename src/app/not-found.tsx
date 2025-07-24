@@ -13,8 +13,8 @@ export default function NotFound() {
           </h2>
 
           <p className="text-lg text-muted-foreground max-w-lg mx-auto font-inter">
-            The team you're looking for might be working remotely somewhere else.
-            Let's get you back to where you can find our talented staff.
+            The team you're looking for might be working remotely somewhere
+            else. Let's get you back to where you can find our talented staff.
           </p>
         </div>
 
@@ -22,7 +22,18 @@ export default function NotFound() {
           <div className="h-20 w-20 mx-auto relative">
             <div className="absolute inset-0 bg-[#09d8f5]/20 rounded-full animate-ping" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#09d8f5]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-[#09d8f5]"
+              >
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>

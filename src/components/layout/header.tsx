@@ -284,25 +284,30 @@ export function Header() {
           <NavigationMenu>
             <NavigationMenuList className="gap-6">
               <NavigationMenuItem>
-                <NavTrigger>
-                  Why outsourced
-                </NavTrigger>
+                <NavTrigger>Why outsourced</NavTrigger>
                 <NavigationMenuContent>
                   <div className="w-[750px] bg-[#0f2c4a]">
                     <div className="px-5 py-4">
-                      <h3 className="text-white font-lexend font-medium tracking-tight">Why outsourced</h3>
+                      <h3 className="text-white font-lexend font-medium tracking-tight">
+                        Why outsourced
+                      </h3>
                     </div>
                     <div className="bg-white p-8">
                       <div className="grid grid-cols-2 gap-8">
                         <div className="space-y-4">
-                          <h3 className="text-[#09d8f5] font-lexend tracking-tight text-xl">Recruitment. Facilities. HR</h3>
+                          <h3 className="text-[#09d8f5] font-lexend tracking-tight text-xl">
+                            Recruitment. Facilities. HR
+                          </h3>
                           <h2 className="text-4xl font-lexend text-[#0f2c4a] font-semibold leading-tight">
-                            Hire full time,<br />
-                            dedicated staff for<br />
+                            Hire full time,
+                            <br />
+                            dedicated staff for
+                            <br />
                             your business
                           </h2>
                           <p className="text-muted-foreground font-inter mt-4">
-                            We are your offshore recruitment partner.<br />
+                            We are your offshore recruitment partner.
+                            <br />
                             We find, you hire, we manage.
                           </p>
                         </div>
@@ -314,7 +319,18 @@ export function Header() {
                               className="flex items-center justify-between text-[#0f2c4a] hover:text-[#09d8f5] transition-colors font-lexend font-medium"
                             >
                               {item.name}
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-2">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="h-4 w-4 ml-2"
+                              >
                                 <path d="M9 18l6-6-6-6" />
                               </svg>
                             </Link>
@@ -327,25 +343,30 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavTrigger>
-                  Industries
-                </NavTrigger>
+                <NavTrigger>Industries</NavTrigger>
                 <NavigationMenuContent>
                   <div className="w-[750px] bg-[#0f2c4a]">
                     <div className="px-5 py-4">
-                      <h3 className="text-white font-lexend font-medium tracking-tight">Industries</h3>
+                      <h3 className="text-white font-lexend font-medium tracking-tight">
+                        Industries
+                      </h3>
                     </div>
                     <div className="bg-white p-8">
                       <div className="grid grid-cols-2 gap-8">
                         <div className="space-y-4">
-                          <h3 className="text-[#09d8f5] font-lexend tracking-tight text-xl">Large and small teams</h3>
+                          <h3 className="text-[#09d8f5] font-lexend tracking-tight text-xl">
+                            Large and small teams
+                          </h3>
                           <h2 className="text-4xl font-lexend text-[#0f2c4a] font-semibold leading-tight">
-                            Dedicated teams with<br />
-                            experience across<br />
+                            Dedicated teams with
+                            <br />
+                            experience across
+                            <br />
                             every industry
                           </h2>
                           <p className="text-muted-foreground font-inter mt-4">
-                            Highly skilled, English speaking, qualified talent to build your team
+                            Highly skilled, English speaking, qualified talent
+                            to build your team
                           </p>
                         </div>
                         <div className="grid grid-cols-2 gap-y-5 gap-x-6">
@@ -357,7 +378,18 @@ export function Header() {
                                 className="flex items-center justify-between text-[#0f2c4a] hover:text-[#09d8f5] transition-colors font-lexend font-medium"
                               >
                                 {item.name}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="h-4 w-4 ml-2"
+                                >
                                   <path d="M9 18l6-6-6-6" />
                                 </svg>
                               </Link>
@@ -371,7 +403,18 @@ export function Header() {
                                 className="flex items-center justify-between text-[#0f2c4a] hover:text-[#09d8f5] transition-colors font-lexend font-medium"
                               >
                                 {item.name}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="h-4 w-4 ml-2"
+                                >
                                   <path d="M9 18l6-6-6-6" />
                                 </svg>
                               </Link>
@@ -385,24 +428,28 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavTrigger>
-                  Roles
-                </NavTrigger>
+                <NavTrigger>Roles</NavTrigger>
                 <NavigationMenuContent>
                   <div className="w-[750px] bg-[#0f2c4a]">
                     <div className="px-5 py-4">
-                      <h3 className="text-white font-lexend font-medium tracking-tight">Roles</h3>
+                      <h3 className="text-white font-lexend font-medium tracking-tight">
+                        Roles
+                      </h3>
                     </div>
                     <div className="bg-white p-8">
                       <div className="grid grid-cols-2 gap-8">
                         <div className="space-y-4">
-                          <h3 className="text-[#09d8f5] font-lexend tracking-tight text-xl">Large and small teams</h3>
+                          <h3 className="text-[#09d8f5] font-lexend tracking-tight text-xl">
+                            Large and small teams
+                          </h3>
                           <h2 className="text-4xl font-lexend text-[#0f2c4a] font-semibold leading-tight">
-                            World class talent for<br />
+                            World class talent for
+                            <br />
                             any role
                           </h2>
                           <p className="text-muted-foreground font-inter mt-4">
-                            Highly skilled, English speaking, qualified talent to build your team
+                            Highly skilled, English speaking, qualified talent
+                            to build your team
                           </p>
                         </div>
                         <div className="grid grid-cols-2 gap-y-5 gap-x-6">
@@ -414,7 +461,18 @@ export function Header() {
                                 className="flex items-center justify-between text-[#0f2c4a] hover:text-[#09d8f5] transition-colors font-lexend font-medium"
                               >
                                 {item.name}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="h-4 w-4 ml-2"
+                                >
                                   <path d="M9 18l6-6-6-6" />
                                 </svg>
                               </Link>
@@ -428,7 +486,18 @@ export function Header() {
                                 className="flex items-center justify-between text-[#0f2c4a] hover:text-[#09d8f5] transition-colors font-lexend font-medium"
                               >
                                 {item.name}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="h-4 w-4 ml-2"
+                                >
                                   <path d="M9 18l6-6-6-6" />
                                 </svg>
                               </Link>
@@ -442,24 +511,29 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavTrigger>
-                  How it works
-                </NavTrigger>
+                <NavTrigger>How it works</NavTrigger>
                 <NavigationMenuContent>
                   <div className="w-[750px] bg-[#0f2c4a]">
                     <div className="px-5 py-4">
-                      <h3 className="text-white font-lexend font-medium tracking-tight">How it works</h3>
+                      <h3 className="text-white font-lexend font-medium tracking-tight">
+                        How it works
+                      </h3>
                     </div>
                     <div className="bg-white p-8">
                       <div className="grid grid-cols-2 gap-8">
                         <div className="space-y-4">
-                          <h3 className="text-[#09d8f5] font-lexend tracking-tight text-xl">We make it simple</h3>
+                          <h3 className="text-[#09d8f5] font-lexend tracking-tight text-xl">
+                            We make it simple
+                          </h3>
                           <h2 className="text-4xl font-lexend text-[#0f2c4a] font-semibold leading-tight">
-                            Build your team from<br />
+                            Build your team from
+                            <br />
                             the top 1% of talent.
                           </h2>
                           <p className="text-muted-foreground font-inter mt-4">
-                            Our unique recruitment process has been paramount to our offshore staffing success and how we've become a leading Philippines Staff Outsourcing provider.
+                            Our unique recruitment process has been paramount to
+                            our offshore staffing success and how we've become a
+                            leading Philippines Staff Outsourcing provider.
                           </p>
                         </div>
                         <div className="grid grid-cols-2 gap-y-5 gap-x-6">
@@ -471,7 +545,18 @@ export function Header() {
                                 className="flex items-center justify-between text-[#0f2c4a] hover:text-[#09d8f5] transition-colors font-lexend font-medium"
                               >
                                 {item.name}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="h-4 w-4 ml-2"
+                                >
                                   <path d="M9 18l6-6-6-6" />
                                 </svg>
                               </Link>
@@ -485,7 +570,18 @@ export function Header() {
                                 className="flex items-center justify-between text-[#0f2c4a] hover:text-[#09d8f5] transition-colors font-lexend font-medium"
                               >
                                 {item.name}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="h-4 w-4 ml-2"
+                                >
                                   <path d="M9 18l6-6-6-6" />
                                 </svg>
                               </Link>
@@ -499,25 +595,30 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavTrigger>
-                  About us
-                </NavTrigger>
+                <NavTrigger>About us</NavTrigger>
                 <NavigationMenuContent>
                   <div className="w-[750px] bg-[#0f2c4a]">
                     <div className="px-5 py-4">
-                      <h3 className="text-white font-lexend font-medium tracking-tight">About us</h3>
+                      <h3 className="text-white font-lexend font-medium tracking-tight">
+                        About us
+                      </h3>
                     </div>
                     <div className="bg-white p-8">
                       <div className="grid grid-cols-2 gap-8">
                         <div className="space-y-4">
-                          <h3 className="text-[#09d8f5] font-lexend tracking-tight text-xl">Recruitment. Facilities. HR</h3>
+                          <h3 className="text-[#09d8f5] font-lexend tracking-tight text-xl">
+                            Recruitment. Facilities. HR
+                          </h3>
                           <h2 className="text-4xl font-lexend text-[#0f2c4a] font-semibold leading-tight">
-                            The team behind<br />
-                            your quality<br />
+                            The team behind
+                            <br />
+                            your quality
+                            <br />
                             offshore staffing
                           </h2>
                           <p className="text-muted-foreground font-inter mt-4">
-                            We are your offshore recruitment partner. We find, you hire, we manage.
+                            We are your offshore recruitment partner. We find,
+                            you hire, we manage.
                           </p>
                         </div>
                         <div className="space-y-5">
@@ -528,7 +629,18 @@ export function Header() {
                               className="flex items-center justify-between text-[#0f2c4a] hover:text-[#09d8f5] transition-colors font-lexend font-medium"
                             >
                               {item.name}
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 ml-2">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="h-4 w-4 ml-2"
+                              >
                                 <path d="M9 18l6-6-6-6" />
                               </svg>
                             </Link>
@@ -577,7 +689,9 @@ export function Header() {
 
                 <div className="flex flex-col gap-6">
                   <div className="border-b pb-2">
-                    <h3 className="text-lg font-lexend font-medium mb-2">Why outsourced</h3>
+                    <h3 className="text-lg font-lexend font-medium mb-2">
+                      Why outsourced
+                    </h3>
                     <ul className="flex flex-col gap-2">
                       {whyOutsourcedItems.map((item) => (
                         <li key={item.name}>
@@ -593,23 +707,29 @@ export function Header() {
                   </div>
 
                   <div className="border-b pb-2">
-                    <h3 className="text-lg font-lexend font-medium mb-2">Industries</h3>
+                    <h3 className="text-lg font-lexend font-medium mb-2">
+                      Industries
+                    </h3>
                     <ul className="flex flex-col gap-2">
-                      {[...industriesLeftItems, ...industriesRightItems].map((item) => (
-                        <li key={item.name}>
-                          <Link
-                            href={item.href}
-                            className="text-sm text-muted-foreground hover:text-foreground font-lexend"
-                          >
-                            {item.name}
-                          </Link>
-                        </li>
-                      ))}
+                      {[...industriesLeftItems, ...industriesRightItems].map(
+                        (item) => (
+                          <li key={item.name}>
+                            <Link
+                              href={item.href}
+                              className="text-sm text-muted-foreground hover:text-foreground font-lexend"
+                            >
+                              {item.name}
+                            </Link>
+                          </li>
+                        ),
+                      )}
                     </ul>
                   </div>
 
                   <div className="border-b pb-2">
-                    <h3 className="text-lg font-lexend font-medium mb-2">Roles</h3>
+                    <h3 className="text-lg font-lexend font-medium mb-2">
+                      Roles
+                    </h3>
                     <ul className="flex flex-col gap-2">
                       {[...rolesLeftItems, ...rolesRightItems].map((item) => (
                         <li key={item.name}>
@@ -625,23 +745,29 @@ export function Header() {
                   </div>
 
                   <div className="border-b pb-2">
-                    <h3 className="text-lg font-lexend font-medium mb-2">How it works</h3>
+                    <h3 className="text-lg font-lexend font-medium mb-2">
+                      How it works
+                    </h3>
                     <ul className="flex flex-col gap-2">
-                      {[...howItWorksLeftItems, ...howItWorksRightItems].map((item) => (
-                        <li key={item.name}>
-                          <Link
-                            href={item.href}
-                            className="text-sm text-muted-foreground hover:text-foreground font-lexend"
-                          >
-                            {item.name}
-                          </Link>
-                        </li>
-                      ))}
+                      {[...howItWorksLeftItems, ...howItWorksRightItems].map(
+                        (item) => (
+                          <li key={item.name}>
+                            <Link
+                              href={item.href}
+                              className="text-sm text-muted-foreground hover:text-foreground font-lexend"
+                            >
+                              {item.name}
+                            </Link>
+                          </li>
+                        ),
+                      )}
                     </ul>
                   </div>
 
                   <div className="border-b pb-2">
-                    <h3 className="text-lg font-lexend font-medium mb-2">About us</h3>
+                    <h3 className="text-lg font-lexend font-medium mb-2">
+                      About us
+                    </h3>
                     <ul className="flex flex-col gap-2">
                       {aboutUsItems.map((item) => (
                         <li key={item.name}>
@@ -695,7 +821,7 @@ function NavTrigger({ children }: { children: React.ReactNode }) {
 function NavContentItem({
   name,
   description,
-  href
+  href,
 }: {
   name: string;
   description: string;
@@ -704,10 +830,7 @@ function NavContentItem({
   return (
     <li>
       <NavigationMenuLink asChild>
-        <Link
-          href={href}
-          className="block transition-colors"
-        >
+        <Link href={href} className="block transition-colors">
           <div className="text-base font-lexend font-medium text-[#0f2c4a]">
             {name}
           </div>
@@ -723,7 +846,7 @@ function NavContentItem({
 function NavItem({
   trigger,
   items,
-  isGridLayout = false
+  isGridLayout = false,
 }: {
   trigger: string;
   items: { name: string; description: string; href: string }[];
@@ -735,13 +858,17 @@ function NavItem({
       <NavigationMenuContent>
         <div className="w-[600px] bg-[#0f2c4a]">
           <div className="px-5 py-4">
-            <h3 className="text-white font-lexend font-medium tracking-tight">{trigger}</h3>
+            <h3 className="text-white font-lexend font-medium tracking-tight">
+              {trigger}
+            </h3>
           </div>
           <div className="bg-white p-5">
-            <ul className={cn(
-              "grid gap-4",
-              isGridLayout ? "grid-cols-2" : "grid-cols-1"
-            )}>
+            <ul
+              className={cn(
+                "grid gap-4",
+                isGridLayout ? "grid-cols-2" : "grid-cols-1",
+              )}
+            >
               {items.map((item) => (
                 <NavContentItem
                   key={item.name}
@@ -760,7 +887,7 @@ function NavItem({
 
 function MobileNavSection({
   title,
-  items
+  items,
 }: {
   title: string;
   items: { name: string; href: string }[];

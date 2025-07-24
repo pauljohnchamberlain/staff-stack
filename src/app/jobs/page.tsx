@@ -7,11 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  ArrowRight,
-  Badge,
-  CheckCircle,
   Clock,
   Globe,
   GraduationCap,
@@ -369,7 +365,7 @@ export default function JobsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {perks.map((perk, index) => (
+            {perks.map((perk, _index) => (
               <Card
                 key={`perk-${perk.title.toLowerCase().replace(/\s+/g, "-")}`}
                 className="border-none shadow-xs bg-white"
@@ -422,21 +418,17 @@ export default function JobsPage() {
                       className={`w-5 h-5 ${star === 5 ? "text-gray-300" : "text-yellow-500"}`}
                     >
                       {star === 5 ? (
-                        <>
-                          <path
+                        <path
                             fillRule="evenodd"
                             d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
                             clipRule="evenodd"
                           />
-                        </>
                       ) : (
-                        <>
-                          <path
+                        <path
                             fillRule="evenodd"
                             d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
                             clipRule="evenodd"
                           />
-                        </>
                       )}
                     </svg>
                   ))}
@@ -595,7 +587,7 @@ export default function JobsPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {coreValues.map((value, index) => (
+            {coreValues.map((value, _index) => (
               <Card
                 key={`core-value-${value.title.toLowerCase().replace(/\s+/g, "-")}`}
                 className="bg-brand text-white border-none shadow-md"

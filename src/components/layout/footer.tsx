@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
@@ -61,11 +60,13 @@ export function Footer() {
                 info@staffstack.com
               </p>
               <p>
-                <strong className="text-white font-lexend">Phone:</strong> +1 (800) 123-4567
+                <strong className="text-white font-lexend">Phone:</strong> +1
+                (800) 123-4567
               </p>
               <p>
-                <strong className="text-white font-lexend">Address:</strong> 18th Floor,
-                Citibank Square, Eastwood City, Quezon City, Philippines
+                <strong className="text-white font-lexend">Address:</strong>{" "}
+                18th Floor, Citibank Square, Eastwood City, Quezon City,
+                Philippines
               </p>
             </div>
           </div>
@@ -73,7 +74,9 @@ export function Footer() {
           {/* Links */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h3 className="font-lexend font-medium text-lg mb-4">{section.title}</h3>
+              <h3 className="font-lexend font-medium text-lg mb-4">
+                {section.title}
+              </h3>
               <ul className="space-y-2">
                 {section.items.map((item) => (
                   <li key={item.name}>
@@ -92,7 +95,9 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="flex items-center justify-between pt-8 pb-8 border-t border-border">
-          <span className="font-lexend">© 2025 Staff Stack. All rights reserved.</span>
+          <span className="font-lexend">
+            © 2025 Staff Stack. All rights reserved.
+          </span>
           <div className="flex space-x-6">
             <a
               href="https://twitter.com"

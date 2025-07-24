@@ -95,7 +95,9 @@ export function Hero() {
                     <div className="rounded-full bg-brand-accent/20 p-1 shrink-0">
                       <Check className="h-3 w-3 text-brand-accent" />
                     </div>
-                    <span className="text-sm md:text-base font-inter">{item.text}</span>
+                    <span className="text-sm md:text-base font-inter">
+                      {item.text}
+                    </span>
                   </motion.li>
                 ))}
               </ul>

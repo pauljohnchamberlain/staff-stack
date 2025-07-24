@@ -10,7 +10,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -32,14 +31,14 @@ import { z } from "zod";
 const contactFormSchema = z.object({
   fullName: z
     .string()
-    .min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  company: z.string().min(1, { message: "Company name is required." }),
-  phone: z.string().min(6, { message: "Please enter a valid phone number." }),
-  service: z.string().min(1, { message: "Please select a service category." }),
+    .min(2, { error: "Name must be at least 2 characters." }),
+  email: z.string().email({ error: "Please enter a valid email address." }),
+  company: z.string().min(1, { error: "Company name is required." }),
+  phone: z.string().min(6, { error: "Please enter a valid phone number." }),
+  service: z.string().min(1, { error: "Please select a service category." }),
   message: z
     .string()
-    .min(10, { message: "Message must be at least 10 characters." }),
+    .min(10, { error: "Message must be at least 10 characters." }),
 });
 
 const locations = [
@@ -78,7 +77,7 @@ export default function ContactPage() {
     },
   });
 
-  function onSubmit(data: z.infer<typeof contactFormSchema>) {
+  function onSubmit(_data: z.infer<typeof contactFormSchema>) {
     setIsSubmitting(true);
     // In a real application, this would send the form data to your server
     setTimeout(() => {

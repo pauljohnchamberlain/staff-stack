@@ -9,10 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { motion } from "framer-motion";
-import { Quote, Star } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -86,7 +83,9 @@ export function TestimonialsSection() {
     <section className="py-16 bg-muted/30">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-lexend font-bold mb-4">What Our Clients Say</h2>
+          <h2 className="text-3xl font-lexend font-bold mb-4">
+            What Our Clients Say
+          </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-inter">
             Hear from businesses like yours who have transformed their
             operations with our offshore staffing solutions.
@@ -101,7 +100,7 @@ export function TestimonialsSection() {
           className="w-full"
         >
           <CarouselContent>
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial, _index) => (
               <CarouselItem
                 key={testimonial.id}
                 className="md:basis-1/2 lg:basis-1/3 pl-4"

@@ -3,35 +3,42 @@ import Link from "next/link";
 
 export const metadata = {
   title: "ISO Data Security | Offshore Staffing",
-  description: "Learn about our ISO-certified security protocols that protect your business data and ensure compliance with international standards.",
+  description:
+    "Learn about our ISO-certified security protocols that protect your business data and ensure compliance with international standards.",
 };
 
 export default function SecurityPage() {
   const securityFeatures = [
     {
       title: "ISO 27001 Certification",
-      description: "Our operations are certified to ISO 27001 standards, the international benchmark for information security management systems (ISMS)."
+      description:
+        "Our operations are certified to ISO 27001 standards, the international benchmark for information security management systems (ISMS).",
     },
     {
       title: "Physical Security",
-      description: "Secured facilities with 24/7 monitoring, biometric access control, CCTV surveillance, and on-site security personnel."
+      description:
+        "Secured facilities with 24/7 monitoring, biometric access control, CCTV surveillance, and on-site security personnel.",
     },
     {
       title: "Network Security",
-      description: "Enterprise-grade firewalls, intrusion detection systems, end-to-end encryption, and continuous network monitoring."
+      description:
+        "Enterprise-grade firewalls, intrusion detection systems, end-to-end encryption, and continuous network monitoring.",
     },
     {
       title: "Access Controls",
-      description: "Role-based access controls, multi-factor authentication, and principle of least privilege to restrict data access."
+      description:
+        "Role-based access controls, multi-factor authentication, and principle of least privilege to restrict data access.",
     },
     {
       title: "Data Protection",
-      description: "Comprehensive data encryption, secure data transfer protocols, and secure cloud storage solutions."
+      description:
+        "Comprehensive data encryption, secure data transfer protocols, and secure cloud storage solutions.",
     },
     {
       title: "Business Continuity",
-      description: "Disaster recovery plans, redundant systems, and regular backups to ensure continuity of operations."
-    }
+      description:
+        "Disaster recovery plans, redundant systems, and regular backups to ensure continuity of operations.",
+    },
   ];
 
   const complianceStandards = [
@@ -41,26 +48,30 @@ export default function SecurityPage() {
     "HIPAA Compliance (for healthcare clients)",
     "PCI DSS (for payment processing)",
     "SOC 2 Type II",
-    "Data Privacy Act of the Philippines"
+    "Data Privacy Act of the Philippines",
   ];
 
   const securityPractices = [
     {
       title: "Regular Security Audits",
-      description: "Comprehensive annual audits and quarterly security assessments by independent third-party security firms."
+      description:
+        "Comprehensive annual audits and quarterly security assessments by independent third-party security firms.",
     },
     {
       title: "Employee Security Training",
-      description: "Mandatory security awareness training for all staff members, with regular refresher courses and simulated phishing tests."
+      description:
+        "Mandatory security awareness training for all staff members, with regular refresher courses and simulated phishing tests.",
     },
     {
       title: "Incident Response",
-      description: "Documented incident response procedures, dedicated security team, and 24/7 monitoring for immediate threat detection and mitigation."
+      description:
+        "Documented incident response procedures, dedicated security team, and 24/7 monitoring for immediate threat detection and mitigation.",
     },
     {
       title: "Secure Development",
-      description: "Secure coding practices, regular vulnerability scanning, and penetration testing for all internal systems."
-    }
+      description:
+        "Secure coding practices, regular vulnerability scanning, and penetration testing for all internal systems.",
+    },
   ];
 
   return (
@@ -88,7 +99,12 @@ export default function SecurityPage() {
                 Security Beyond Standards
               </h2>
               <p className="text-lg text-slate-700">
-                At Staff Stack, we understand that data security is paramount to your business. Our comprehensive security framework goes beyond compliance with international standards to implement multi-layered protection for your sensitive information. From physical facility security to advanced digital safeguards, we've built our infrastructure with security as the foundation.
+                At Staff Stack, we understand that data security is paramount to
+                your business. Our comprehensive security framework goes beyond
+                compliance with international standards to implement
+                multi-layered protection for your sensitive information. From
+                physical facility security to advanced digital safeguards, we've
+                built our infrastructure with security as the foundation.
               </p>
             </div>
 
@@ -101,9 +117,7 @@ export default function SecurityPage() {
                   <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-700">
-                    {feature.description}
-                  </p>
+                  <p className="text-slate-700">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -113,7 +127,9 @@ export default function SecurityPage() {
                 Compliance & Certifications
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                We maintain compliance with international security standards and regulations, undergoing regular audits and assessments to ensure our security measures meet or exceed industry requirements.
+                We maintain compliance with international security standards and
+                regulations, undergoing regular audits and assessments to ensure
+                our security measures meet or exceed industry requirements.
               </p>
 
               <div className="bg-slate-50 p-8 rounded-xl border border-slate-100">
@@ -127,7 +143,17 @@ export default function SecurityPage() {
                       className="flex items-start gap-3"
                     >
                       <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
@@ -143,7 +169,10 @@ export default function SecurityPage() {
                 Ongoing Security Practices
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                Security is not a one-time implementation but an ongoing commitment. We continuously enhance our security measures through regular assessments, training, and technological updates.
+                Security is not a one-time implementation but an ongoing
+                commitment. We continuously enhance our security measures
+                through regular assessments, training, and technological
+                updates.
               </p>
 
               <div className="space-y-6">
@@ -155,9 +184,7 @@ export default function SecurityPage() {
                     <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-2">
                       {practice.title}
                     </h3>
-                    <p className="text-slate-700">
-                      {practice.description}
-                    </p>
+                    <p className="text-slate-700">{practice.description}</p>
                   </div>
                 ))}
               </div>
@@ -168,7 +195,8 @@ export default function SecurityPage() {
                 Ready to secure your offshore operations?
               </h2>
               <p className="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
-                Get started today with our expert team to build a secure offshore operation with enterprise-grade data protection.
+                Get started today with our expert team to build a secure
+                offshore operation with enterprise-grade data protection.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -201,7 +229,13 @@ export default function SecurityPage() {
             </h2>
             <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
-                "Security was our top concern when considering offshore operations. Staff Stack's ISO-certified security protocols and comprehensive data protection measures gave us the confidence to move forward. Their transparent approach to security, including providing detailed documentation and allowing our team to audit their processes, demonstrated their commitment to protecting our sensitive data."
+                "Security was our top concern when considering offshore
+                operations. Staff Stack's ISO-certified security protocols and
+                comprehensive data protection measures gave us the confidence to
+                move forward. Their transparent approach to security, including
+                providing detailed documentation and allowing our team to audit
+                their processes, demonstrated their commitment to protecting our
+                sensitive data."
               </p>
               <div className="flex items-center justify-center">
                 <div className="h-12 w-12 bg-[#0f2c4a] rounded-full flex items-center justify-center text-white font-lexend font-bold">
@@ -209,7 +243,9 @@ export default function SecurityPage() {
                 </div>
                 <div className="ml-4 text-left">
                   <p className="font-lexend font-medium">Nathan Singh</p>
-                  <p className="text-sm text-slate-500">CISO, Financial Services Group</p>
+                  <p className="text-sm text-slate-500">
+                    CISO, Financial Services Group
+                  </p>
                 </div>
               </div>
             </div>

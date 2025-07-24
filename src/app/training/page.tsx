@@ -3,35 +3,42 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Training & Development | Offshore Staffing",
-  description: "Discover how our comprehensive training and professional development programs ensure your offshore team continuously improves and exceeds expectations.",
+  description:
+    "Discover how our comprehensive training and professional development programs ensure your offshore team continuously improves and exceeds expectations.",
 };
 
 export default function TrainingPage() {
   const trainingPrograms = [
     {
       title: "Initial Skills Assessment",
-      description: "We conduct thorough evaluations of all staff members to identify strengths and areas for improvement, creating personalized development plans."
+      description:
+        "We conduct thorough evaluations of all staff members to identify strengths and areas for improvement, creating personalized development plans.",
     },
     {
       title: "Technical Training",
-      description: "Role-specific training programs ensure your team has the technical skills needed to excel in their positions, from software development to customer service."
+      description:
+        "Role-specific training programs ensure your team has the technical skills needed to excel in their positions, from software development to customer service.",
     },
     {
       title: "Communication Skills",
-      description: "Our specialized English language and communication training ensures clear, effective interaction with your team and customers."
+      description:
+        "Our specialized English language and communication training ensures clear, effective interaction with your team and customers.",
     },
     {
       title: "Cultural Alignment",
-      description: "We help your offshore staff understand your company culture, values, and expectations to ensure seamless integration with your business."
+      description:
+        "We help your offshore staff understand your company culture, values, and expectations to ensure seamless integration with your business.",
     },
     {
       title: "Leadership Development",
-      description: "For team leads and managers, we offer advanced leadership training to help them effectively manage and motivate their teams."
+      description:
+        "For team leads and managers, we offer advanced leadership training to help them effectively manage and motivate their teams.",
     },
     {
       title: "Continuous Learning",
-      description: "Regular workshops, webinars, and learning opportunities keep your team's skills current and relevant in rapidly changing industries."
-    }
+      description:
+        "Regular workshops, webinars, and learning opportunities keep your team's skills current and relevant in rapidly changing industries.",
+    },
   ];
 
   const developmentApproach = [
@@ -42,7 +49,7 @@ export default function TrainingPage() {
     "Access to online learning platforms and resources",
     "Annual professional development budgets",
     "Cross-training opportunities to develop versatile skill sets",
-    "Feedback-driven improvement processes"
+    "Feedback-driven improvement processes",
   ];
 
   return (
@@ -55,7 +62,8 @@ export default function TrainingPage() {
               Training & Development
             </h1>
             <p className="text-xl md:text-2xl font-lexend font-light max-w-3xl">
-              Comprehensive programs to enhance the skills and capabilities of your offshore team
+              Comprehensive programs to enhance the skills and capabilities of
+              your offshore team
             </p>
           </div>
         </div>
@@ -70,7 +78,11 @@ export default function TrainingPage() {
                 Continuous Improvement Through Training
               </h2>
               <p className="text-lg text-slate-700">
-                At Staff Stack, we believe that ongoing training and professional development are crucial to maintaining high-performing offshore teams. Our comprehensive programs ensure your staff continues to grow their skills, adapt to new technologies, and consistently exceed your expectations.
+                At Staff Stack, we believe that ongoing training and
+                professional development are crucial to maintaining
+                high-performing offshore teams. Our comprehensive programs
+                ensure your staff continues to grow their skills, adapt to new
+                technologies, and consistently exceed your expectations.
               </p>
             </div>
 
@@ -83,9 +95,7 @@ export default function TrainingPage() {
                   <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                     {program.title}
                   </h3>
-                  <p className="text-slate-700">
-                    {program.description}
-                  </p>
+                  <p className="text-slate-700">{program.description}</p>
                 </div>
               ))}
             </div>
@@ -95,7 +105,10 @@ export default function TrainingPage() {
                 Our Development Approach
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                We take a structured yet flexible approach to professional development, focusing on both immediate skill needs and long-term career growth. This balanced approach ensures your team remains engaged, motivated, and continuously improving.
+                We take a structured yet flexible approach to professional
+                development, focusing on both immediate skill needs and
+                long-term career growth. This balanced approach ensures your
+                team remains engaged, motivated, and continuously improving.
               </p>
 
               <div className="bg-slate-50 p-8 rounded-xl border border-slate-100 mb-8">
@@ -109,7 +122,17 @@ export default function TrainingPage() {
                       className="flex items-start gap-3"
                     >
                       <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
@@ -125,25 +148,46 @@ export default function TrainingPage() {
                 Measuring Success & ROI
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                We believe training should deliver measurable results. Our programs track key performance indicators before and after training initiatives, allowing us to demonstrate clear return on investment and continually refine our approach.
+                We believe training should deliver measurable results. Our
+                programs track key performance indicators before and after
+                training initiatives, allowing us to demonstrate clear return on
+                investment and continually refine our approach.
               </p>
 
               <div className="bg-slate-50 p-8 rounded-xl border border-slate-100">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                   <div className="flex flex-col items-center">
-                    <div className="text-5xl font-bold text-[#09d8f5] mb-2">+32%</div>
-                    <p className="text-xl font-lexend font-semibold text-[#0f2c4a]">Productivity Increase</p>
-                    <p className="text-slate-700 mt-2">Average improvement after specialized role training</p>
+                    <div className="text-5xl font-bold text-[#09d8f5] mb-2">
+                      +32%
+                    </div>
+                    <p className="text-xl font-lexend font-semibold text-[#0f2c4a]">
+                      Productivity Increase
+                    </p>
+                    <p className="text-slate-700 mt-2">
+                      Average improvement after specialized role training
+                    </p>
                   </div>
                   <div className="flex flex-col items-center">
-                    <div className="text-5xl font-bold text-[#09d8f5] mb-2">85%</div>
-                    <p className="text-xl font-lexend font-semibold text-[#0f2c4a]">Skills Retention</p>
-                    <p className="text-slate-700 mt-2">Knowledge retention rate from our training programs</p>
+                    <div className="text-5xl font-bold text-[#09d8f5] mb-2">
+                      85%
+                    </div>
+                    <p className="text-xl font-lexend font-semibold text-[#0f2c4a]">
+                      Skills Retention
+                    </p>
+                    <p className="text-slate-700 mt-2">
+                      Knowledge retention rate from our training programs
+                    </p>
                   </div>
                   <div className="flex flex-col items-center">
-                    <div className="text-5xl font-bold text-[#09d8f5] mb-2">95%+</div>
-                    <p className="text-xl font-lexend font-semibold text-[#0f2c4a]">Staff Satisfaction</p>
-                    <p className="text-slate-700 mt-2">Team members reporting career growth opportunities</p>
+                    <div className="text-5xl font-bold text-[#09d8f5] mb-2">
+                      95%+
+                    </div>
+                    <p className="text-xl font-lexend font-semibold text-[#0f2c4a]">
+                      Staff Satisfaction
+                    </p>
+                    <p className="text-slate-700 mt-2">
+                      Team members reporting career growth opportunities
+                    </p>
                   </div>
                 </div>
               </div>
@@ -154,7 +198,9 @@ export default function TrainingPage() {
                 Ready to build a skilled offshore team?
               </h2>
               <p className="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
-                Get started today with our expert recruitment team and ongoing training programs to build a highly skilled, continually improving offshore team for your business.
+                Get started today with our expert recruitment team and ongoing
+                training programs to build a highly skilled, continually
+                improving offshore team for your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -187,7 +233,14 @@ export default function TrainingPage() {
             </h2>
             <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
-                "The training programs Staff Stack has implemented for our offshore development team have been transformative. When we initially hired, our developers were good, but after six months of continuous development and technical training, they're outstanding. The personalized development plans and regular skill assessments have given us visibility into their progress, and the results speak for themselves - faster development cycles and higher quality code."
+                "The training programs Staff Stack has implemented for our
+                offshore development team have been transformative. When we
+                initially hired, our developers were good, but after six months
+                of continuous development and technical training, they're
+                outstanding. The personalized development plans and regular
+                skill assessments have given us visibility into their progress,
+                and the results speak for themselves - faster development cycles
+                and higher quality code."
               </p>
               <div className="flex items-center justify-center">
                 <div className="h-12 w-12 bg-[#0f2c4a] rounded-full flex items-center justify-center text-white font-lexend font-bold">
@@ -195,7 +248,9 @@ export default function TrainingPage() {
                 </div>
                 <div className="ml-4 text-left">
                   <p className="font-lexend font-medium">Michelle Rodriguez</p>
-                  <p className="text-sm text-slate-500">CTO, Digital Innovations Inc.</p>
+                  <p className="text-sm text-slate-500">
+                    CTO, Digital Innovations Inc.
+                  </p>
                 </div>
               </div>
             </div>

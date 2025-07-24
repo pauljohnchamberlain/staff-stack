@@ -134,6 +134,7 @@ const Carousel = React.forwardRef<
           canScrollNext,
         }}
       >
+        {/* biome-ignore lint/a11y/useAriaPropsSupportedByRole: carousel needs role description */}
         <section
           ref={ref}
           onKeyDownCapture={handleKeyDown}

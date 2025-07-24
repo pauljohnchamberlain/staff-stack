@@ -3,7 +3,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "CX & Contact Center Staff | Offshore Staffing",
-  description: "Hire dedicated customer experience and contact center professionals from the Philippines. Our skilled CX specialists provide exceptional customer service.",
+  description:
+    "Hire dedicated customer experience and contact center professionals from the Philippines. Our skilled CX specialists provide exceptional customer service.",
 };
 
 export default function ContactCenterPage() {
@@ -19,7 +20,7 @@ export default function ContactCenterPage() {
     "Contact Center Team Leaders",
     "Customer Success Managers",
     "Help Desk Support Agents",
-    "Bilingual Support Specialists"
+    "Bilingual Support Specialists",
   ];
 
   const capabilities = [
@@ -31,7 +32,7 @@ export default function ContactCenterPage() {
     "Complaint Resolution",
     "Service Escalation Management",
     "Reporting & Analytics",
-    "CRM System Management"
+    "CRM System Management",
   ];
 
   const benefits = [
@@ -40,7 +41,7 @@ export default function ContactCenterPage() {
     "24/7 operational capability for global coverage",
     "Experienced staff with strong customer service skills",
     "Dedicated full-time resources (not shared agents)",
-    "Scalable teams for seasonal or growth demands"
+    "Scalable teams for seasonal or growth demands",
   ];
 
   return (
@@ -53,7 +54,8 @@ export default function ContactCenterPage() {
               CX & Contact Center Staff
             </h1>
             <p className="text-xl md:text-2xl font-lexend font-light max-w-3xl">
-              Build your dedicated customer support team with skilled professionals in the Philippines
+              Build your dedicated customer support team with skilled
+              professionals in the Philippines
             </p>
           </div>
         </div>
@@ -68,7 +70,12 @@ export default function ContactCenterPage() {
                 Customer Experience Solutions
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                Our offshore customer experience and contact center professionals in the Philippines provide exceptional support services for your customers. With outstanding English communication skills and a customer-first mindset, they help build loyalty and satisfaction while optimizing your operational costs.
+                Our offshore customer experience and contact center
+                professionals in the Philippines provide exceptional support
+                services for your customers. With outstanding English
+                communication skills and a customer-first mindset, they help
+                build loyalty and satisfaction while optimizing your operational
+                costs.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -78,9 +85,22 @@ export default function ContactCenterPage() {
                   </h3>
                   <ul className="space-y-3">
                     {roles.slice(0, 6).map((role) => (
-                      <li key={`role-${role.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-3">
+                      <li
+                        key={`role-${role.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`}
+                        className="flex items-start gap-3"
+                      >
                         <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </div>
@@ -95,9 +115,22 @@ export default function ContactCenterPage() {
                   </h3>
                   <ul className="space-y-3">
                     {roles.slice(6, 12).map((role) => (
-                      <li key={`role-${role.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-3">
+                      <li
+                        key={`role-${role.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`}
+                        className="flex items-start gap-3"
+                      >
                         <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </div>
@@ -129,7 +162,10 @@ export default function ContactCenterPage() {
               </h2>
               <ul className="space-y-6 mb-10">
                 {benefits.map((benefit, index) => (
-                  <li key={`benefit-${benefit.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-4">
+                  <li
+                    key={`benefit-${benefit.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`}
+                    className="flex items-start gap-4"
+                  >
                     <div className="shrink-0 h-10 w-10 rounded-full bg-[#09d8f5] text-white font-lexend font-bold flex items-center justify-center">
                       {index + 1}
                     </div>
@@ -147,7 +183,9 @@ export default function ContactCenterPage() {
                   Elevate your customer experience
                 </h3>
                 <p className="text-lg text-slate-700 mb-6">
-                  Get started today with our expert recruitment team to build a dedicated customer support team that delivers exceptional service while optimizing your operational costs.
+                  Get started today with our expert recruitment team to build a
+                  dedicated customer support team that delivers exceptional
+                  service while optimizing your operational costs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
@@ -181,7 +219,12 @@ export default function ContactCenterPage() {
             </h2>
             <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
-                "Since partnering with Staff Stack for our customer support team, our customer satisfaction scores have increased by 35%. Their agents are professional, empathetic, and truly care about resolving customer issues. The 24/7 coverage has eliminated our backlog and significantly reduced response times. It's been a game-changer for our business."
+                "Since partnering with Staff Stack for our customer support
+                team, our customer satisfaction scores have increased by 35%.
+                Their agents are professional, empathetic, and truly care about
+                resolving customer issues. The 24/7 coverage has eliminated our
+                backlog and significantly reduced response times. It's been a
+                game-changer for our business."
               </p>
               <div className="flex items-center justify-center">
                 <div className="h-12 w-12 bg-[#0f2c4a] rounded-full flex items-center justify-center text-white font-lexend font-bold">
@@ -189,7 +232,9 @@ export default function ContactCenterPage() {
                 </div>
                 <div className="ml-4 text-left">
                   <p className="font-lexend font-medium">Lisa Parker</p>
-                  <p className="text-sm text-slate-500">Customer Experience Director, Global Solutions</p>
+                  <p className="text-sm text-slate-500">
+                    Customer Experience Director, Global Solutions
+                  </p>
                 </div>
               </div>
             </div>

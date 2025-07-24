@@ -5,19 +5,15 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  BarChart3,
   Calculator,
   CheckCircle,
   ChevronRight,
-  HardHat,
   Headphones,
-  HeartPulse,
   LineChart,
   Mail,
   Monitor,
   Paintbrush,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 const categories = [

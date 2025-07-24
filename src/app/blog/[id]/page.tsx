@@ -9,15 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import {
-  ArrowRight,
-  Calendar,
-  Clock,
-  MessageSquare,
-  Share2,
-  Tag,
-  User,
-} from "lucide-react";
+import { Calendar, Clock, MessageSquare, Share2, Tag } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -218,7 +210,11 @@ const relatedPosts = [
   },
 ];
 
-export default function BlogPostPage({ params }: { params: { id: string } }) {
+export default function BlogPostPage({
+  params: _params,
+}: {
+  params: { id: string };
+}) {
   return (
     <>
       <section className="pt-24 pb-10 bg-linear-to-b from-sky-50 to-background">

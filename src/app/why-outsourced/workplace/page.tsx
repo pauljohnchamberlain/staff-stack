@@ -4,7 +4,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Great Place to Work | Staff Stack",
-  description: "Discover what makes Staff Stack a great place to work with our modern facilities, exceptional work culture, and employee-focused benefits.",
+  description:
+    "Discover what makes Staff Stack a great place to work with our modern facilities, exceptional work culture, and employee-focused benefits.",
 };
 
 export default function WorkplacePage() {
@@ -12,32 +13,38 @@ export default function WorkplacePage() {
     {
       id: "excellence",
       title: "Excellence",
-      description: "We pursue excellence in all aspects of our service, from our recruitment processes to our facility management and client support."
+      description:
+        "We pursue excellence in all aspects of our service, from our recruitment processes to our facility management and client support.",
     },
     {
       id: "integrity",
       title: "Integrity",
-      description: "We operate with honesty, transparency, and ethical practices in all client and employee relationships."
+      description:
+        "We operate with honesty, transparency, and ethical practices in all client and employee relationships.",
     },
     {
       id: "innovation",
       title: "Innovation",
-      description: "We embrace technology and creative solutions to continuously improve our services and workplace environment."
+      description:
+        "We embrace technology and creative solutions to continuously improve our services and workplace environment.",
     },
     {
       id: "respect",
       title: "Respect",
-      description: "We value diverse perspectives and treat all employees and clients with dignity and fairness."
+      description:
+        "We value diverse perspectives and treat all employees and clients with dignity and fairness.",
     },
     {
       id: "growth",
       title: "Growth Mindset",
-      description: "We foster an environment of continuous learning and professional development for all our team members."
+      description:
+        "We foster an environment of continuous learning and professional development for all our team members.",
     },
     {
       id: "teamwork",
       title: "Teamwork",
-      description: "We believe in collaborative problem-solving and supporting each other to achieve exceptional results."
+      description:
+        "We believe in collaborative problem-solving and supporting each other to achieve exceptional results.",
     },
   ];
 
@@ -53,7 +60,7 @@ export default function WorkplacePage() {
     { id: "transportation", name: "Transportation Allowance" },
     { id: "mental-health", name: "Mental Health Support" },
     { id: "fitness", name: "Fitness Programs" },
-    { id: "holidays", name: "Holiday Celebrations" }
+    { id: "holidays", name: "Holiday Celebrations" },
   ];
 
   return (
@@ -82,10 +89,18 @@ export default function WorkplacePage() {
                 Creating an Exceptional Workplace Experience
               </h2>
               <p className="text-lg font-inter text-slate-700 mb-6">
-                At Staff Stack, we believe that happy, engaged employees deliver exceptional service to our clients. That's why we've built a workplace culture and environment that supports our team members' professional growth, work-life balance, and overall wellbeing.
+                At Staff Stack, we believe that happy, engaged employees deliver
+                exceptional service to our clients. That's why we've built a
+                workplace culture and environment that supports our team
+                members' professional growth, work-life balance, and overall
+                wellbeing.
               </p>
               <p className="text-lg font-inter text-slate-700 mb-6">
-                Our commitment to creating an outstanding workplace has earned us recognition as a top employer in the Philippines. From our state-of-the-art facilities to our comprehensive benefits package and professional development opportunities, we invest in our people because they are the heart of our success.
+                Our commitment to creating an outstanding workplace has earned
+                us recognition as a top employer in the Philippines. From our
+                state-of-the-art facilities to our comprehensive benefits
+                package and professional development opportunities, we invest in
+                our people because they are the heart of our success.
               </p>
             </div>
 
@@ -130,7 +145,8 @@ export default function WorkplacePage() {
                 Our Core Values
               </h2>
               <p className="text-lg font-inter text-slate-700 max-w-3xl mx-auto">
-                These values guide how we operate our business, treat our employees, and serve our clients.
+                These values guide how we operate our business, treat our
+                employees, and serve our clients.
               </p>
             </div>
 
@@ -155,7 +171,9 @@ export default function WorkplacePage() {
                 Employee Benefits
               </h2>
               <p className="text-lg font-inter text-slate-700 max-w-3xl mx-auto">
-                We offer a comprehensive benefits package designed to support our employees' well-being, professional growth, and work-life balance.
+                We offer a comprehensive benefits package designed to support
+                our employees' well-being, professional growth, and work-life
+                balance.
               </p>
             </div>
 
@@ -166,11 +184,23 @@ export default function WorkplacePage() {
                   className="bg-white p-4 rounded-lg shadow-xs flex items-center gap-3"
                 >
                   <div className="h-8 w-8 rounded-full bg-[#09d8f5]/20 text-[#09d8f5] flex items-center justify-center shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
                       <path d="M20 6L9 17l-5-5" />
                     </svg>
                   </div>
-                  <span className="font-lexend font-medium text-[#0f2c4a]">{benefit.name}</span>
+                  <span className="font-lexend font-medium text-[#0f2c4a]">
+                    {benefit.name}
+                  </span>
                 </div>
               ))}
             </div>
@@ -199,7 +229,10 @@ export default function WorkplacePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-slate-50 p-6 rounded-lg">
                 <p className="italic text-slate-600 font-inter mb-6">
-                  "Working at Staff Stack has been transformative for my career. The supportive environment, continuous learning opportunities, and work-life balance have allowed me to grow professionally while maintaining my personal well-being."
+                  "Working at Staff Stack has been transformative for my career.
+                  The supportive environment, continuous learning opportunities,
+                  and work-life balance have allowed me to grow professionally
+                  while maintaining my personal well-being."
                 </p>
                 <div className="flex items-center">
                   <div className="h-12 w-12 bg-[#0f2c4a] rounded-full flex items-center justify-center text-white font-lexend font-bold">
@@ -207,14 +240,19 @@ export default function WorkplacePage() {
                   </div>
                   <div className="ml-4">
                     <p className="font-lexend font-medium">Janelle Martinez</p>
-                    <p className="text-sm text-slate-500">Senior Developer, 3 years</p>
+                    <p className="text-sm text-slate-500">
+                      Senior Developer, 3 years
+                    </p>
                   </div>
                 </div>
               </div>
 
               <div className="bg-slate-50 p-6 rounded-lg">
                 <p className="italic text-slate-600 font-inter mb-6">
-                  "The culture at Staff Stack is unlike any company I've worked for before. There's a genuine focus on employee wellbeing, regular team building activities, and management actually listens to our feedback and implements positive changes."
+                  "The culture at Staff Stack is unlike any company I've worked
+                  for before. There's a genuine focus on employee wellbeing,
+                  regular team building activities, and management actually
+                  listens to our feedback and implements positive changes."
                 </p>
                 <div className="flex items-center">
                   <div className="h-12 w-12 bg-[#0f2c4a] rounded-full flex items-center justify-center text-white font-lexend font-bold">

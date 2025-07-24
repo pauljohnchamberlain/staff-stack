@@ -3,7 +3,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "20 Reasons Why Staff Stack | Offshore Staffing",
-  description: "Discover the top 20 reasons why businesses choose Staff Stack for their offshore staffing needs in the Philippines.",
+  description:
+    "Discover the top 20 reasons why businesses choose Staff Stack for their offshore staffing needs in the Philippines.",
 };
 
 export default function ReasonsPage() {
@@ -40,7 +41,8 @@ export default function ReasonsPage() {
               20 Reasons to Choose Staff Stack
             </h1>
             <p className="text-xl md:text-2xl font-lexend font-light max-w-3xl">
-              Discover why businesses worldwide trust us with their offshore staffing needs
+              Discover why businesses worldwide trust us with their offshore
+              staffing needs
             </p>
           </div>
         </div>
@@ -51,7 +53,10 @@ export default function ReasonsPage() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
             {reasons.map((reason, index) => (
-              <div key={`reason-${index}-${reason.substring(0, 10)}`} className="flex items-start gap-4">
+              <div
+                key={`reason-${index}-${reason.substring(0, 10)}`}
+                className="flex items-start gap-4"
+              >
                 <div className="shrink-0 h-10 w-10 rounded-full bg-[#09d8f5] text-white font-lexend font-bold flex items-center justify-center">
                   {index + 1}
                 </div>
@@ -98,7 +103,12 @@ export default function ReasonsPage() {
             </h2>
             <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
-                "Staff Stack has completely transformed our business operations. The quality of talent we've accessed through their platform is exceptional. We've been able to scale our operations rapidly while maintaining top-tier service levels. The cost savings have been substantial, but the real value is in the dedicated professionals now working as an integral part of our team."
+                "Staff Stack has completely transformed our business operations.
+                The quality of talent we've accessed through their platform is
+                exceptional. We've been able to scale our operations rapidly
+                while maintaining top-tier service levels. The cost savings have
+                been substantial, but the real value is in the dedicated
+                professionals now working as an integral part of our team."
               </p>
               <div className="flex items-center justify-center">
                 <div className="h-12 w-12 bg-[#0f2c4a] rounded-full flex items-center justify-center text-white font-lexend font-bold">
@@ -106,7 +116,9 @@ export default function ReasonsPage() {
                 </div>
                 <div className="ml-4 text-left">
                   <p className="font-lexend font-medium">Michael Kerns</p>
-                  <p className="text-sm text-slate-500">Operations Director, TechSolve Inc.</p>
+                  <p className="text-sm text-slate-500">
+                    Operations Director, TechSolve Inc.
+                  </p>
                 </div>
               </div>
             </div>

@@ -256,11 +256,17 @@ export function ServiceCategories() {
                   >
                     <category.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-2xl font-lexend font-bold mb-2">{category.name}</h3>
+                  <h3 className="text-2xl font-lexend font-bold mb-2">
+                    {category.name}
+                  </h3>
                   <p className="text-muted-foreground mb-4 font-inter">
                     {category.description}
                   </p>
-                  <Button variant="outline" className="group font-lexend font-medium" asChild>
+                  <Button
+                    variant="outline"
+                    className="group font-lexend font-medium"
+                    asChild
+                  >
                     <Link href={`/services#${category.id}`}>
                       Learn more
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

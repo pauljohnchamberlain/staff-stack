@@ -3,35 +3,42 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Home Based Staff | Offshore Staffing",
-  description: "Hire dedicated home-based staff in the Philippines. Our remote workforce solutions provide flexibility and cost-effectiveness without sacrificing quality.",
+  description:
+    "Hire dedicated home-based staff in the Philippines. Our remote workforce solutions provide flexibility and cost-effectiveness without sacrificing quality.",
 };
 
 export default function HomeBasedStaffPage() {
   const benefits = [
     {
       title: "Cost Efficiency",
-      description: "Lower operational costs with no office space requirements, reduced utilities, and more affordable infrastructure."
+      description:
+        "Lower operational costs with no office space requirements, reduced utilities, and more affordable infrastructure.",
     },
     {
       title: "Access to Wider Talent Pool",
-      description: "Recruit the best talent regardless of their location within the Philippines, expanding your potential candidate options."
+      description:
+        "Recruit the best talent regardless of their location within the Philippines, expanding your potential candidate options.",
     },
     {
       title: "Greater Flexibility",
-      description: "Scale your team up or down quickly without physical space constraints or long-term office lease commitments."
+      description:
+        "Scale your team up or down quickly without physical space constraints or long-term office lease commitments.",
     },
     {
       title: "Improved Work-Life Balance",
-      description: "Staff who work from home often report higher job satisfaction, leading to better retention and productivity."
+      description:
+        "Staff who work from home often report higher job satisfaction, leading to better retention and productivity.",
     },
     {
       title: "Business Continuity",
-      description: "Distributed workforce provides inherent protection against local disruptions, ensuring continuous operations."
+      description:
+        "Distributed workforce provides inherent protection against local disruptions, ensuring continuous operations.",
     },
     {
       title: "Reduced Carbon Footprint",
-      description: "Eliminating daily commutes and office energy usage contributes to environmental sustainability goals."
-    }
+      description:
+        "Eliminating daily commutes and office energy usage contributes to environmental sustainability goals.",
+    },
   ];
 
   const homeSupportFeatures = [
@@ -42,30 +49,35 @@ export default function HomeBasedStaffPage() {
     "VPN, time tracking, and productivity software",
     "Secure home office setup and verification",
     "Regular technical support and maintenance",
-    "Home office stipends for utilities and setup costs"
+    "Home office stipends for utilities and setup costs",
   ];
 
   const staffTypes = [
     {
       role: "Administrative Support",
-      description: "Virtual assistants, data entry specialists, and administrative coordinators working remotely."
+      description:
+        "Virtual assistants, data entry specialists, and administrative coordinators working remotely.",
     },
     {
       role: "Software Development",
-      description: "Remote developers, programmers, and QA engineers collaborating through cloud-based tools."
+      description:
+        "Remote developers, programmers, and QA engineers collaborating through cloud-based tools.",
     },
     {
       role: "Creative Services",
-      description: "Graphic designers, content creators, and multimedia specialists connected virtually."
+      description:
+        "Graphic designers, content creators, and multimedia specialists connected virtually.",
     },
     {
       role: "Customer Support",
-      description: "Remote customer service representatives, technical support staff, and help desk agents."
+      description:
+        "Remote customer service representatives, technical support staff, and help desk agents.",
     },
     {
       role: "Digital Marketing",
-      description: "SEO specialists, social media managers, and marketing coordinators working from home."
-    }
+      description:
+        "SEO specialists, social media managers, and marketing coordinators working from home.",
+    },
   ];
 
   return (
@@ -78,7 +90,8 @@ export default function HomeBasedStaffPage() {
               Home Based Staff
             </h1>
             <p className="text-xl md:text-2xl font-lexend font-light max-w-3xl">
-              Flexible, cost-effective remote workforce solutions with the same quality and management
+              Flexible, cost-effective remote workforce solutions with the same
+              quality and management
             </p>
           </div>
         </div>
@@ -93,7 +106,12 @@ export default function HomeBasedStaffPage() {
                 Professional Remote Workforce
               </h2>
               <p className="text-lg text-slate-700">
-                Our home-based staffing solutions offer the flexibility of remote work combined with our comprehensive management and support systems. Each remote team member is equipped with enterprise-grade technology, secure connectivity, and full integration with your business processes, ensuring high performance regardless of physical location.
+                Our home-based staffing solutions offer the flexibility of
+                remote work combined with our comprehensive management and
+                support systems. Each remote team member is equipped with
+                enterprise-grade technology, secure connectivity, and full
+                integration with your business processes, ensuring high
+                performance regardless of physical location.
               </p>
             </div>
 
@@ -106,9 +124,7 @@ export default function HomeBasedStaffPage() {
                   <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-slate-700">
-                    {benefit.description}
-                  </p>
+                  <p className="text-slate-700">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -118,7 +134,9 @@ export default function HomeBasedStaffPage() {
                 Comprehensive Home Office Support
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                We ensure each home-based staff member has a professional, secure, and productive work environment through our comprehensive equipment and support program.
+                We ensure each home-based staff member has a professional,
+                secure, and productive work environment through our
+                comprehensive equipment and support program.
               </p>
 
               <div className="bg-slate-50 p-8 rounded-xl border border-slate-100 mb-8">
@@ -132,7 +150,17 @@ export default function HomeBasedStaffPage() {
                       className="flex items-start gap-3"
                     >
                       <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
@@ -148,7 +176,8 @@ export default function HomeBasedStaffPage() {
                 Popular Home-Based Roles
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                Many roles are well-suited for remote work while maintaining high productivity and integration with your in-house team.
+                Many roles are well-suited for remote work while maintaining
+                high productivity and integration with your in-house team.
               </p>
 
               <div className="space-y-6">
@@ -160,9 +189,7 @@ export default function HomeBasedStaffPage() {
                     <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-2">
                       {type.role}
                     </h3>
-                    <p className="text-slate-700">
-                      {type.description}
-                    </p>
+                    <p className="text-slate-700">{type.description}</p>
                   </div>
                 ))}
               </div>
@@ -173,7 +200,8 @@ export default function HomeBasedStaffPage() {
                 Ready to build your home-based team?
               </h2>
               <p className="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
-                Get started today with our expert recruitment team to build your dedicated remote offshore team.
+                Get started today with our expert recruitment team to build your
+                dedicated remote offshore team.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -206,7 +234,12 @@ export default function HomeBasedStaffPage() {
             </h2>
             <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
-                "Staff Stack's home-based staffing solution has been perfect for our needs. We were initially concerned about managing remote workers across time zones, but their comprehensive support systems and high-quality staff selection made it seamless. Our remote developers and support specialists are as integrated, responsive, and productive as any in-office team I've managed."
+                "Staff Stack's home-based staffing solution has been perfect for
+                our needs. We were initially concerned about managing remote
+                workers across time zones, but their comprehensive support
+                systems and high-quality staff selection made it seamless. Our
+                remote developers and support specialists are as integrated,
+                responsive, and productive as any in-office team I've managed."
               </p>
               <div className="flex items-center justify-center">
                 <div className="h-12 w-12 bg-[#0f2c4a] rounded-full flex items-center justify-center text-white font-lexend font-bold">
@@ -214,7 +247,9 @@ export default function HomeBasedStaffPage() {
                 </div>
                 <div className="ml-4 text-left">
                   <p className="font-lexend font-medium">Rebecca Hernandez</p>
-                  <p className="text-sm text-slate-500">Operations Director, CloudTech Solutions</p>
+                  <p className="text-sm text-slate-500">
+                    Operations Director, CloudTech Solutions
+                  </p>
                 </div>
               </div>
             </div>

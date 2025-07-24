@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -24,7 +23,6 @@ import {
   Stethoscope,
 } from "lucide-react";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -292,7 +290,7 @@ export default function IndustriesPage() {
                           Our Services
                         </h3>
                         <ul className="space-y-2">
-                          {industry.services.map((service, index) => (
+                          {industry.services.map((service, _index) => (
                             <li
                               key={`service-${service.toLowerCase().replace(/\s+/g, "-")}`}
                               className="flex items-start gap-2"
@@ -309,7 +307,7 @@ export default function IndustriesPage() {
                           Key Benefits
                         </h3>
                         <ul className="space-y-2">
-                          {industry.benefits.map((benefit, index) => (
+                          {industry.benefits.map((benefit, _index) => (
                             <li
                               key={`benefit-${benefit.toLowerCase().replace(/\s+/g, "-")}`}
                               className="flex items-start gap-2"

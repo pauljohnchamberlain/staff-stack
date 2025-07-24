@@ -3,35 +3,42 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Office Based Teams | Offshore Staffing",
-  description: "Build dedicated office-based teams in the Philippines with our premium facilities, professional environment, and comprehensive support systems.",
+  description:
+    "Build dedicated office-based teams in the Philippines with our premium facilities, professional environment, and comprehensive support systems.",
 };
 
 export default function OfficeBasedTeamsPage() {
   const benefits = [
     {
       title: "Professional Environment",
-      description: "State-of-the-art office facilities designed for collaboration, productivity, and professional development."
+      description:
+        "State-of-the-art office facilities designed for collaboration, productivity, and professional development.",
     },
     {
       title: "Advanced Infrastructure",
-      description: "Enterprise-grade technology, redundant connectivity, and secure systems for uninterrupted operations."
+      description:
+        "Enterprise-grade technology, redundant connectivity, and secure systems for uninterrupted operations.",
     },
     {
       title: "Team Collaboration",
-      description: "Dedicated spaces that foster teamwork, peer learning, and organic knowledge sharing among staff members."
+      description:
+        "Dedicated spaces that foster teamwork, peer learning, and organic knowledge sharing among staff members.",
     },
     {
       title: "Management Oversight",
-      description: "Direct supervision with team leaders and managers on-site to ensure productivity and quality standards."
+      description:
+        "Direct supervision with team leaders and managers on-site to ensure productivity and quality standards.",
     },
     {
       title: "Security & Compliance",
-      description: "Physical security measures, access controls, and ISO-certified data security protocols for maximum protection."
+      description:
+        "Physical security measures, access controls, and ISO-certified data security protocols for maximum protection.",
     },
     {
       title: "Corporate Culture",
-      description: "Immersive environment that reinforces your company culture, values, and performance expectations."
-    }
+      description:
+        "Immersive environment that reinforces your company culture, values, and performance expectations.",
+    },
   ];
 
   const facilityFeatures = [
@@ -42,30 +49,34 @@ export default function OfficeBasedTeamsPage() {
     "Breakout areas and recreational facilities",
     "24/7 security and access controls",
     "Refreshment areas and pantries",
-    "Technical support on-site"
+    "Technical support on-site",
   ];
 
   const officeLocations = [
     {
       city: "Makati City",
       area: "Premium business district in Metro Manila",
-      features: "Class A office buildings, excellent transportation access, nearby amenities"
+      features:
+        "Class A office buildings, excellent transportation access, nearby amenities",
     },
     {
       city: "Bonifacio Global City",
       area: "Modern financial and lifestyle center",
-      features: "Contemporary office spaces, tech-friendly environment, vibrant community"
+      features:
+        "Contemporary office spaces, tech-friendly environment, vibrant community",
     },
     {
       city: "Cebu City",
       area: "Major business hub in central Philippines",
-      features: "Growing IT Park, rich talent pool, competitive operational costs"
+      features:
+        "Growing IT Park, rich talent pool, competitive operational costs",
     },
     {
       city: "Davao City",
       area: "Business center in southern Philippines",
-      features: "Emerging technology sector, stable infrastructure, quality of life advantages"
-    }
+      features:
+        "Emerging technology sector, stable infrastructure, quality of life advantages",
+    },
   ];
 
   return (
@@ -78,7 +89,8 @@ export default function OfficeBasedTeamsPage() {
               Office Based Teams
             </h1>
             <p className="text-xl md:text-2xl font-lexend font-light max-w-3xl">
-              Professional, collaborative environments for your dedicated offshore staff
+              Professional, collaborative environments for your dedicated
+              offshore staff
             </p>
           </div>
         </div>
@@ -93,7 +105,12 @@ export default function OfficeBasedTeamsPage() {
                 Premium Office Environments
               </h2>
               <p className="text-lg text-slate-700">
-                Our office-based staffing solutions provide your team with a dedicated professional environment designed to maximize productivity, collaboration, and security. With all infrastructure and support services managed by our team, your staff can focus entirely on delivering exceptional results for your business.
+                Our office-based staffing solutions provide your team with a
+                dedicated professional environment designed to maximize
+                productivity, collaboration, and security. With all
+                infrastructure and support services managed by our team, your
+                staff can focus entirely on delivering exceptional results for
+                your business.
               </p>
             </div>
 
@@ -106,9 +123,7 @@ export default function OfficeBasedTeamsPage() {
                   <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-slate-700">
-                    {benefit.description}
-                  </p>
+                  <p className="text-slate-700">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -118,7 +133,10 @@ export default function OfficeBasedTeamsPage() {
                 World-Class Facilities
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                Our offices are specifically designed for offshore teams, with everything your staff needs to perform at their best. Each facility combines functionality, comfort, and security to create an optimal working environment.
+                Our offices are specifically designed for offshore teams, with
+                everything your staff needs to perform at their best. Each
+                facility combines functionality, comfort, and security to create
+                an optimal working environment.
               </p>
 
               <div className="bg-slate-50 p-8 rounded-xl border border-slate-100 mb-8">
@@ -132,7 +150,17 @@ export default function OfficeBasedTeamsPage() {
                       className="flex items-start gap-3"
                     >
                       <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
@@ -148,7 +176,9 @@ export default function OfficeBasedTeamsPage() {
                 Strategic Locations
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                Our office facilities are located in key business districts across the Philippines, providing convenient access to talent pools, transportation, and supporting infrastructure.
+                Our office facilities are located in key business districts
+                across the Philippines, providing convenient access to talent
+                pools, transportation, and supporting infrastructure.
               </p>
 
               <div className="space-y-6">
@@ -163,9 +193,7 @@ export default function OfficeBasedTeamsPage() {
                     <p className="text-slate-600 font-medium mb-2">
                       {location.area}
                     </p>
-                    <p className="text-slate-700">
-                      {location.features}
-                    </p>
+                    <p className="text-slate-700">{location.features}</p>
                   </div>
                 ))}
               </div>
@@ -176,7 +204,9 @@ export default function OfficeBasedTeamsPage() {
                 Ready to build your office-based team?
               </h2>
               <p className="text-lg text-slate-700 mb-8 max-w-2xl mx-auto">
-                Get started today with our expert recruitment team to build your dedicated office-based offshore team in one of our premium facilities.
+                Get started today with our expert recruitment team to build your
+                dedicated office-based offshore team in one of our premium
+                facilities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -209,7 +239,14 @@ export default function OfficeBasedTeamsPage() {
             </h2>
             <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
-                "I was impressed when I visited our team at Staff Stack's office in Manila. The facilities are first-class – on par with our headquarters in Sydney. Our staff have everything they need, from cutting-edge technology to comfortable workspaces. The security measures and professional environment give us complete confidence when dealing with sensitive client information. Most importantly, our team loves working there, which has resulted in excellent retention rates."
+                "I was impressed when I visited our team at Staff Stack's office
+                in Manila. The facilities are first-class – on par with our
+                headquarters in Sydney. Our staff have everything they need,
+                from cutting-edge technology to comfortable workspaces. The
+                security measures and professional environment give us complete
+                confidence when dealing with sensitive client information. Most
+                importantly, our team loves working there, which has resulted in
+                excellent retention rates."
               </p>
               <div className="flex items-center justify-center">
                 <div className="h-12 w-12 bg-[#0f2c4a] rounded-full flex items-center justify-center text-white font-lexend font-bold">
@@ -217,7 +254,9 @@ export default function OfficeBasedTeamsPage() {
                 </div>
                 <div className="ml-4 text-left">
                   <p className="font-lexend font-medium">James Chen</p>
-                  <p className="text-sm text-slate-500">Managing Director, Pacific Financial Group</p>
+                  <p className="text-sm text-slate-500">
+                    Managing Director, Pacific Financial Group
+                  </p>
                 </div>
               </div>
             </div>

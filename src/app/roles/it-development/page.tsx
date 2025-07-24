@@ -3,7 +3,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "IT & Development Staff | Offshore Staffing",
-  description: "Hire dedicated IT and software development professionals from the Philippines. Our technical staff helps build and maintain your digital solutions.",
+  description:
+    "Hire dedicated IT and software development professionals from the Philippines. Our technical staff helps build and maintain your digital solutions.",
 };
 
 export default function ITDevelopmentPage() {
@@ -19,7 +20,7 @@ export default function ITDevelopmentPage() {
     "UI/UX Designers",
     "Database Administrators",
     "System Administrators",
-    "IT Support Specialists"
+    "IT Support Specialists",
   ];
 
   const technologies = [
@@ -34,7 +35,7 @@ export default function ITDevelopmentPage() {
     "iOS/Android Development",
     "AWS/Azure/GCP",
     "Docker/Kubernetes",
-    "SQL & NoSQL Databases"
+    "SQL & NoSQL Databases",
   ];
 
   const benefits = [
@@ -43,7 +44,7 @@ export default function ITDevelopmentPage() {
     "Dedicated full-time technical resources",
     "Flexible team composition based on project needs",
     "Scalable resource allocation for growth phases",
-    "Continuous training and skill development"
+    "Continuous training and skill development",
   ];
 
   return (
@@ -56,7 +57,8 @@ export default function ITDevelopmentPage() {
               IT & Development Staff
             </h1>
             <p className="text-xl md:text-2xl font-lexend font-light max-w-3xl">
-              Build your dedicated tech team with skilled developers in the Philippines
+              Build your dedicated tech team with skilled developers in the
+              Philippines
             </p>
           </div>
         </div>
@@ -71,7 +73,11 @@ export default function ITDevelopmentPage() {
                 Technical Talent Solutions
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                Our offshore IT and development professionals in the Philippines provide comprehensive technical expertise for your software projects. With strong English communication skills and a solid technical foundation, they seamlessly integrate into your team to build, maintain, and enhance your digital solutions.
+                Our offshore IT and development professionals in the Philippines
+                provide comprehensive technical expertise for your software
+                projects. With strong English communication skills and a solid
+                technical foundation, they seamlessly integrate into your team
+                to build, maintain, and enhance your digital solutions.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -81,9 +87,22 @@ export default function ITDevelopmentPage() {
                   </h3>
                   <ul className="space-y-3">
                     {roles.slice(0, 6).map((role) => (
-                      <li key={`role-${role.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-3">
+                      <li
+                        key={`role-${role.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`}
+                        className="flex items-start gap-3"
+                      >
                         <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </div>
@@ -98,9 +117,22 @@ export default function ITDevelopmentPage() {
                   </h3>
                   <ul className="space-y-3">
                     {roles.slice(6, 12).map((role) => (
-                      <li key={`role-${role.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-3">
+                      <li
+                        key={`role-${role.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`}
+                        className="flex items-start gap-3"
+                      >
                         <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </div>
@@ -132,7 +164,10 @@ export default function ITDevelopmentPage() {
               </h2>
               <ul className="space-y-6 mb-10">
                 {benefits.map((benefit, index) => (
-                  <li key={`benefit-${benefit.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-4">
+                  <li
+                    key={`benefit-${benefit.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`}
+                    className="flex items-start gap-4"
+                  >
                     <div className="shrink-0 h-10 w-10 rounded-full bg-[#09d8f5] text-white font-lexend font-bold flex items-center justify-center">
                       {index + 1}
                     </div>
@@ -150,7 +185,9 @@ export default function ITDevelopmentPage() {
                   Build your development team
                 </h3>
                 <p className="text-lg text-slate-700 mb-6">
-                  Get started today with our expert recruitment team to find the perfect IT professionals for your tech projects and ongoing support needs.
+                  Get started today with our expert recruitment team to find the
+                  perfect IT professionals for your tech projects and ongoing
+                  support needs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
@@ -184,7 +221,12 @@ export default function ITDevelopmentPage() {
             </h2>
             <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
-                "Staff Stack has been instrumental in helping us build our engineering team. The developers we've hired are not just technically proficient but also great communicators who integrate seamlessly with our in-house team. We've been able to accelerate our product development significantly while maintaining high quality standards."
+                "Staff Stack has been instrumental in helping us build our
+                engineering team. The developers we've hired are not just
+                technically proficient but also great communicators who
+                integrate seamlessly with our in-house team. We've been able to
+                accelerate our product development significantly while
+                maintaining high quality standards."
               </p>
               <div className="flex items-center justify-center">
                 <div className="h-12 w-12 bg-[#0f2c4a] rounded-full flex items-center justify-center text-white font-lexend font-bold">
@@ -192,7 +234,9 @@ export default function ITDevelopmentPage() {
                 </div>
                 <div className="ml-4 text-left">
                   <p className="font-lexend font-medium">David Schmidt</p>
-                  <p className="text-sm text-slate-500">CTO, TechInnovate Solutions</p>
+                  <p className="text-sm text-slate-500">
+                    CTO, TechInnovate Solutions
+                  </p>
                 </div>
               </div>
             </div>

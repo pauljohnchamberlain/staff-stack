@@ -72,7 +72,9 @@ export function HowItWorksSection() {
                   <div className="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4 text-brand">
                     {step.icon}
                   </div>
-                  <h3 className="text-xl font-lexend font-semibold mb-3">{step.title}</h3>
+                  <h3 className="text-xl font-lexend font-semibold mb-3">
+                    {step.title}
+                  </h3>
                 </div>
                 <p className="text-muted-foreground mb-4 grow font-inter">
                   {step.description}

@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 
 export const metadata = {
   title: "Industry Expertise | Staff Stack",
-  description: "Discover the wide range of industries we serve with our offshore staffing solutions. Find specialized talent for your specific industry needs.",
+  description:
+    "Discover the wide range of industries we serve with our offshore staffing solutions. Find specialized talent for your specific industry needs.",
 };
 
 export default function IndustryOverviewPage() {
@@ -12,84 +12,96 @@ export default function IndustryOverviewPage() {
     {
       id: "it",
       title: "Information Technology",
-      description: "Tech talent for software development, web applications, and IT support.",
+      description:
+        "Tech talent for software development, web applications, and IT support.",
       href: "/industries/information-technology",
       icon: "/images/industries/information-technology.png",
     },
     {
       id: "financial",
       title: "Financial & Insurance Services",
-      description: "Accounting, financial analysis, and insurance support professionals.",
+      description:
+        "Accounting, financial analysis, and insurance support professionals.",
       href: "/industries/financial",
       icon: "/images/industries/financial.png",
     },
     {
       id: "healthcare",
       title: "Healthcare",
-      description: "Medical billing, patient coordination, and healthcare administrative support.",
+      description:
+        "Medical billing, patient coordination, and healthcare administrative support.",
       href: "/industries/healthcare",
       icon: "/images/industries/healthcare.png",
     },
     {
       id: "retail",
       title: "Retail Trade & E-Commerce",
-      description: "Customer service, inventory management, and e-commerce operations.",
+      description:
+        "Customer service, inventory management, and e-commerce operations.",
       href: "/industries/retail",
       icon: "/images/industries/retail.png",
     },
     {
       id: "education",
       title: "Education & Training",
-      description: "Educational content development, tutoring, and administrative support.",
+      description:
+        "Educational content development, tutoring, and administrative support.",
       href: "/industries/education",
       icon: "/images/industries/education.png",
     },
     {
       id: "hospitality",
       title: "Hospitality & Tourism",
-      description: "Customer service, booking management, and tourism operations.",
+      description:
+        "Customer service, booking management, and tourism operations.",
       href: "/industries/hospitality",
       icon: "/images/industries/hospitality.png",
     },
     {
       id: "real-estate",
       title: "Real Estate Services",
-      description: "Property management, lead generation, and administrative support.",
+      description:
+        "Property management, lead generation, and administrative support.",
       href: "/industries/real-estate",
       icon: "/images/industries/real-estate.png",
     },
     {
       id: "telecommunications",
       title: "Information Media & Telecommunications",
-      description: "Media production, telecommunications support, and content management.",
+      description:
+        "Media production, telecommunications support, and content management.",
       href: "/industries/telecommunications",
       icon: "/images/industries/telecommunications.png",
     },
     {
       id: "engineering",
       title: "Engineering & Construction",
-      description: "CAD specialists, project coordinators, and technical support.",
+      description:
+        "CAD specialists, project coordinators, and technical support.",
       href: "/industries/engineering",
       icon: "/images/industries/engineering.png",
     },
     {
       id: "legal",
       title: "Legal Services",
-      description: "Legal research, document preparation, and paralegal support.",
+      description:
+        "Legal research, document preparation, and paralegal support.",
       href: "/industries/legal",
       icon: "/images/industries/legal.png",
     },
     {
       id: "professional",
       title: "Professional Services",
-      description: "Business consulting, administrative support, and specialized services.",
+      description:
+        "Business consulting, administrative support, and specialized services.",
       href: "/industries/professional-services",
       icon: "/images/industries/professional-services.png",
     },
     {
       id: "transport",
       title: "Transport, Postal & Warehousing",
-      description: "Logistics coordination, shipping administration, and supply chain support.",
+      description:
+        "Logistics coordination, shipping administration, and supply chain support.",
       href: "/industries/transport",
       icon: "/images/industries/transport.png",
     },
@@ -119,7 +131,11 @@ export default function IndustryOverviewPage() {
               Industry-Specific Talent Solutions
             </h2>
             <p className="text-lg font-inter text-slate-700 text-center">
-              At Staff Stack, we understand that each industry has unique requirements, challenges, and operational needs. Our industry-specific staffing solutions are designed to provide you with professionals who have the exact skills, experience, and background needed for your sector.
+              At Staff Stack, we understand that each industry has unique
+              requirements, challenges, and operational needs. Our
+              industry-specific staffing solutions are designed to provide you
+              with professionals who have the exact skills, experience, and
+              background needed for your sector.
             </p>
           </div>
 
@@ -135,7 +151,15 @@ export default function IndustryOverviewPage() {
                   <div className="h-12 w-12 rounded-lg bg-[#0f2c4a]/5 flex items-center justify-center shrink-0">
                     <div className="h-6 w-6 text-[#09d8f5]">
                       {/* Placeholder for industry icon */}
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                       </svg>
                     </div>
@@ -160,7 +184,9 @@ export default function IndustryOverviewPage() {
                 Ready to Find Industry-Specific Talent?
               </h2>
               <p className="text-lg font-inter text-slate-700 mb-8">
-                Our talent acquisition specialists will work with you to understand your industry-specific requirements and find the perfect professionals for your team.
+                Our talent acquisition specialists will work with you to
+                understand your industry-specific requirements and find the
+                perfect professionals for your team.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -193,26 +219,35 @@ export default function IndustryOverviewPage() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
               <div className="text-center">
-                <p className="text-4xl font-lexend font-bold text-[#09d8f5]">15+</p>
+                <p className="text-4xl font-lexend font-bold text-[#09d8f5]">
+                  15+
+                </p>
                 <p className="mt-2 font-inter">Industries Served</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-lexend font-bold text-[#09d8f5]">3,500+</p>
+                <p className="text-4xl font-lexend font-bold text-[#09d8f5]">
+                  3,500+
+                </p>
                 <p className="mt-2 font-inter">Professionals Placed</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-lexend font-bold text-[#09d8f5]">97%</p>
+                <p className="text-4xl font-lexend font-bold text-[#09d8f5]">
+                  97%
+                </p>
                 <p className="mt-2 font-inter">Client Satisfaction</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-lexend font-bold text-[#09d8f5]">250+</p>
+                <p className="text-4xl font-lexend font-bold text-[#09d8f5]">
+                  250+
+                </p>
                 <p className="mt-2 font-inter">Global Clients</p>
               </div>
             </div>
 
             <div className="text-center">
               <p className="text-lg font-inter text-slate-700">
-                Our industry expertise has helped businesses of all sizes access specialized talent that drives growth and innovation.
+                Our industry expertise has helped businesses of all sizes access
+                specialized talent that drives growth and innovation.
               </p>
             </div>
           </div>

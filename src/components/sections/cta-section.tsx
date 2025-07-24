@@ -38,15 +38,21 @@ export function CtaSection() {
                   <div className="bg-white/10 backdrop-blur-xs p-4 rounded-lg flex items-start gap-3">
                     <Phone className="h-5 w-5 text-brand-accent mt-1" />
                     <div>
-                      <h3 className="font-lexend font-semibold text-sm mb-1">Call Us</h3>
-                      <p className="text-sm text-white/80 font-inter">+63 2 8791 7462</p>
+                      <h3 className="font-lexend font-semibold text-sm mb-1">
+                        Call Us
+                      </h3>
+                      <p className="text-sm text-white/80 font-inter">
+                        +63 2 8791 7462
+                      </p>
                     </div>
                   </div>
 
                   <div className="bg-white/10 backdrop-blur-xs p-4 rounded-lg flex items-start gap-3">
                     <Mail className="h-5 w-5 text-brand-accent mt-1" />
                     <div>
-                      <h3 className="font-lexend font-semibold text-sm mb-1">Email Us</h3>
+                      <h3 className="font-lexend font-semibold text-sm mb-1">
+                        Email Us
+                      </h3>
                       <p className="text-sm text-white/80 font-inter">
                         info@staffstack.com
                       </p>
@@ -102,11 +108,17 @@ export function CtaSection() {
               augmentation solutions.
               <br />
               Learn more about{" "}
-              <Link href="/about" className="text-brand hover:underline font-lexend">
+              <Link
+                href="/about"
+                className="text-brand hover:underline font-lexend"
+              >
                 how we work
               </Link>{" "}
               or{" "}
-              <Link href="/contact-us" className="text-brand hover:underline font-lexend">
+              <Link
+                href="/contact-us"
+                className="text-brand hover:underline font-lexend"
+              >
                 contact us
               </Link>{" "}
               with any questions.

@@ -112,8 +112,12 @@ export function WhyChooseUs() {
                   <div className="mb-4 p-3 rounded-full bg-brand/10 w-fit">
                     <reason.icon className="h-6 w-6 text-brand" />
                   </div>
-                  <h3 className="text-xl font-lexend font-semibold mb-2">{reason.title}</h3>
-                  <p className="text-muted-foreground font-inter">{reason.description}</p>
+                  <h3 className="text-xl font-lexend font-semibold mb-2">
+                    {reason.title}
+                  </h3>
+                  <p className="text-muted-foreground font-inter">
+                    {reason.description}
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>

@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -219,7 +214,7 @@ export default function HowItWorksPage() {
                   "Quality assurance monitoring",
                   "Employee benefits and incentives",
                   "Security compliance and protocols",
-                ].map((item, idx) => (
+                ].map((item, _idx) => (
                   <div
                     key={`service-${item.toLowerCase().replace(/\s+/g, "-")}`}
                     className="flex items-start gap-3"

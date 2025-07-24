@@ -4,7 +4,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Why Choose The Philippines | Staff Stack",
-  description: "Discover why the Philippines is the ideal offshore staffing destination with Staff Stack. Learn about the advantages of Filipino talent.",
+  description:
+    "Discover why the Philippines is the ideal offshore staffing destination with Staff Stack. Learn about the advantages of Filipino talent.",
 };
 
 export default function PhilippinesPage() {
@@ -12,32 +13,38 @@ export default function PhilippinesPage() {
     {
       id: "business-environment",
       title: "Business-Friendly Environment",
-      description: "The Philippines has a stable government and economy with policies encouraging foreign investment and international business partnerships."
+      description:
+        "The Philippines has a stable government and economy with policies encouraging foreign investment and international business partnerships.",
     },
     {
       id: "english-proficiency",
       title: "High English Proficiency",
-      description: "With over 92% English literacy, Filipinos rank among the top non-native English speakers globally, ensuring seamless communication."
+      description:
+        "With over 92% English literacy, Filipinos rank among the top non-native English speakers globally, ensuring seamless communication.",
     },
     {
       id: "cultural-compatibility",
       title: "Cultural Compatibility",
-      description: "Filipino culture blends Eastern values with Western influences, making it easy for Filipino staff to adapt to international business practices."
+      description:
+        "Filipino culture blends Eastern values with Western influences, making it easy for Filipino staff to adapt to international business practices.",
     },
     {
       id: "education-system",
       title: "Education System",
-      description: "The Philippines produces over 500,000 college graduates annually, with strong emphasis on business, IT, engineering, and healthcare."
+      description:
+        "The Philippines produces over 500,000 college graduates annually, with strong emphasis on business, IT, engineering, and healthcare.",
     },
     {
       id: "cost-efficiency",
       title: "Cost Efficiency",
-      description: "Operational costs in the Philippines are 70-80% lower than the US, Australia, and Europe, without compromising quality."
+      description:
+        "Operational costs in the Philippines are 70-80% lower than the US, Australia, and Europe, without compromising quality.",
     },
     {
       id: "work-ethic",
       title: "Exceptional Work Ethic",
-      description: "Filipino professionals are known for their dedication, loyalty, and extraordinary customer service orientation."
+      description:
+        "Filipino professionals are known for their dedication, loyalty, and extraordinary customer service orientation.",
     },
   ];
 
@@ -49,7 +56,7 @@ export default function PhilippinesPage() {
     { id: "data-entry", name: "Data Entry" },
     { id: "virtual-assistance", name: "Virtual Assistance" },
     { id: "graphic-design", name: "Graphic Design" },
-    { id: "engineering", name: "Engineering" }
+    { id: "engineering", name: "Engineering" },
   ];
 
   return (
@@ -77,10 +84,19 @@ export default function PhilippinesPage() {
                 The Philippines: Your Global Staffing Advantage
               </h2>
               <p className="text-lg font-inter text-slate-700 mb-6">
-                For businesses looking to optimize operations while maintaining high quality, the Philippines stands out as the premier offshore staffing destination. With its unique combination of linguistic capabilities, educational excellence, and cultural affinity with Western business practices, Filipino professionals offer unparalleled value.
+                For businesses looking to optimize operations while maintaining
+                high quality, the Philippines stands out as the premier offshore
+                staffing destination. With its unique combination of linguistic
+                capabilities, educational excellence, and cultural affinity with
+                Western business practices, Filipino professionals offer
+                unparalleled value.
               </p>
               <p className="text-lg font-inter text-slate-700 mb-6">
-                At Staff Stack, we've built our success on connecting businesses with the exceptional talent pool the Philippines offers. Our clients consistently report that their Filipino team members outperform expectations, delivering outstanding work while seamlessly integrating with existing teams across the globe.
+                At Staff Stack, we've built our success on connecting businesses
+                with the exceptional talent pool the Philippines offers. Our
+                clients consistently report that their Filipino team members
+                outperform expectations, delivering outstanding work while
+                seamlessly integrating with existing teams across the globe.
               </p>
             </div>
 
@@ -107,7 +123,9 @@ export default function PhilippinesPage() {
                   className="bg-slate-50 p-6 rounded-lg shadow-xs hover:shadow-md transition-shadow"
                 >
                   <div className="h-12 w-12 rounded-full bg-[#09d8f5]/20 text-[#09d8f5] flex items-center justify-center mb-4">
-                    <span className="text-xl font-lexend font-bold">{index + 1}</span>
+                    <span className="text-xl font-lexend font-bold">
+                      {index + 1}
+                    </span>
                   </div>
                   <h3 className="text-xl font-lexend font-bold text-[#0f2c4a] mb-3">
                     {advantage.title}
@@ -126,7 +144,9 @@ export default function PhilippinesPage() {
                 Specialized Talent Across Industries
               </h2>
               <p className="text-lg font-inter text-slate-700 mb-8 text-center">
-                The Philippines is a hub for specialized talent across numerous fields, from IT and software development to customer service, accounting, digital marketing, and healthcare support.
+                The Philippines is a hub for specialized talent across numerous
+                fields, from IT and software development to customer service,
+                accounting, digital marketing, and healthcare support.
               </p>
 
               <div className="flex flex-wrap justify-center gap-3 mb-8">
@@ -162,19 +182,27 @@ export default function PhilippinesPage() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <p className="text-5xl font-lexend font-bold text-[#09d8f5]">92%</p>
+              <p className="text-5xl font-lexend font-bold text-[#09d8f5]">
+                92%
+              </p>
               <p className="mt-2 font-inter">English Literacy Rate</p>
             </div>
             <div className="text-center">
-              <p className="text-5xl font-lexend font-bold text-[#09d8f5]">700k+</p>
+              <p className="text-5xl font-lexend font-bold text-[#09d8f5]">
+                700k+
+              </p>
               <p className="mt-2 font-inter">Annual IT Graduates</p>
             </div>
             <div className="text-center">
-              <p className="text-5xl font-lexend font-bold text-[#09d8f5]">24/7</p>
+              <p className="text-5xl font-lexend font-bold text-[#09d8f5]">
+                24/7
+              </p>
               <p className="mt-2 font-inter">Operational Capabilities</p>
             </div>
             <div className="text-center">
-              <p className="text-5xl font-lexend font-bold text-[#09d8f5]">75%</p>
+              <p className="text-5xl font-lexend font-bold text-[#09d8f5]">
+                75%
+              </p>
               <p className="mt-2 font-inter">Average Cost Savings</p>
             </div>
           </div>

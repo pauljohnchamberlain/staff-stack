@@ -3,7 +3,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Hospitality & Tourism Staff | Offshore Staffing",
-  description: "Build your dedicated hospitality and tourism team with skilled offshore professionals from the Philippines. Our staff helps streamline your hospitality operations.",
+  description:
+    "Build your dedicated hospitality and tourism team with skilled offshore professionals from the Philippines. Our staff helps streamline your hospitality operations.",
 };
 
 export default function HospitalityPage() {
@@ -16,7 +17,7 @@ export default function HospitalityPage() {
     "Event Planners & Coordinators",
     "Revenue Management Specialists",
     "Front Desk Support Staff",
-    "Digital Marketing for Hospitality"
+    "Digital Marketing for Hospitality",
   ];
 
   const benefits = [
@@ -25,7 +26,7 @@ export default function HospitalityPage() {
     "Multilingual staff options for international guests",
     "Significant cost savings compared to local hiring",
     "Scalable team growth during peak seasons",
-    "Streamlined booking and reservation management"
+    "Streamlined booking and reservation management",
   ];
 
   return (
@@ -38,7 +39,8 @@ export default function HospitalityPage() {
               Hospitality & Tourism Staff
             </h1>
             <p className="text-xl md:text-2xl font-lexend font-light max-w-3xl">
-              Build your dedicated hospitality team with skilled professionals in the Philippines
+              Build your dedicated hospitality team with skilled professionals
+              in the Philippines
             </p>
           </div>
         </div>
@@ -53,7 +55,11 @@ export default function HospitalityPage() {
                 Hospitality & Tourism Services
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                Our offshore hospitality professionals provide comprehensive support for hotels, resorts, travel agencies, and tourism businesses. With excellent customer service skills and industry knowledge, they help deliver exceptional guest experiences while optimizing operational efficiency.
+                Our offshore hospitality professionals provide comprehensive
+                support for hotels, resorts, travel agencies, and tourism
+                businesses. With excellent customer service skills and industry
+                knowledge, they help deliver exceptional guest experiences while
+                optimizing operational efficiency.
               </p>
 
               <h3 className="text-2xl font-lexend font-semibold text-[#0f2c4a] mb-4">
@@ -61,9 +67,22 @@ export default function HospitalityPage() {
               </h3>
               <ul className="space-y-3 mb-10">
                 {services.map((service) => (
-                  <li key={`service-${service.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-3">
+                  <li
+                    key={`service-${service.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`}
+                    className="flex items-start gap-3"
+                  >
                     <div className="h-6 w-6 rounded-full bg-[#09d8f5] flex items-center justify-center shrink-0 mt-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                     </div>
@@ -79,7 +98,10 @@ export default function HospitalityPage() {
               </h2>
               <ul className="space-y-6 mb-10">
                 {benefits.map((benefit, index) => (
-                  <li key={`benefit-${benefit.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`} className="flex items-start gap-4">
+                  <li
+                    key={`benefit-${benefit.substring(0, 15).replace(/\s+/g, "-").toLowerCase()}`}
+                    className="flex items-start gap-4"
+                  >
                     <div className="shrink-0 h-10 w-10 rounded-full bg-[#09d8f5] text-white font-lexend font-bold flex items-center justify-center">
                       {index + 1}
                     </div>
@@ -97,7 +119,9 @@ export default function HospitalityPage() {
                   Elevate your hospitality business
                 </h3>
                 <p className="text-lg text-slate-700 mb-6">
-                  Get started today and build a dedicated hospitality team that provides exceptional service to your guests while optimizing operational costs.
+                  Get started today and build a dedicated hospitality team that
+                  provides exceptional service to your guests while optimizing
+                  operational costs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
@@ -131,7 +155,12 @@ export default function HospitalityPage() {
             </h2>
             <div className="bg-white p-8 rounded-xl shadow-xs">
               <p className="text-lg italic font-inter text-slate-600 mb-6">
-                "The hospitality staff we hired through Staff Stack has transformed our customer service operations. Our guests consistently praise the responsiveness and helpfulness of our remote team. The 24/7 coverage has been a game-changer for our international clientele, and the cost savings have allowed us to invest more in our physical facilities."
+                "The hospitality staff we hired through Staff Stack has
+                transformed our customer service operations. Our guests
+                consistently praise the responsiveness and helpfulness of our
+                remote team. The 24/7 coverage has been a game-changer for our
+                international clientele, and the cost savings have allowed us to
+                invest more in our physical facilities."
               </p>
               <div className="flex items-center justify-center">
                 <div className="h-12 w-12 bg-[#0f2c4a] rounded-full flex items-center justify-center text-white font-lexend font-bold">
@@ -139,7 +168,9 @@ export default function HospitalityPage() {
                 </div>
                 <div className="ml-4 text-left">
                   <p className="font-lexend font-medium">Richard Martinez</p>
-                  <p className="text-sm text-slate-500">General Manager, Horizon Resorts</p>
+                  <p className="text-sm text-slate-500">
+                    General Manager, Horizon Resorts
+                  </p>
                 </div>
               </div>
             </div>
