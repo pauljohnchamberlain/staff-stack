@@ -1,13 +1,3 @@
-
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import {
   ArrowRight,
   BarChart3,
@@ -23,6 +13,15 @@ import {
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
   title: "How It Works | Staff Stack",

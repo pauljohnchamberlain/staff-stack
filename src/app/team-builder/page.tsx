@@ -1,5 +1,5 @@
-import TeamBuilder from "@/components/sections/TeamBuilder";
 import { Suspense } from "react";
+import TeamBuilder from "@/components/sections/TeamBuilder";
 
 // Team Builder Page
 export default function TeamBuilderPage() {

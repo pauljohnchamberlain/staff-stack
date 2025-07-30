@@ -1,5 +1,14 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
+import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -18,20 +27,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
-import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { z } from "zod";
 
 const contactFormSchema = z.object({
-  fullName: z
-    .string()
-    .min(2, { error: "Name must be at least 2 characters." }),
+  fullName: z.string().min(2, { error: "Name must be at least 2 characters." }),
   email: z.string().email({ error: "Please enter a valid email address." }),
   company: z.string().min(1, { error: "Company name is required." }),
   phone: z.string().min(6, { error: "Please enter a valid phone number." }),

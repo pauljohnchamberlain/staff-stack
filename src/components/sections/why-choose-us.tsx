@@ -1,6 +1,5 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
   BadgeCheck,
@@ -11,6 +10,7 @@ import {
   Zap,
 } from "lucide-react";
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
 
 const reasons = [
   {

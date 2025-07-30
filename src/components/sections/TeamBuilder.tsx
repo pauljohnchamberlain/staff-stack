@@ -1,35 +1,21 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
-import { v4 as uuidv4 } from "uuid"; // For unique keys
+import {
+  ArrowUp,
+  ChevronDown,
+  MessageCircle,
+  MinusCircle,
+  PlusCircle,
+  RefreshCw,
+  Search,
+  Share2,
+  XCircle,
+} from "lucide-react";
 import Link from "next/link"; // Import Link
-import {
-  availableRoles,
-  experienceLevels,
-  getRoleCosts,
-  calculateSavings,
-  type ExperienceLevel,
-} from "@/lib/data/roles";
-import {
-  countries,
-  workSetups,
-  type CountryOption,
-  type WorkSetupOption,
-} from "@/lib/data/options";
+import { useCallback, useMemo, useState } from "react";
+import { v4 as uuidv4 } from "uuid"; // For unique keys
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -37,20 +23,34 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Separator } from "@/components/ui/separator";
-import { Input } from "@/components/ui/input"; // Simple incrementer for now
-import { Card, CardContent, } from "@/components/ui/card";
 import {
-  MinusCircle,
-  PlusCircle,
-  XCircle,
-  Search,
-  ChevronDown,
-  ArrowUp,
-  RefreshCw,
-  Share2,
-  MessageCircle,
-} from "lucide-react";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input"; // Simple incrementer for now
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
+import {
+  type CountryOption,
+  countries,
+  type WorkSetupOption,
+  workSetups,
+} from "@/lib/data/options";
+import {
+  availableRoles,
+  calculateSavings,
+  type ExperienceLevel,
+  experienceLevels,
+  getRoleCosts,
+} from "@/lib/data/roles";
 
 interface TeamMember {
   id: string; // Unique identifier for each row/member

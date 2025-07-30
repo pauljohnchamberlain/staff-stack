@@ -1,5 +1,6 @@
 "use client";
 
+import { Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -9,7 +10,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Star } from "lucide-react";
 
 const testimonials = [
   {

@@ -1,5 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { ChevronDown, Menu } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -11,10 +15,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import { ChevronDown, Menu } from "lucide-react";
-import Link from "next/link";
-import { useEffect, useState } from "react";
 
 // Update Why outsourced items to match the screenshot
 const whyOutsourcedItems = [

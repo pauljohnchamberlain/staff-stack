@@ -1,3 +1,7 @@
+import { Calendar, Clock, MessageSquare, Share2, Tag } from "lucide-react";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,10 +13,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Calendar, Clock, MessageSquare, Share2, Tag } from "lucide-react";
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title:

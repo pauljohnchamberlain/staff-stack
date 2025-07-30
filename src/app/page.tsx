@@ -1,11 +1,12 @@
 // Remove the problematic import
 // import { HowItWorksSection } from "@/components/sections/how-it-works";
+
+import { FileSearch, MonitorCheck, UserCheck, Users } from "lucide-react";
 import { CtaSection } from "@/components/sections/cta-section";
 import { Hero } from "@/components/sections/hero";
 import { ServiceCategories } from "@/components/sections/service-categories";
 import { TestimonialsSection } from "@/components/sections/testimonials";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
-import { FileSearch, MonitorCheck, UserCheck, Users } from "lucide-react";
 
 // Create a simpler version of the component directly in this file
 function SimpleHowItWorksSection() {

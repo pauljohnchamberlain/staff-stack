@@ -1,7 +1,5 @@
 "use client";
 
-import { ServiceCategories } from "@/components/sections/service-categories";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -15,6 +13,8 @@ import {
   Paintbrush,
 } from "lucide-react";
 import Link from "next/link";
+import { ServiceCategories } from "@/components/sections/service-categories";
+import { Button } from "@/components/ui/button";
 
 const categories = [
   {

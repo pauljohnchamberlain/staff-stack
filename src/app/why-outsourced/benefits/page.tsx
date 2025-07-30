@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import {
   BadgeCheck,
   Building2,
@@ -10,6 +8,8 @@ import {
   Search,
   Users2,
 } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const metadata = {
   title: "Benefits of Outsourcing | Staff Stack",

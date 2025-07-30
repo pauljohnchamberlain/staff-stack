@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const metadata = {
   title: "Great Place to Work | Staff Stack",

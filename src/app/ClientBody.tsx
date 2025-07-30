@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import { MainLayout } from "@/components/layout/main-layout";
 import { Toaster } from "@/components/ui/sonner";
-import { useEffect } from "react";
 
 export default function ClientBody({
   children,
