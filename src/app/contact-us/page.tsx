@@ -45,18 +45,20 @@ const locations = [
     city: "Manila Main Office",
     address: "25th Floor, One World Place, BGC, Taguig City, Philippines",
     phone: "+63 2 8791 7462",
-    email: "info@globalstaff.com",
+    email: "support@staffstack.co",
     hours: "Monday-Friday: 9AM-6PM PHT",
-    image: "https://ext.same-assets.com/2688779156/543602244.png",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&crop=center",
   },
   {
     id: "cebu",
     city: "Cebu Office",
     address: "15th Floor, Park Centrale Tower, IT Park, Cebu City, Philippines",
     phone: "+63 32 342 8765",
-    email: "cebu@globalstaff.com",
+    email: "support@staffstack.co",
     hours: "Monday-Friday: 9AM-6PM PHT",
-    image: "https://ext.same-assets.com/1379786756/1312885363.jpeg",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=center",
   },
 ];
 

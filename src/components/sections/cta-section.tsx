@@ -54,7 +54,7 @@ export function CtaSection() {
                         Email Us
                       </h3>
                       <p className="text-sm text-white/80 font-inter">
-                        info@staffstack.com
+                        support@staffstack.co
                       </p>
                     </div>
                   </div>

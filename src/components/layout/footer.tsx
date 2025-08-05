@@ -57,7 +57,7 @@ export function Footer() {
             <div className="space-y-2 text-slate-400 font-inter">
               <p>
                 <strong className="text-white font-lexend">Email:</strong>{" "}
-                info@staffstack.com
+                support@staffstack.co
               </p>
               <p>
                 <strong className="text-white font-lexend">Phone:</strong> +1

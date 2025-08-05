@@ -81,7 +81,7 @@ export default function PhilippinesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-lexend font-bold text-[#0f2c4a] mb-6">
-                The Philippines: Your Global Staffing Advantage
+                The Philippines: Your Staff Stack Advantage
               </h2>
               <p className="text-lg font-inter text-slate-700 mb-6">
                 For businesses looking to optimize operations while maintaining

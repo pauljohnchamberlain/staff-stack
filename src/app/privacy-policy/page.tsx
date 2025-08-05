@@ -253,7 +253,7 @@ export default function PrivacyPolicyPage() {
             <address>
               <strong>Staff Stack</strong>
               <br />
-              Email: privacy@staffstack.com
+              Email: support@staffstack.co
               <br />
               Phone: +1 (800) 123-4567
               <br />
