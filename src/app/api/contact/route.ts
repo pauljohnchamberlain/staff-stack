@@ -2,8 +2,6 @@ import { type NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Server-side validation schema (same as frontend)
 const contactFormSchema = z.object({
   fullName: z.string().min(2).max(100),
@@ -136,6 +134,9 @@ export async function POST(request: NextRequest) {
         { status: 500 },
       );
     }
+
+    // Initialize Resend with API key
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const fromEmail = process.env.CONTACT_EMAIL_FROM || "noreply@example.com";
     const toEmail = process.env.CONTACT_EMAIL_TO || "support@staffstack.co";
