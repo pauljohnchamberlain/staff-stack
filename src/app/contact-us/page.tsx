@@ -77,16 +77,51 @@ export default function ContactPage() {
     },
   });
 
-  function onSubmit(_data: z.infer<typeof contactFormSchema>) {
+  async function onSubmit(data: z.infer<typeof contactFormSchema>) {
     setIsSubmitting(true);
-    // In a real application, this would send the form data to your server
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast.success("Message sent successfully!", {
-        description: "We'll get back to you within 24 hours.",
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
-      form.reset();
-    }, 1500);
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Message sent successfully!", {
+          description:
+            result.message || "We'll get back to you within 24 hours.",
+        });
+        form.reset();
+      } else {
+        // Handle specific error cases
+        if (response.status === 429) {
+          toast.error("Too many requests", {
+            description: "Please wait a moment before submitting again.",
+          });
+        } else if (response.status === 400) {
+          toast.error("Invalid form data", {
+            description: "Please check your input and try again.",
+          });
+        } else {
+          toast.error("Failed to send message", {
+            description:
+              result.error || "Please try again or contact us directly.",
+          });
+        }
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast.error("Network error", {
+        description: "Please check your connection and try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
