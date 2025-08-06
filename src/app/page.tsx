@@ -1,7 +1,24 @@
-// Remove the problematic import
-// import { HowItWorksSection } from "@/components/sections/how-it-works";
-
+import type { Metadata } from "next";
 import { FileSearch, MonitorCheck, UserCheck, Users } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Offshore Staffing Philippines | Build Remote Teams | Staff Stack",
+  description:
+    "Build your dedicated remote team in the Philippines with Staff Stack. Access top IT developers, customer service, and admin professionals at 60% cost savings.",
+  keywords: [
+    "offshore staffing Philippines",
+    "remote team Philippines",
+    "hire Filipino developers",
+    "Philippines outsourcing",
+    "dedicated offshore team",
+    "IT outsourcing Philippines",
+  ],
+  openGraph: {
+    title: "Offshore Staffing Philippines | Build Remote Teams | Staff Stack",
+    description:
+      "Build your dedicated remote team in the Philippines with Staff Stack. Access top IT developers, customer service, and admin professionals at 60% cost savings.",
+  },
+};
 import { CtaSection } from "@/components/sections/cta-section";
 import { Hero } from "@/components/sections/hero";
 import { ServiceCategories } from "@/components/sections/service-categories";

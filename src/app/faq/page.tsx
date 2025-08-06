@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Frequently Asked Questions | Offshore Staffing",
   description:
     "Find answers to common questions about offshore staffing with Staff Stack. Learn about our processes, benefits, and how to get started.",
+  openGraph: {
+    title: "FAQ - Offshore Staffing Questions | Staff Stack",
+    description:
+      "Get answers to common questions about hiring offshore teams in the Philippines.",
+  },
 };
 
 export default function FAQPage() {
@@ -144,168 +150,193 @@ export default function FAQPage() {
     },
   ];
 
+  // Generate FAQ schema for all questions
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqCategories.flatMap((category) =>
+      category.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    ),
+  };
+
   return (
-    <main className="pt-28">
-      {/* Hero Section */}
-      <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
-        <div className="container mx-auto">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-xl md:text-2xl font-lexend font-light max-w-3xl">
-              Find answers to common questions about offshore staffing with
-              Staff Stack
-            </p>
+    <>
+      {/* FAQ Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      <main className="pt-28">
+        {/* Hero Section */}
+        <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
+          <div className="container mx-auto">
+            <div className="max-w-4xl">
+              <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
+                Frequently Asked Questions
+              </h1>
+              <p className="text-xl md:text-2xl font-lexend font-light max-w-3xl">
+                Find answers to common questions about offshore staffing with
+                Staff Stack
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Categories Navigation Section */}
-      <section className="bg-white border-b border-slate-200 sticky top-28 z-20">
-        <div className="container mx-auto py-4">
-          <div className="flex flex-wrap gap-4 justify-center">
-            {faqCategories.map((category) => (
-              <a
-                key={category.title}
-                href={`#${category.title.toLowerCase().replace(/\s+/g, "-")}`}
-                className="px-4 py-2 bg-slate-50 hover:bg-slate-100 text-[#0f2c4a] rounded-full font-medium text-sm transition-colors"
-              >
-                {category.title}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Content Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto">
-            {faqCategories.map((category) => (
-              <div
-                key={category.title}
-                id={category.title.toLowerCase().replace(/\s+/g, "-")}
-                className="mb-20 scroll-mt-40"
-              >
-                <h2 className="text-3xl font-lexend font-bold text-[#0f2c4a] mb-6 pb-2 border-b border-slate-200">
+        {/* Categories Navigation Section */}
+        <section className="bg-white border-b border-slate-200 sticky top-28 z-20">
+          <div className="container mx-auto py-4">
+            <div className="flex flex-wrap gap-4 justify-center">
+              {faqCategories.map((category) => (
+                <a
+                  key={category.title}
+                  href={`#${category.title.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="px-4 py-2 bg-slate-50 hover:bg-slate-100 text-[#0f2c4a] rounded-full font-medium text-sm transition-colors"
+                >
                   {category.title}
-                </h2>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
 
-                <div className="space-y-8">
-                  {category.faqs.map((faq) => (
-                    <div
-                      key={faq.question}
-                      className="bg-slate-50 rounded-xl p-6 border border-slate-100"
-                    >
-                      <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
-                        {faq.question}
-                      </h3>
-                      <div className="text-slate-700 space-y-4">
-                        {faq.answer.split("\n\n").map((paragraph) => (
-                          <p key={paragraph.slice(0, 50)}>{paragraph}</p>
-                        ))}
+        {/* FAQ Content Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto">
+            <div className="max-w-4xl mx-auto">
+              {faqCategories.map((category) => (
+                <div
+                  key={category.title}
+                  id={category.title.toLowerCase().replace(/\s+/g, "-")}
+                  className="mb-20 scroll-mt-40"
+                >
+                  <h2 className="text-3xl font-lexend font-bold text-[#0f2c4a] mb-6 pb-2 border-b border-slate-200">
+                    {category.title}
+                  </h2>
+
+                  <div className="space-y-8">
+                    {category.faqs.map((faq) => (
+                      <div
+                        key={faq.question}
+                        className="bg-slate-50 rounded-xl p-6 border border-slate-100"
+                      >
+                        <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
+                          {faq.question}
+                        </h3>
+                        <div className="text-slate-700 space-y-4">
+                          {faq.answer.split("\n\n").map((paragraph) => (
+                            <p key={paragraph.slice(0, 50)}>{paragraph}</p>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              <div className="bg-[#0f2c4a]/5 p-8 rounded-xl text-center mt-12">
+                <h3 className="text-2xl font-lexend font-bold text-[#0f2c4a] mb-4">
+                  Still have questions?
+                </h3>
+                <p className="text-lg text-slate-700 mb-6 max-w-2xl mx-auto">
+                  Our team is ready to help you understand how offshore staffing
+                  can benefit your business and answer any specific questions
+                  you may have.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    size="lg"
+                    className="bg-[#e60b8a] hover:bg-[#e60b8a]/90 text-white font-lexend"
+                    asChild
+                  >
+                    <Link href="/contact-us">Contact Us</Link>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-[#09d8f5] text-[#0f2c4a] hover:bg-[#09d8f5]/10 font-lexend"
+                    asChild
+                  >
+                    <Link href="/how-it-works">Learn More</Link>
+                  </Button>
                 </div>
               </div>
-            ))}
+            </div>
+          </div>
+        </section>
 
-            <div className="bg-[#0f2c4a]/5 p-8 rounded-xl text-center mt-12">
-              <h3 className="text-2xl font-lexend font-bold text-[#0f2c4a] mb-4">
-                Still have questions?
-              </h3>
-              <p className="text-lg text-slate-700 mb-6 max-w-2xl mx-auto">
-                Our team is ready to help you understand how offshore staffing
-                can benefit your business and answer any specific questions you
-                may have.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="bg-[#e60b8a] hover:bg-[#e60b8a]/90 text-white font-lexend"
-                  asChild
-                >
-                  <Link href="/contact-us">Contact Us</Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-[#09d8f5] text-[#0f2c4a] hover:bg-[#09d8f5]/10 font-lexend"
-                  asChild
-                >
-                  <Link href="/how-it-works">Learn More</Link>
-                </Button>
+        {/* Related Resources Section */}
+        <section className="py-16 bg-slate-50">
+          <div className="container mx-auto">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-lexend font-bold text-[#0f2c4a] mb-10 text-center">
+                Related Resources
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-white p-6 rounded-xl shadow-xs border border-slate-100">
+                  <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
+                    How It Works
+                  </h3>
+                  <p className="text-slate-700 mb-4">
+                    Learn about our end-to-end process for building and managing
+                    your offshore team.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="w-full border-[#09d8f5] text-[#0f2c4a] hover:bg-[#09d8f5]/10 font-medium"
+                    asChild
+                  >
+                    <Link href="/how-it-works">Explore Process</Link>
+                  </Button>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl shadow-xs border border-slate-100">
+                  <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
+                    Roles We Staff
+                  </h3>
+                  <p className="text-slate-700 mb-4">
+                    Browse the wide range of positions and skill sets available
+                    for your offshore team.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="w-full border-[#09d8f5] text-[#0f2c4a] hover:bg-[#09d8f5]/10 font-medium"
+                    asChild
+                  >
+                    <Link href="/roles">View Roles</Link>
+                  </Button>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl shadow-xs border border-slate-100">
+                  <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
+                    Client Testimonials
+                  </h3>
+                  <p className="text-slate-700 mb-4">
+                    Read success stories from businesses that have partnered
+                    with Staff Stack.
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="w-full border-[#09d8f5] text-[#0f2c4a] hover:bg-[#09d8f5]/10 font-medium"
+                    asChild
+                  >
+                    <Link href="/about/testimonials">Read Stories</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Related Resources Section */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-lexend font-bold text-[#0f2c4a] mb-10 text-center">
-              Related Resources
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-xs border border-slate-100">
-                <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
-                  How It Works
-                </h3>
-                <p className="text-slate-700 mb-4">
-                  Learn about our end-to-end process for building and managing
-                  your offshore team.
-                </p>
-                <Button
-                  variant="outline"
-                  className="w-full border-[#09d8f5] text-[#0f2c4a] hover:bg-[#09d8f5]/10 font-medium"
-                  asChild
-                >
-                  <Link href="/how-it-works">Explore Process</Link>
-                </Button>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-xs border border-slate-100">
-                <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
-                  Roles We Staff
-                </h3>
-                <p className="text-slate-700 mb-4">
-                  Browse the wide range of positions and skill sets available
-                  for your offshore team.
-                </p>
-                <Button
-                  variant="outline"
-                  className="w-full border-[#09d8f5] text-[#0f2c4a] hover:bg-[#09d8f5]/10 font-medium"
-                  asChild
-                >
-                  <Link href="/roles">View Roles</Link>
-                </Button>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-xs border border-slate-100">
-                <h3 className="text-xl font-lexend font-semibold text-[#0f2c4a] mb-3">
-                  Client Testimonials
-                </h3>
-                <p className="text-slate-700 mb-4">
-                  Read success stories from businesses that have partnered with
-                  Staff Stack.
-                </p>
-                <Button
-                  variant="outline"
-                  className="w-full border-[#09d8f5] text-[#0f2c4a] hover:bg-[#09d8f5]/10 font-medium"
-                  asChild
-                >
-                  <Link href="/about/testimonials">Read Stories</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 }

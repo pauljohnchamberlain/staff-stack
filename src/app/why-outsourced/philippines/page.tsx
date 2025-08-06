@@ -3,9 +3,23 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
-  title: "Why Choose The Philippines | Staff Stack",
+  title: "Why Philippines for Offshore Staffing | Best Location | Staff Stack",
   description:
-    "Discover why the Philippines is the ideal offshore staffing destination with Staff Stack. Learn about the advantages of Filipino talent.",
+    "Discover why the Philippines is the world's top offshore staffing destination. 92% English proficiency, cultural alignment, and exceptional talent pool.",
+  keywords: [
+    "Philippines offshore staffing",
+    "why Philippines outsourcing",
+    "Filipino talent advantages",
+    "Philippines business advantages",
+    "offshore staffing location",
+    "best outsourcing destination",
+  ],
+  openGraph: {
+    title:
+      "Why Philippines for Offshore Staffing | Best Location | Staff Stack",
+    description:
+      "Discover why the Philippines is the world's top offshore staffing destination. 92% English proficiency, cultural alignment, and exceptional talent pool.",
+  },
 };
 
 export default function PhilippinesPage() {

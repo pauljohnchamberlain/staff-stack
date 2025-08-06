@@ -1,6 +1,26 @@
 "use client";
 
+import type { Metadata } from "next";
 import { motion } from "framer-motion";
+
+export const metadata: Metadata = {
+  title: "About Staff Stack | Leading Offshore Staffing Provider Philippines",
+  description:
+    "Learn about Staff Stack's mission to help businesses build exceptional remote teams in the Philippines. Trusted by companies worldwide since 2015.",
+  keywords: [
+    "about Staff Stack",
+    "offshore staffing company",
+    "Philippines staffing provider",
+    "remote team solutions",
+    "offshore staffing expertise",
+    "Staff Stack history",
+  ],
+  openGraph: {
+    title: "About Staff Stack | Leading Offshore Staffing Provider Philippines",
+    description:
+      "Learn about Staff Stack's mission to help businesses build exceptional remote teams in the Philippines. Trusted by companies worldwide since 2015.",
+  },
+};
 import {
   ArrowRight,
   BadgeCheck,
