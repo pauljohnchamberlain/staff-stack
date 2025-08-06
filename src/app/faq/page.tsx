@@ -1,19 +1,27 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Offshore Staffing",
-  description:
-    "Find answers to common questions about offshore staffing with Staff Stack. Learn about our processes, benefits, and how to get started.",
-  openGraph: {
-    title: "FAQ - Offshore Staffing Questions | Staff Stack",
-    description:
-      "Get answers to common questions about hiring offshore teams in the Philippines.",
-  },
-};
 
 export default function FAQPage() {
+  // Breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://staffstack.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "FAQ",
+        item: "https://staffstack.com/faq",
+      },
+    ],
+  };
+
   const faqCategories = [
     {
       title: "Getting Started",
@@ -168,6 +176,13 @@ export default function FAQPage() {
 
   return (
     <>
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       {/* FAQ Schema for SEO */}
       <script
         type="application/ld+json"

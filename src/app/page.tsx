@@ -73,8 +73,28 @@ function SimpleHowItWorksSection() {
 }
 
 export default function Home() {
+  // Breadcrumb schema for homepage
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://staffstack.com",
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       <Hero />
       <WhyChooseUs />
       <ServiceCategories />

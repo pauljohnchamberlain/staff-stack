@@ -41,6 +41,32 @@ export const metadata: Metadata = {
 };
 
 export default function ManilaLocationPage() {
+  // Breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://staffstack.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Locations",
+        item: "https://staffstack.com/locations",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Manila",
+        item: "https://staffstack.com/locations/manila",
+      },
+    ],
+  };
+
   const manilaStats = {
     population: "13.5 million",
     timeZone: "GMT+8 (Philippine Standard Time)",
@@ -181,6 +207,13 @@ export default function ManilaLocationPage() {
 
   return (
     <>
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       {/* LocalBusiness Schema for Manila */}
       <script
         type="application/ld+json"

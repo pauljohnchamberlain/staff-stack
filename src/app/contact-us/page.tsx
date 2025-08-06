@@ -65,6 +65,26 @@ const locations = [
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://staffstack.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact Us",
+        item: "https://staffstack.com/contact-us",
+      },
+    ],
+  };
+
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -126,6 +146,12 @@ export default function ContactPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       <section className="pt-16 pb-16 bg-linear-to-r from-brand-dark via-brand to-brand-light text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
           <motion.div

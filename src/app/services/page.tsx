@@ -110,8 +110,34 @@ const categories = [
 ];
 
 export default function ServicesPage() {
+  // Breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://staffstack.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://staffstack.com/services",
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       <section className="pt-16 pb-16 md:pb-24 bg-linear-to-r from-brand-dark via-brand to-brand-light text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
           <motion.div

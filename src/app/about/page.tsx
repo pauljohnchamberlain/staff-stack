@@ -111,8 +111,34 @@ export default function AboutPage() {
     visible: { opacity: 1, y: 0 },
   };
 
+  // Breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://staffstack.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: "https://staffstack.com/about",
+      },
+    ],
+  };
+
   return (
     <main className="flex-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       {/* About Hero Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-linear-to-b from-slate-50 to-white">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
