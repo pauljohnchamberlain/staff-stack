@@ -39,7 +39,6 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
   
   // TODO: Fix these in production for better code quality
   typescript: {
