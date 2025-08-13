@@ -11,7 +11,6 @@ import { Badge } from "@/components/ui/badge";
 import {
   MapPin,
   Phone,
-  Mail,
   Clock,
   Users,
   Briefcase,
@@ -382,7 +381,7 @@ export default function DavaoLocationPage() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {davaoAdvantages.map((advantage, index) => (
-                  <div key={index} className="text-center">
+                  <div key={advantage.title} className="text-center">
                     <div className="w-16 h-16 bg-[#e60b8a]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <span className="text-2xl font-bold text-[#e60b8a]">
                         {index + 1}
