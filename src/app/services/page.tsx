@@ -229,7 +229,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="service-categories" className="py-16 bg-background">
+      {/* biome-ignore lint/correctness/useUniqueElementIds: This is a server component with unique ID */}
+      <section id="services-categories" className="py-16 bg-background">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <motion.h2

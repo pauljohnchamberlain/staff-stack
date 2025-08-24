@@ -47,7 +47,8 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <section className="py-16 bg-white" id="how-it-works">
+    // biome-ignore lint/correctness/useUniqueElementIds: This is a server component with unique ID
+    <section className="py-16 bg-white" id="component-how-it-works">
       <div className="container">
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <h2 className="text-3xl font-lexend font-bold mb-4">How It Works</h2>

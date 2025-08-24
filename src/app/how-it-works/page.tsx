@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowRight,
   BarChart3,
@@ -10,9 +12,9 @@ import {
   UserCheck,
   Users,
 } from "lucide-react";
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useId } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -23,13 +25,11 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
-export const metadata: Metadata = {
-  title: "How It Works | Staff Stack",
-  description:
-    "Learn the simple process of building your remote team in the Philippines with Staff Stack - from recruitment to ongoing management.",
-};
 
 export default function HowItWorksPage() {
+  const processId = useId();
+  const howItWorksId = useId();
+
   return (
     <>
       <section className="pt-24 pb-12 bg-linear-to-b from-sky-50 to-background">
@@ -134,8 +134,8 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <div id="process">
-        <section className="py-16 bg-white" id="how-it-works">
+      <div id={processId}>
+        <section className="py-16 bg-white" id={howItWorksId}>
           <div className="container">
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-4">How It Works</h2>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useId } from "react";
 import {
   ArrowRight,
   BadgeCheck,
@@ -96,6 +97,12 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const storyId = useId();
+  const valuesId = useId();
+  const teamId = useId();
+  const locationsId = useId();
+  const whyChooseUsId = useId();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -189,7 +196,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section id="our-story" className="py-16 bg-white">
+      <section id={storyId} className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -254,7 +261,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Core Values */}
-      <section id="our-values" className="py-16 bg-muted/30">
+      <section id={valuesId} className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -298,7 +305,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section id="our-team" className="py-16 bg-slate-50">
+      <section id={teamId} className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Leadership Team</h2>
@@ -348,7 +355,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Locations */}
-      <section id="our-locations" className="py-16 bg-muted/30">
+      <section id={locationsId} className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -417,7 +424,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section id="why-choose-us" className="py-16 bg-white">
+      <section id={whyChooseUsId} className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <motion.h2
