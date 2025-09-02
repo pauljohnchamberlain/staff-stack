@@ -360,55 +360,9 @@ export default function Layout({ children }) {
 }
 ```
 
-### 6. Google Analytics 4 Setup (20 minutes)
+### 6. Google Analytics 4 Setup (REMOVED)
 
-Create `/src/components/GoogleAnalytics.tsx`:
-
-```typescript
-'use client';
-
-import Script from 'next/script';
-
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with your GA4 ID
-
-export default function GoogleAnalytics() {
-  return (
-    <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}', {
-            page_path: window.location.pathname,
-          });
-        `}
-      </Script>
-    </>
-  );
-}
-```
-
-Add to your root layout:
-
-```typescript
-import GoogleAnalytics from '@/components/GoogleAnalytics';
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body>
-        <GoogleAnalytics />
-        {children}
-      </body>
-    </html>
-  );
-}
-```
+**Note:** Google Analytics tracking code has been removed from the application upon user request.
 
 ### 7. Fix Image Optimization (10 minutes)
 

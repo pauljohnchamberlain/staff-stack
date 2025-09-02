@@ -101,29 +101,9 @@ export const metadata: Metadata = {
 };
 ```
 
-## 4. Google Analytics Quick Setup (5 minutes)
+## 4. Google Analytics Quick Setup (REMOVED)
 
-**File:** `/src/app/layout.tsx` (add to head)
-
-```typescript
-import Script from 'next/script'
-
-// In your layout component, add:
-<>
-  <Script
-    src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-    strategy="afterInteractive"
-  />
-  <Script id="google-analytics" strategy="afterInteractive">
-    {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    `}
-  </Script>
-</>
-```
+**Note:** Google Analytics tracking code has been removed from the application upon user request.
 
 ## 5. Fix Image Optimization (2 minutes)
 

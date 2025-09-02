@@ -25,7 +25,6 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
-
 export default function HowItWorksPage() {
   const processId = useId();
   const howItWorksId = useId();
