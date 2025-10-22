@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // NOTE: cacheComponents disabled for now - requires refactoring to add Suspense boundaries
+  // Error: "Uncached data was accessed outside of <Suspense>" in /blog/[id] route
+  // TODO: Wrap data fetching in Suspense boundaries to enable cacheComponents
+  // cacheComponents: true,
+
+  // Enable View Transitions
+  experimental: {
+    viewTransition: true,
+  },
+
   images: {
     // Image optimization enabled for better SEO and performance
     formats: ['image/avif', 'image/webp'],
