@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -24,14 +24,22 @@ export function Hero() {
   };
 
   const benefitItems = [
-    { id: "cost", text: "Up to 70% cost savings compared to local hires" },
-    { id: "language", text: "English-fluent, college-educated professionals" },
     {
-      id: "dedicated",
-      text: "Dedicated full-time team members, not contractors",
+      id: "certified",
+      text: "StackCertified operators pass role-specific tests before placement",
     },
-    { id: "quality", text: "ISO-certified quality assurance process" },
-    { id: "infrastructure", text: "Fully managed office infrastructure" },
+    {
+      id: "speed",
+      text: "Ready in 7 days with 14-day replacement guarantee",
+    },
+    {
+      id: "systems",
+      text: "Weekly KPI reviews + QA checklists + SOP library included",
+    },
+    {
+      id: "ai",
+      text: "AI workflow proof: every hire demonstrates prompt-to-deliverable competence",
+    },
   ];
 
   return (
@@ -44,20 +52,29 @@ export function Hero() {
             animate="visible"
             variants={containerVariants}
           >
-            <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-lexend font-bold"
+            <motion.div
+              className="inline-flex items-center gap-2 bg-brand-accent/20 px-4 py-2 rounded-full"
               variants={itemVariants}
             >
-              Build Your <span className="text-brand-accent">Offshore</span>{" "}
-              Team in the Philippines
+              <Sparkles className="h-4 w-4 text-brand-accent" />
+              <span className="text-sm font-medium font-inter">
+                AI-Native Certified Staff
+              </span>
+            </motion.div>
+
+            <motion.h1
+              className="text-4xl sm:text-5xl lg:text-6xl font-lexend font-bold leading-tight"
+              variants={itemVariants}
+            >
+              Stop hiring satisfactory.{" "}
+              <span className="text-brand-accent">Hire operators who ship.</span>
             </motion.h1>
             <motion.p
               className="text-lg sm:text-xl opacity-90 max-w-xl font-inter"
               variants={itemVariants}
             >
-              Access top Filipino talent to reduce costs while maintaining
-              quality. Staff Stack provides dedicated remote professionals with
-              all the infrastructure handled for you.
+              AI-native delivery staff for agencies — onboarded, tested, and
+              ready in 7 days. More client capacity without more chaos.
             </motion.p>
 
             <motion.div
@@ -69,7 +86,7 @@ export function Hero() {
                 className="bg-brand-accent hover:bg-brand-accent/90 text-white font-lexend font-medium"
                 asChild
               >
-                <Link href="/contact-us">Get Started Today</Link>
+                <Link href="/contact-us">Get Your First Operator</Link>
               </Button>
               <Button
                 variant="outline"
@@ -77,13 +94,13 @@ export function Hero() {
                 className="bg-transparent border-white text-white hover:bg-white/10 font-lexend font-medium"
                 asChild
               >
-                <Link href="/services">Explore Services</Link>
+                <Link href="/stackcertified">See StackCertified Process</Link>
               </Button>
             </motion.div>
 
             <motion.div variants={itemVariants}>
               <h3 className="text-lg font-lexend font-medium mb-3">
-                Why Companies Choose Us:
+                Why Agencies Choose Staff Stack:
               </h3>
               <ul className="space-y-2">
                 {benefitItems.map((item) => (
@@ -110,11 +127,10 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            {/* Replace with the new team illustration image */}
             <div className="relative bg-white/10 backdrop-blur-xs rounded-2xl p-8 shadow-lg">
               <Image
-                src="/images/team-illustration.png"
-                alt="Staff Stack Team Illustration"
+                src="/images/staff-stack-hero.png"
+                alt="Staff Stack AI-Native Operators"
                 width={600}
                 height={450}
                 className="w-full h-auto object-contain"
@@ -123,14 +139,14 @@ export function Hero() {
               />
               <div className="absolute bottom-8 left-0 right-0 mx-auto max-w-[90%] bg-white/90 rounded-lg p-4 text-brand-dark text-center backdrop-blur-xs shadow-lg">
                 <p className="font-lexend font-medium text-sm mb-2">
-                  Join 250+ companies with staff in the Philippines
+                  Built for Retention, Paid Media & Shopify Agencies
                 </p>
                 <div className="flex justify-center gap-1 text-xs text-muted-foreground font-inter">
-                  <span>Customer Support</span>
+                  <span>Klaviyo Ops</span>
                   <span>•</span>
-                  <span>Software Development</span>
+                  <span>Media Buying</span>
                   <span>•</span>
-                  <span>Admin</span>
+                  <span>Shopify Dev</span>
                 </div>
               </div>
             </div>
