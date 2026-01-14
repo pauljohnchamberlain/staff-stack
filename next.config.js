@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  allowedDevOrigins: ['staff-stack.kaizenbrands.com'],
   // NOTE: cacheComponents disabled for now - requires refactoring to add Suspense boundaries
   // Error: "Uncached data was accessed outside of <Suspense>" in /blog/[id] route
   // TODO: Wrap data fetching in Suspense boundaries to enable cacheComponents
