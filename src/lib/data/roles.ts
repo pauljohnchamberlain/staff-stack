@@ -1,293 +1,418 @@
-export type ExperienceLevel = "Junior" | "Intermediate" | "Senior";
+export type AgencyVertical = "retention" | "paid-media" | "shopify";
 
-export interface RoleCost {
-  hireOnshore: number;
-  hireWithStaffStack: number;
+export interface RoleSkill {
+  name: string;
+  category: "platform" | "technical" | "process";
+}
+
+export interface CertificationTask {
+  description: string;
+  timeLimit?: string;
 }
 
 export interface RoleData {
   id: string;
-  name: string;
-  costs: Record<ExperienceLevel, RoleCost>;
-  description?: string;
+  title: string;
+  vertical: AgencyVertical;
+  description: string;
+  skills: RoleSkill[];
+  certificationTasks: CertificationTask[];
+  stackCertified: boolean;
 }
 
-export const experienceLevels: ExperienceLevel[] = [
-  "Junior",
-  "Intermediate",
-  "Senior",
+export const agencyVerticals: { id: AgencyVertical; name: string; color: string }[] = [
+  { id: "retention", name: "Retention & Klaviyo", color: "purple" },
+  { id: "paid-media", name: "Paid Media Ops", color: "blue" },
+  { id: "shopify", name: "Shopify Dev", color: "green" },
 ];
 
-// Placeholder data - replace with actual data later
 export const availableRoles: RoleData[] = [
+  // Retention & Klaviyo Roles
   {
-    id: "amazon-fba",
-    name: "Amazon FBA Specialist",
+    id: "klaviyo-email-builder",
+    title: "Klaviyo Email Builder",
+    vertical: "retention",
     description:
-      "Manages Amazon FBA accounts, listings, inventory, and advertising campaigns.",
-    costs: {
-      Junior: { hireOnshore: 4500, hireWithStaffStack: 1500 },
-      Intermediate: { hireOnshore: 5655, hireWithStaffStack: 1958 },
-      Senior: { hireOnshore: 7000, hireWithStaffStack: 2500 },
-    },
+      "Build flows, campaigns, and segments in Klaviyo. Template development, A/B tests, automation setup.",
+    skills: [
+      { name: "Klaviyo", category: "platform" },
+      { name: "HTML/CSS", category: "technical" },
+      { name: "Liquid", category: "technical" },
+      { name: "A/B Testing", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Build a 3-email abandoned cart flow in Klaviyo", timeLimit: "45 min" },
+      { description: "Create a segment based on purchase behavior" },
+      { description: "Set up an A/B test for subject lines" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "web-dev",
-    name: "Web Developer",
+    id: "email-designer",
+    title: "Email Designer",
+    vertical: "retention",
     description:
-      "Develops and maintains websites and web applications using various technologies.",
-    costs: {
-      Junior: { hireOnshore: 5000, hireWithStaffStack: 1800 },
-      Intermediate: { hireOnshore: 6500, hireWithStaffStack: 2200 },
-      Senior: { hireOnshore: 8000, hireWithStaffStack: 3000 },
-    },
+      "Transform Figma designs into pixel-perfect emails. Responsive layouts, dark mode, accessibility.",
+    skills: [
+      { name: "Figma", category: "platform" },
+      { name: "Email HTML", category: "technical" },
+      { name: "Responsive Design", category: "technical" },
+      { name: "Dark Mode", category: "technical" },
+    ],
+    certificationTasks: [
+      { description: "Convert a Figma design to responsive email HTML", timeLimit: "60 min" },
+      { description: "Implement dark mode support for an email template" },
+      { description: "Optimize email for mobile rendering" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "graphic-designer",
-    name: "Graphic Designer",
+    id: "email-qa-specialist",
+    title: "QA Specialist",
+    vertical: "retention",
     description:
-      "Creates visual concepts, using computer software or by hand, to communicate ideas.",
-    costs: {
-      Junior: { hireOnshore: 4000, hireWithStaffStack: 1400 },
-      Intermediate: { hireOnshore: 5200, hireWithStaffStack: 1800 },
-      Senior: { hireOnshore: 6500, hireWithStaffStack: 2300 },
-    },
+      "Links, rendering, UTMs, copy review, inbox testing. Catch errors before they reach inboxes.",
+    skills: [
+      { name: "Litmus/Email on Acid", category: "platform" },
+      { name: "UTM Auditing", category: "process" },
+      { name: "Rendering QA", category: "process" },
+      { name: "Copy QA", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "QA audit an email campaign: find 10+ issues", timeLimit: "30 min" },
+      { description: "Create a comprehensive QA checklist" },
+      { description: "Test and document email rendering across 10 clients" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "virtual-assistant",
-    name: "Virtual Assistant",
+    id: "email-copywriter",
+    title: "Copywriter",
+    vertical: "retention",
     description:
-      "Provides administrative, technical, or creative assistance to clients remotely.",
-    costs: {
-      Junior: { hireOnshore: 3500, hireWithStaffStack: 1200 },
-      Intermediate: { hireOnshore: 4500, hireWithStaffStack: 1600 },
-      Senior: { hireOnshore: 5500, hireWithStaffStack: 2000 },
-    },
+      "Subject lines, preview text, body copy, CTAs. Conversion-focused writing for email and SMS.",
+    skills: [
+      { name: "Email Copy", category: "technical" },
+      { name: "SMS Copy", category: "technical" },
+      { name: "A/B Headlines", category: "process" },
+      { name: "Conversion Copy", category: "technical" },
+    ],
+    certificationTasks: [
+      { description: "Write 10 subject line variants for A/B testing" },
+      { description: "Create email body copy for a product launch" },
+      { description: "Write SMS campaign copy within character limits" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "accountant",
-    name: "Accountant",
+    id: "flow-strategist",
+    title: "Flow Strategist",
+    vertical: "retention",
     description:
-      "Prepares and examines financial records, ensuring accuracy and compliance.",
-    costs: {
-      Junior: { hireOnshore: 5500, hireWithStaffStack: 1900 },
-      Intermediate: { hireOnshore: 7000, hireWithStaffStack: 2400 },
-      Senior: { hireOnshore: 9000, hireWithStaffStack: 3200 },
-    },
+      "Design and optimize automated flows: welcome, abandon, post-purchase, win-back, and more.",
+    skills: [
+      { name: "Flow Architecture", category: "process" },
+      { name: "Segmentation", category: "process" },
+      { name: "Timing Optimization", category: "process" },
+      { name: "Revenue Attribution", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Design a post-purchase flow with 5+ touchpoints" },
+      { description: "Optimize flow timing based on engagement data" },
+      { description: "Create a win-back flow strategy document" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "bookkeeper",
-    name: "Bookkeeper",
+    id: "sms-specialist",
+    title: "SMS Specialist",
+    vertical: "retention",
     description:
-      "Records daily financial transactions and manages financial data entry.",
-    costs: {
-      Junior: { hireOnshore: 4200, hireWithStaffStack: 1450 },
-      Intermediate: { hireOnshore: 5300, hireWithStaffStack: 1850 },
-      Senior: { hireOnshore: 6800, hireWithStaffStack: 2350 },
-    },
+      "SMS campaign management, compliance, segmentation, and performance optimization.",
+    skills: [
+      { name: "SMS Platforms", category: "platform" },
+      { name: "Compliance", category: "process" },
+      { name: "Segmentation", category: "process" },
+      { name: "Performance", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Set up an SMS campaign with proper compliance" },
+      { description: "Create SMS segments based on engagement" },
+      { description: "Analyze and report on SMS performance metrics" },
+    ],
+    stackCertified: true,
+  },
+
+  // Paid Media Ops Roles
+  {
+    id: "ad-ops-assistant",
+    title: "Ad Ops Assistant",
+    vertical: "paid-media",
+    description:
+      "Campaign setup, audience building, budget management, and day-to-day ad account maintenance.",
+    skills: [
+      { name: "Meta Ads", category: "platform" },
+      { name: "Google Ads", category: "platform" },
+      { name: "TikTok Ads", category: "platform" },
+      { name: "Campaign Setup", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Set up a Meta campaign with proper targeting", timeLimit: "45 min" },
+      { description: "Build custom audiences from customer data" },
+      { description: "Audit an ad account for optimization opportunities" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "customer-service-rep",
-    name: "Customer Service Representative",
+    id: "reporting-analyst",
+    title: "Reporting Analyst",
+    vertical: "paid-media",
     description:
-      "Handles customer inquiries, complaints, and provides information about products/services.",
-    costs: {
-      Junior: { hireOnshore: 3800, hireWithStaffStack: 1300 },
-      Intermediate: { hireOnshore: 4800, hireWithStaffStack: 1700 },
-      Senior: { hireOnshore: 6000, hireWithStaffStack: 2100 },
-    },
+      "Build dashboards, automate reports, and deliver insights. Looker, Sheets, Data Studio expertise.",
+    skills: [
+      { name: "Looker Studio", category: "platform" },
+      { name: "Google Sheets", category: "platform" },
+      { name: "Data Analysis", category: "technical" },
+      { name: "Automation", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Build a client dashboard in Looker Studio from raw data", timeLimit: "60 min" },
+      { description: "Create automated reporting templates in Sheets" },
+      { description: "Analyze campaign data and deliver insights report" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "data-entry-specialist",
-    name: "Data Entry Specialist",
+    id: "creative-editor",
+    title: "Creative Editor",
+    vertical: "paid-media",
     description:
-      "Enters and updates data into databases and computer systems accurately and efficiently.",
-    costs: {
-      Junior: { hireOnshore: 3200, hireWithStaffStack: 1100 },
-      Intermediate: { hireOnshore: 4000, hireWithStaffStack: 1400 },
-      Senior: { hireOnshore: 5000, hireWithStaffStack: 1800 },
-    },
+      "Produce ad variants, hook variations, and creative iterations at scale. Fast turnaround.",
+    skills: [
+      { name: "Video Editing", category: "technical" },
+      { name: "Static Ads", category: "technical" },
+      { name: "Variant Creation", category: "process" },
+      { name: "Hook Testing", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Create 10 ad variants from a single hero creative", timeLimit: "60 min" },
+      { description: "Edit hook variations for video ads" },
+      { description: "Resize creatives for multiple placements" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "digital-marketer",
-    name: "Digital Marketer",
+    id: "utm-pixel-specialist",
+    title: "UTM & Pixel Specialist",
+    vertical: "paid-media",
     description:
-      "Develops and implements online marketing strategies including SEO, SEM, and social media.",
-    costs: {
-      Junior: { hireOnshore: 5200, hireWithStaffStack: 1850 },
-      Intermediate: { hireOnshore: 6800, hireWithStaffStack: 2350 },
-      Senior: { hireOnshore: 8500, hireWithStaffStack: 3100 },
-    },
+      "Attribution setup, pixel configuration, conversion tracking, and debugging.",
+    skills: [
+      { name: "UTM Strategy", category: "process" },
+      { name: "Meta Pixel", category: "platform" },
+      { name: "GA4", category: "platform" },
+      { name: "Conversion API", category: "technical" },
+    ],
+    certificationTasks: [
+      { description: "Debug a broken conversion tracking setup", timeLimit: "45 min" },
+      { description: "Implement Conversion API for server-side tracking" },
+      { description: "Create a UTM naming convention document" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "seo-specialist",
-    name: "SEO Specialist",
+    id: "campaign-builder",
+    title: "Campaign Builder",
+    vertical: "paid-media",
     description:
-      "Optimizes websites and content to improve search engine rankings and visibility.",
-    costs: {
-      Junior: { hireOnshore: 4800, hireWithStaffStack: 1700 },
-      Intermediate: { hireOnshore: 6200, hireWithStaffStack: 2100 },
-      Senior: { hireOnshore: 7800, hireWithStaffStack: 2800 },
-    },
+      "Execute campaign builds from briefs: ad sets, targeting, creative upload, and launch.",
+    skills: [
+      { name: "Campaign Structure", category: "process" },
+      { name: "Audience Targeting", category: "process" },
+      { name: "Ad Formats", category: "technical" },
+      { name: "Launch QA", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Set up a campaign structure for a new client vertical", timeLimit: "60 min" },
+      { description: "Build audiences based on a creative brief" },
+      { description: "Launch and QA a multi-ad set campaign" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "social-media-manager",
-    name: "Social Media Manager",
+    id: "ga4-analyst",
+    title: "GA4 Analyst",
+    vertical: "paid-media",
     description:
-      "Manages social media presence, content creation, and engagement strategies.",
-    costs: {
-      Junior: { hireOnshore: 4500, hireWithStaffStack: 1600 },
-      Intermediate: { hireOnshore: 5800, hireWithStaffStack: 2000 },
-      Senior: { hireOnshore: 7200, hireWithStaffStack: 2600 },
-    },
+      "Google Analytics 4 setup, reporting, and analysis. Event tracking and custom reports.",
+    skills: [
+      { name: "GA4", category: "platform" },
+      { name: "Event Tracking", category: "technical" },
+      { name: "Custom Reports", category: "process" },
+      { name: "Attribution", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Set up custom event tracking in GA4" },
+      { description: "Create a conversion funnel report" },
+      { description: "Analyze attribution across channels" },
+    ],
+    stackCertified: true,
+  },
+
+  // Shopify Dev Roles
+  {
+    id: "shopify-developer",
+    title: "Shopify Developer",
+    vertical: "shopify",
+    description:
+      "Full Shopify development: theme customization, app integration, checkout extensions, and more.",
+    skills: [
+      { name: "Liquid", category: "technical" },
+      { name: "JavaScript", category: "technical" },
+      { name: "Shopify APIs", category: "platform" },
+      { name: "Theme Development", category: "technical" },
+    ],
+    certificationTasks: [
+      { description: "Fix a Shopify theme bug from a client ticket", timeLimit: "60 min" },
+      { description: "Build a custom Liquid section with metafield integration" },
+      { description: "Implement checkout customization" },
+    ],
+    stackCertified: true,
   },
   {
-    id: "content-writer",
-    name: "Content Writer",
+    id: "theme-specialist",
+    title: "Theme Specialist",
+    vertical: "shopify",
     description:
-      "Creates engaging and informative written content for websites, blogs, and marketing.",
-    costs: {
-      Junior: { hireOnshore: 4300, hireWithStaffStack: 1500 },
-      Intermediate: { hireOnshore: 5500, hireWithStaffStack: 1900 },
-      Senior: { hireOnshore: 7000, hireWithStaffStack: 2500 },
-    },
+      "Theme customization, section development, metafields setup, and design implementation.",
+    skills: [
+      { name: "Liquid", category: "technical" },
+      { name: "CSS", category: "technical" },
+      { name: "Theme Architecture", category: "technical" },
+      { name: "Metafields", category: "platform" },
+    ],
+    certificationTasks: [
+      { description: "Build a custom section with block settings" },
+      { description: "Implement metafields for product customization" },
+      { description: "Style a theme to match a design mockup" },
+    ],
+    stackCertified: true,
+  },
+  {
+    id: "shopify-qa-tester",
+    title: "QA Tester",
+    vertical: "shopify",
+    description:
+      "Cross-browser, mobile, checkout flow, and functionality testing. Bug documentation and regression.",
+    skills: [
+      { name: "Cross-browser QA", category: "process" },
+      { name: "Mobile Testing", category: "process" },
+      { name: "Checkout QA", category: "process" },
+      { name: "Bug Tracking", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "QA a checkout flow: document all issues found", timeLimit: "30 min" },
+      { description: "Test responsive layouts across devices" },
+      { description: "Create bug reports with reproduction steps" },
+    ],
+    stackCertified: true,
+  },
+  {
+    id: "support-developer",
+    title: "Support Developer",
+    vertical: "shopify",
+    description:
+      "Handle client support tickets, quick fixes, content updates, and maintenance tasks.",
+    skills: [
+      { name: "Ticket Management", category: "process" },
+      { name: "Quick Fixes", category: "technical" },
+      { name: "Client Communication", category: "process" },
+      { name: "Documentation", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Resolve 5 sample client tickets", timeLimit: "60 min" },
+      { description: "Document a solution for a common issue" },
+      { description: "Write client-facing update communication" },
+    ],
+    stackCertified: true,
+  },
+  {
+    id: "app-integration-specialist",
+    title: "App Integration Specialist",
+    vertical: "shopify",
+    description:
+      "App installation, configuration, custom integrations, and third-party connections.",
+    skills: [
+      { name: "App Setup", category: "process" },
+      { name: "API Integration", category: "technical" },
+      { name: "Webhooks", category: "technical" },
+      { name: "Custom Apps", category: "technical" },
+    ],
+    certificationTasks: [
+      { description: "Set up a custom app integration with webhooks", timeLimit: "60 min" },
+      { description: "Configure a third-party app for a client" },
+      { description: "Document an API integration workflow" },
+    ],
+    stackCertified: true,
+  },
+  {
+    id: "store-migration-specialist",
+    title: "Store Migration Specialist",
+    vertical: "shopify",
+    description:
+      "Platform migrations, data transfer, SEO preservation, and launch coordination.",
+    skills: [
+      { name: "Data Migration", category: "process" },
+      { name: "SEO Redirects", category: "technical" },
+      { name: "Platform Knowledge", category: "process" },
+      { name: "Launch QA", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Migrate product data from WooCommerce to Shopify", timeLimit: "60 min" },
+      { description: "Set up 301 redirects for SEO preservation" },
+      { description: "Create a migration launch checklist" },
+    ],
+    stackCertified: true,
   },
   {
     id: "project-manager",
-    name: "Project Manager",
+    title: "Project Manager",
+    vertical: "shopify",
     description:
-      "Plans, executes, and oversees projects to ensure they are completed on time and within budget.",
-    costs: {
-      Junior: { hireOnshore: 6000, hireWithStaffStack: 2200 },
-      Intermediate: { hireOnshore: 8000, hireWithStaffStack: 3000 },
-      Senior: { hireOnshore: 10000, hireWithStaffStack: 3800 },
-    },
-  },
-  {
-    id: "hr-specialist",
-    name: "HR Specialist",
-    description:
-      "Manages recruitment, employee relations, benefits administration, and HR policies.",
-    costs: {
-      Junior: { hireOnshore: 5300, hireWithStaffStack: 1900 },
-      Intermediate: { hireOnshore: 6800, hireWithStaffStack: 2400 },
-      Senior: { hireOnshore: 8500, hireWithStaffStack: 3100 },
-    },
-  },
-  {
-    id: "recruiter",
-    name: "Recruiter",
-    description:
-      "Sources, screens, and interviews candidates to fill job openings.",
-    costs: {
-      Junior: { hireOnshore: 5000, hireWithStaffStack: 1800 },
-      Intermediate: { hireOnshore: 6500, hireWithStaffStack: 2300 },
-      Senior: { hireOnshore: 8200, hireWithStaffStack: 2900 },
-    },
-  },
-  {
-    id: "sales-representative",
-    name: "Sales Representative",
-    description:
-      "Sells products or services to businesses or consumers, managing customer relationships.",
-    costs: {
-      Junior: { hireOnshore: 4500, hireWithStaffStack: 1600 },
-      Intermediate: { hireOnshore: 6000, hireWithStaffStack: 2100 },
-      Senior: { hireOnshore: 8000, hireWithStaffStack: 2800 },
-    },
-  },
-  {
-    id: "executive-assistant",
-    name: "Executive Assistant",
-    description:
-      "Provides high-level administrative support to executives and managers.",
-    costs: {
-      Junior: { hireOnshore: 4800, hireWithStaffStack: 1700 },
-      Intermediate: { hireOnshore: 6200, hireWithStaffStack: 2150 },
-      Senior: { hireOnshore: 7500, hireWithStaffStack: 2700 },
-    },
-  },
-  {
-    id: "it-support-specialist",
-    name: "IT Support Specialist",
-    description:
-      "Provides technical assistance and support for computer systems, hardware, and software.",
-    costs: {
-      Junior: { hireOnshore: 4600, hireWithStaffStack: 1650 },
-      Intermediate: { hireOnshore: 5900, hireWithStaffStack: 2050 },
-      Senior: { hireOnshore: 7400, hireWithStaffStack: 2650 },
-    },
-  },
-  {
-    id: "ui-ux-designer",
-    name: "UI/UX Designer",
-    description:
-      "Designs user interfaces and user experiences for websites and applications.",
-    costs: {
-      Junior: { hireOnshore: 5500, hireWithStaffStack: 1950 },
-      Intermediate: { hireOnshore: 7200, hireWithStaffStack: 2550 },
-      Senior: { hireOnshore: 9500, hireWithStaffStack: 3500 },
-    },
-  },
-  {
-    id: "video-editor",
-    name: "Video Editor",
-    description:
-      "Assembles recorded raw material into a finished product suitable for broadcasting.",
-    costs: {
-      Junior: { hireOnshore: 4400, hireWithStaffStack: 1550 },
-      Intermediate: { hireOnshore: 5700, hireWithStaffStack: 1950 },
-      Senior: { hireOnshore: 7100, hireWithStaffStack: 2500 },
-    },
-  },
-  {
-    id: "3d-artist",
-    name: "3D Artist",
-    description:
-      "Creates 3D models, animations, and visual effects for various media.",
-    costs: {
-      Junior: { hireOnshore: 5800, hireWithStaffStack: 2000 },
-      Intermediate: { hireOnshore: 7500, hireWithStaffStack: 2700 },
-      Senior: { hireOnshore: 9800, hireWithStaffStack: 3600 },
-    },
-  },
-  {
-    id: "qa-tester",
-    name: "QA Tester",
-    description:
-      "Tests software to identify bugs and ensure quality before release.",
-    costs: {
-      Junior: { hireOnshore: 4700, hireWithStaffStack: 1680 },
-      Intermediate: { hireOnshore: 6000, hireWithStaffStack: 2080 },
-      Senior: { hireOnshore: 7600, hireWithStaffStack: 2750 },
-    },
-  },
-  {
-    id: "business-analyst",
-    name: "Business Analyst",
-    description:
-      "Analyzes business needs and processes, recommending solutions and improvements.",
-    costs: {
-      Junior: { hireOnshore: 5900, hireWithStaffStack: 2100 },
-      Intermediate: { hireOnshore: 7800, hireWithStaffStack: 2900 },
-      Senior: { hireOnshore: 10000, hireWithStaffStack: 3700 },
-    },
+      "Project coordination, client communication, timeline management, and resource allocation.",
+    skills: [
+      { name: "Project Planning", category: "process" },
+      { name: "Client Management", category: "process" },
+      { name: "Resource Allocation", category: "process" },
+      { name: "Agile", category: "process" },
+    ],
+    certificationTasks: [
+      { description: "Create a project plan for a store launch" },
+      { description: "Write a client status update" },
+      { description: "Allocate resources for a multi-week project" },
+    ],
+    stackCertified: true,
   },
 ];
 
-// Helper function to get cost data for a specific role and experience level
-export function getRoleCosts(
-  roleId: string,
-  level: ExperienceLevel,
-): RoleCost | undefined {
-  const role = availableRoles.find((r) => r.id === roleId);
-  return role?.costs[level];
+// Helper functions
+export function getRolesByVertical(vertical: AgencyVertical): RoleData[] {
+  return availableRoles.filter((role) => role.vertical === vertical);
 }
 
-// Function to calculate savings
-export function calculateSavings(
-  onshoreCost: number,
-  staffStackCost: number,
-): number {
-  return onshoreCost - staffStackCost;
+export function getRoleById(roleId: string): RoleData | undefined {
+  return availableRoles.find((role) => role.id === roleId);
+}
+
+export function getVerticalInfo(verticalId: AgencyVertical) {
+  return agencyVerticals.find((v) => v.id === verticalId);
+}
+
+export function getAllSkillsForVertical(vertical: AgencyVertical): string[] {
+  const roles = getRolesByVertical(vertical);
+  const skills = new Set<string>();
+  roles.forEach((role) => {
+    role.skills.forEach((skill) => skills.add(skill.name));
+  });
+  return Array.from(skills);
 }

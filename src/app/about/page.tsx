@@ -1,124 +1,99 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useId } from "react";
+import type { Metadata } from "next";
 import {
   ArrowRight,
-  BadgeCheck,
-  Building,
-  Lightbulb,
-  Medal,
+  Award,
+  CheckCircle,
+  Rocket,
+  Sparkles,
+  Target,
   Users,
+  Zap,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-const executiveTeam = [
+export const metadata: Metadata = {
+  title: "About Us | Staff Stack",
+  description:
+    "Staff Stack provides AI-native certified operators for agencies. We built StackCertified to solve the agency staffing problem — operators tested on real work, ready in 7 days.",
+};
+
+const principles = [
   {
-    id: "ceo",
-    name: "Michael Johnson",
-    role: "CEO & Founder",
-    bio: "With over 20 years of experience in global outsourcing, Michael founded Staff Stack to bridge the gap between international businesses and the exceptional talent in the Philippines.",
-    image: "/images/team-event-1.jpg",
+    id: "ship",
+    title: "Operators Ship",
+    description:
+      "We don't place 'candidates'. We certify operators who can execute on day one. Every StackCertified hire has proven they can ship real work.",
+    icon: Rocket,
   },
   {
-    id: "coo",
-    name: "Isabel Santos",
-    role: "Chief Operations Officer",
-    bio: "Isabel oversees all operational aspects of Staff Stack, ensuring that our infrastructure, processes, and support systems consistently deliver an exceptional client experience.",
-    image: "/images/team-event-2.jpg",
+    id: "ai-native",
+    title: "AI-Native Workflows",
+    description:
+      "Modern agencies use AI tools. So do our operators. Every certification includes AI workflow proof — prompt to deliverable.",
+    icon: Sparkles,
   },
   {
-    id: "recruiting",
-    name: "David Park",
-    role: "Head of Talent Acquisition",
-    bio: "David leads our recruitment team, implementing innovative sourcing strategies to find the perfect professionals for our clients' unique business needs.",
-    image: "https://randomuser.me/api/portraits/men/52.jpg",
+    id: "quality",
+    title: "Quality Over Volume",
+    description:
+      "We don't flood you with resumes. We send pre-certified operators with scorecards you can actually evaluate.",
+    icon: Award,
   },
   {
-    id: "client",
-    name: "Sarah Johnson",
-    role: "Client Success Director",
-    bio: "Sarah ensures that every client partnership thrives through proactive communication, strategic planning, and ongoing optimization of each staffing solution.",
-    image: "https://randomuser.me/api/portraits/women/29.jpg",
+    id: "accountability",
+    title: "Ongoing Accountability",
+    description:
+      "Certification is step one. StackOps keeps operators performing with weekly KPI check-ins and QA systems.",
+    icon: Target,
   },
 ];
 
-const offices = [
+const stackMechanisms = [
   {
-    id: "manila",
-    location: "Manila Main Office",
-    address: "25th Floor, One World Place, BGC, Taguig City, Philippines",
+    title: "StackCertified",
     description:
-      "Our headquarters features modern workspaces, dedicated team areas, and state-of-the-art technology infrastructure.",
-    image: "https://ext.same-assets.com/2688779156/543602244.png",
+      "Role-specific practical tests that prove operators can do agency work — not generic assessments.",
+    link: "/stackcertified",
+    color: "bg-purple-50 text-purple-600",
   },
   {
-    id: "cebu",
-    location: "Cebu Office",
-    address: "15th Floor, Park Centrale Tower, IT Park, Cebu City, Philippines",
+    title: "StackOps",
     description:
-      "Located in Cebu's thriving IT Park, this office supports our expanding operations in the Visayas region.",
-    image: "https://ext.same-assets.com/1379786756/1312885363.jpeg",
+      "The delivery infrastructure that keeps operators performing: QA checklists, KPI tracking, performance coaching.",
+    link: "/stackops",
+    color: "bg-blue-50 text-blue-600",
+  },
+  {
+    title: "StackGuarantee",
+    description:
+      "14-day replacement guarantee. If your operator isn't the right fit, we find a replacement at no additional cost.",
+    link: "/stackguarantee",
+    color: "bg-green-50 text-green-600",
   },
 ];
 
-const values = [
+const agencyVerticals = [
   {
-    id: "excellence",
-    title: "Excellence",
-    description:
-      "We are committed to delivering exceptional quality in everything we do, from recruitment to daily operations.",
-    icon: Medal,
+    name: "Retention & Klaviyo",
+    roles: "Email builders, designers, QA specialists, copywriters",
+    color: "bg-purple-100 text-purple-700",
   },
   {
-    id: "integrity",
-    title: "Integrity",
-    description:
-      "We build trust through honest communication, transparency, and ethical business practices.",
-    icon: BadgeCheck,
+    name: "Paid Media Ops",
+    roles: "Ad ops assistants, reporting analysts, creative editors",
+    color: "bg-blue-100 text-blue-700",
   },
   {
-    id: "innovation",
-    title: "Innovation",
-    description:
-      "We continuously improve our processes, technology, and services to lead the industry in offshore staffing solutions.",
-    icon: Lightbulb,
-  },
-  {
-    id: "partnership",
-    title: "Partnership",
-    description:
-      "We view ourselves as an extension of our clients' teams, fully invested in their long-term success.",
-    icon: Users,
+    name: "Shopify Dev",
+    roles: "Shopify developers, QA testers, support devs, PMs",
+    color: "bg-green-100 text-green-700",
   },
 ];
 
 export default function AboutPage() {
-  const storyId = useId();
-  const valuesId = useId();
-  const teamId = useId();
-  const locationsId = useId();
-  const whyChooseUsId = useId();
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  // Breadcrumb schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -139,379 +114,337 @@ export default function AboutPage() {
   };
 
   return (
-    <main className="flex-1">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),
         }}
       />
-      {/* About Hero Section */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-linear-to-b from-slate-50 to-white">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <motion.div
-            className="absolute h-64 w-64 rounded-full bg-brand-accent"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, 50, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-            }}
-            style={{ top: "10%", left: "5%" }}
-          />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-5xl font-bold mb-6"
-            >
-              About <span className="text-brand-accent">Staff Stack</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-xl opacity-90 mb-8"
-            >
-              Your trusted partner for building remote and offshore teams in the
-              Philippines
-            </motion.p>
-          </div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            className="fill-background w-full h-10 md:h-16"
-          >
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" />
-          </svg>
-        </div>
-      </section>
 
-      {/* Our Story */}
-      <section id={storyId} className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-              <div className="space-y-4 text-slate-700">
-                <p>
-                  Founded in 2012, Staff Stack was created to solve a critical
-                  business challenge: how to access exceptional talent while
-                  managing costs effectively. We recognized the Philippines'
-                  unique combination of strong English proficiency, cultural
-                  compatibility, and technical expertise.
-                </p>
-                <p>
-                  What began as a small operation with just 5 staff has grown
-                  into a thriving organization with multiple offices across the
-                  Philippines and hundreds of professionals working with clients
-                  worldwide.
-                </p>
-                <p>
-                  Our vision is to transform how businesses approach staffing by
-                  providing dedicated, full-time team members who work
-                  exclusively for one client while being fully supported by our
-                  infrastructure, HR, and management systems.
-                </p>
-                <p>
-                  Today, we serve businesses of all sizes, from startups to
-                  Fortune 500 companies, across industries ranging from
-                  technology and healthcare to finance and creative services.
+      <main className="pt-24">
+        {/* Hero */}
+        <section className="py-20 bg-gradient-to-br from-brand-dark via-brand to-brand-light text-white">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 bg-brand-accent/20 px-4 py-2 rounded-full mb-6">
+                <Users className="h-4 w-4 text-brand-accent" />
+                <span className="text-sm font-medium font-inter">
+                  Built for Agencies
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
+                We Built Staff Stack to Solve the{" "}
+                <span className="text-brand-accent">Agency Staffing Problem</span>
+              </h1>
+              <p className="text-xl opacity-90 font-inter">
+                Agencies need operators who can ship. Not candidates who interview
+                well. We created StackCertified to prove the difference.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* The Problem We Solve */}
+        <section className="py-20 bg-background">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                  The Problem We Saw
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                <div className="bg-red-50 rounded-xl p-6 border border-red-100">
+                  <h3 className="font-lexend font-semibold text-red-700 mb-4">
+                    What Agencies Were Getting
+                  </h3>
+                  <ul className="space-y-3 text-red-600 font-inter">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-1">✗</span>
+                      <span>Generic VAs who need weeks of training</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-1">✗</span>
+                      <span>Freelancers who disappear mid-project</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-1">✗</span>
+                      <span>Hires who interview well but can't execute</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-1">✗</span>
+                      <span>No accountability after placement</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-50 rounded-xl p-6 border border-green-100">
+                  <h3 className="font-lexend font-semibold text-green-700 mb-4">
+                    What Agencies Actually Need
+                  </h3>
+                  <ul className="space-y-3 text-green-600 font-inter">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Operators tested on actual agency tasks</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Full-time commitment with clear expectations</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>AI-native workflows built in</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Ongoing support and performance tracking</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <p className="text-lg text-muted-foreground font-inter max-w-2xl mx-auto">
+                  So we built a certification system that tests what actually
+                  matters: can this person ship the work your agency needs?
                 </p>
               </div>
-              <div className="mt-8">
-                <Button
-                  className="bg-brand hover:bg-brand-light text-white"
-                  asChild
-                >
-                  <Link href="/contact-us">
-                    Work with us <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative h-[400px] rounded-xl overflow-hidden"
-            >
-              <img
-                src="/images/team-event-3.jpg"
-                className="object-cover rounded-xl w-full h-full"
-                alt="Staff Stack office"
-              />
-            </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Our Core Values */}
-      <section id={valuesId} className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Core Values
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              These principles guide everything we do, from how we treat our
-              staff to how we partner with clients
-            </p>
-          </motion.div>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {values.map((value) => (
-              <motion.div key={value.id} variants={itemVariants}>
-                <Card className="h-full border-none shadow-md">
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className="mb-4 p-3 rounded-full bg-brand/10 w-fit">
-                      <value.icon className="h-6 w-6 text-brand" />
+        {/* Meet Our Operators */}
+        <section className="py-20 bg-muted/30">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/team-collaboration.png"
+                  alt="StackCertified operators collaborating on agency work"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-6">
+                  Meet the <span className="text-brand">Operators</span>
+                </h2>
+                <p className="text-muted-foreground font-inter mb-6">
+                  Our operators are based in the Philippines — a country known for
+                  strong English communication, cultural alignment with Western
+                  agencies, and a deep talent pool in digital marketing and
+                  development.
+                </p>
+                <p className="text-muted-foreground font-inter mb-6">
+                  But unlike traditional offshore hires, every Staff Stack operator
+                  earns their StackCertified badge through practical testing. They
+                  prove they can ship before they start.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
+                    Klaviyo Certified
+                  </span>
+                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+                    Ad Ops Tested
+                  </span>
+                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+                    Shopify Qualified
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Principles */}
+        <section className="py-20 bg-background">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                What We Believe
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto font-inter">
+                These principles shape how we certify operators and support
+                agencies.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {principles.map((principle) => (
+                <Card key={principle.id} className="border-0 shadow-sm">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <principle.icon className="h-6 w-6 text-brand" />
+                      </div>
+                      <div>
+                        <h3 className="font-lexend font-semibold mb-2">
+                          {principle.title}
+                        </h3>
+                        <p className="text-muted-foreground font-inter text-sm">
+                          {principle.description}
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">
-                      {value.title}
-                    </h3>
-                    <p className="text-muted-foreground">{value.description}</p>
                   </CardContent>
                 </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section id={teamId} className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Leadership Team</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              Meet the professionals behind Staff Stack who work tirelessly to
-              deliver exceptional service
-            </p>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {executiveTeam.map((member, index) => (
-              <motion.div
-                key={member.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-xs overflow-hidden"
-              >
-                <div className="relative h-48">
-                  {member.image.startsWith("/") ? (
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="object-cover w-full h-full"
-                    />
-                  ) : (
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                      unoptimized={true}
-                    />
-                  )}
-                </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-lg">{member.name}</h3>
-                  <p className="text-brand-accent text-sm mb-3">
-                    {member.role}
+        </section>
+
+        {/* The Stack Approach */}
+        <section className="py-20 bg-background">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                The <span className="text-brand">Stack</span> Approach
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto font-inter">
+                Three mechanisms that make Staff Stack different from generic
+                staffing agencies.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {stackMechanisms.map((mechanism) => (
+                <div
+                  key={mechanism.title}
+                  className="bg-white rounded-xl p-6 shadow-sm border hover:shadow-md transition-shadow"
+                >
+                  <span
+                    className={`inline-block text-xs font-medium px-3 py-1 rounded-full mb-4 ${mechanism.color}`}
+                  >
+                    {mechanism.title}
+                  </span>
+                  <p className="text-muted-foreground font-inter mb-4">
+                    {mechanism.description}
                   </p>
-                  <p className="text-muted-foreground text-sm">{member.bio}</p>
+                  <Link
+                    href={mechanism.link}
+                    className="text-brand font-lexend font-medium text-sm inline-flex items-center hover:underline"
+                  >
+                    Learn more
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Our Locations */}
-      <section id={locationsId} className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Locations
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Modern, secure facilities equipped with everything your team needs
-              to succeed
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {offices.map((office, index) => (
-              <motion.div
-                key={office.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-xs overflow-hidden"
+        {/* Who We Serve */}
+        <section className="py-20 bg-muted/30">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                Who We Serve
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto font-inter">
+                We specialize in three agency verticals where we've built
+                role-specific certification tracks.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {agencyVerticals.map((vertical) => (
+                <div
+                  key={vertical.name}
+                  className="bg-white rounded-xl p-6 shadow-sm border text-center"
+                >
+                  <span
+                    className={`inline-block text-sm font-medium px-4 py-2 rounded-full mb-4 ${vertical.color}`}
+                  >
+                    {vertical.name}
+                  </span>
+                  <p className="text-muted-foreground font-inter text-sm">
+                    {vertical.roles}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-10">
+              <Button
+                className="bg-brand hover:bg-brand-light text-white font-lexend font-medium"
+                asChild
               >
-                <div className="relative h-64">
-                  <Image
-                    src={office.image}
-                    alt={office.location}
-                    fill
-                    className="object-cover"
-                    unoptimized={true}
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-xl mb-2">{office.location}</h3>
-                  <p className="text-muted-foreground mb-3">{office.address}</p>
-                  <p>{office.description}</p>
-                </div>
-              </motion.div>
-            ))}
+                <Link href="/agencies">
+                  Explore Agency Solutions
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-12 text-center"
-          >
-            <p className="text-muted-foreground mb-6">
-              Our facilities include high-speed redundant internet, backup power
-              systems, biometric security, ergonomic workspaces, relaxation
-              areas, and all the technology your team needs to be productive.
-            </p>
-            <Button
-              className="bg-brand hover:bg-brand-light text-white"
-              asChild
-            >
-              <Link href="/contact-us">
-                Schedule a virtual tour <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+        </section>
 
-      {/* Why Choose Us */}
-      <section id={whyChooseUsId} className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl md:text-4xl font-bold mb-4"
-            >
-              Why Choose <span className="text-brand-accent">Staff Stack</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-xl mb-8 opacity-90"
-            >
-              Partner with us for the perfect blend of talent, infrastructure,
-              and management
-            </motion.p>
+        {/* By the Numbers */}
+        <section className="py-20 bg-background">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                Built for Agency Scale
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              {[
+                { number: "7", label: "Days to first operator" },
+                { number: "14", label: "Day replacement guarantee" },
+                { number: "3", label: "Agency verticals" },
+                { number: "100%", label: "AI workflow tested" },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="bg-brand/5 rounded-xl p-6 text-center"
+                >
+                  <div className="text-4xl font-lexend font-bold text-brand mb-2">
+                    {stat.number}
+                  </div>
+                  <p className="text-muted-foreground font-inter text-sm">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-10"
-          >
-            <motion.div
-              variants={itemVariants}
-              className="bg-brand/10 p-6 rounded-xl"
-            >
-              <Building className="h-8 w-8 text-brand-accent mb-4" />
-              <h3 className="text-xl font-bold mb-3">
-                Fully Managed Infrastructure
-              </h3>
-              <p className="text-slate-700">
-                We handle all the complexities of infrastructure, from office
-                space and equipment to IT systems and security.
+        </section>
+
+        {/* CTA */}
+        <section className="py-20 bg-brand text-white">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center">
+              <Zap className="h-12 w-12 text-brand-accent mx-auto mb-6" />
+              <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                Ready to Add Capacity?
+              </h2>
+              <p className="text-xl opacity-90 font-inter mb-8">
+                StackCertified operators for your agency. Tested on real work.
+                Ready in 7 days.
               </p>
-            </motion.div>
-            <motion.div
-              variants={itemVariants}
-              className="bg-brand/10 p-6 rounded-xl"
-            >
-              <Users className="h-8 w-8 text-brand-accent mb-4" />
-              <h3 className="text-xl font-bold mb-3">
-                Exceptional Talent Pool
-              </h3>
-              <p className="text-slate-700">
-                Access a deep pool of qualified professionals with the skills,
-                education, and experience your business needs.
-              </p>
-            </motion.div>
-            <motion.div
-              variants={itemVariants}
-              className="bg-brand/10 p-6 rounded-xl"
-            >
-              <Medal className="h-8 w-8 text-brand-accent mb-4" />
-              <h3 className="text-xl font-bold mb-3">Proven Track Record</h3>
-              <p className="text-slate-700">
-                With over a decade of experience and hundreds of satisfied
-                clients, we have the expertise to deliver results.
-              </p>
-            </motion.div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-12 text-center"
-          >
-            <Button
-              size="lg"
-              className="bg-brand hover:bg-brand-light text-white font-medium"
-              asChild
-            >
-              <Link href="/contact-us">
-                Start Building Your Team
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-    </main>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-brand-accent hover:bg-brand-accent/90 text-white font-lexend font-medium"
+                  asChild
+                >
+                  <Link href="/contact-us">Get Your First Operator</Link>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-transparent border-white text-white hover:bg-white/10 font-lexend font-medium"
+                  asChild
+                >
+                  <Link href="/how-it-works">See How It Works</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }

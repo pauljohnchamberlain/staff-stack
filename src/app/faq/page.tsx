@@ -108,10 +108,9 @@ export default function FAQPage() {
       title: "Costs & Contracts",
       faqs: [
         {
-          question:
-            "How much does it cost to hire offshore staff in the Philippines?",
+          question: "How does the pricing work for Staff Stack operators?",
           answer:
-            "Costs vary depending on the role, experience level, and specific skill requirements. However, most clients achieve 40-70% cost savings compared to hiring equivalent positions locally in the US, Australia, UK, or other Western countries. We provide transparent pricing with a simple monthly fee structure that includes the employee's salary, our management fee, office facilities, equipment, HR management, and all statutory benefits. Contact us for a detailed quote based on your specific requirements.",
+            "We provide transparent pricing with a simple monthly fee structure. This includes the operator's salary, our management fee, StackCertified onboarding, weekly performance check-ins, QA systems, and our replacement guarantee. Pricing varies based on role complexity and experience level. Contact us for a detailed quote based on your specific requirements — we focus on delivering capacity that actually ships work, not just filling seats.",
         },
         {
           question: "Are there any hidden costs or setup fees?",

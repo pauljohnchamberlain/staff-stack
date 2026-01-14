@@ -1,7 +1,7 @@
 "use client";
 
 import { Star } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -14,69 +14,56 @@ import {
 const testimonials = [
   {
     id: "1",
-    company: "TechVision Software",
-    logo: "https://ext.same-assets.com/2073858358/2822076010.svg",
-    author: "David Wilson",
-    role: "CTO",
-    text: "Exceeded my expectations in every way. The developers we hired through Staff Stack have transformed our development capacity, delivering high-quality code and innovative solutions.",
+    company: "Retention Agency (Klaviyo Partner)",
+    vertical: "Retention",
+    author: "Sarah Chen",
+    role: "Founder",
+    text: "We added two Klaviyo email builders through Staff Stack. They passed their certification tests before we even interviewed them — we could see their actual flow builds. Now we're shipping 40% more campaigns without adding to our core team.",
     rating: 5,
   },
   {
     id: "2",
-    company: "Global Support Solutions",
-    logo: "https://ext.same-assets.com/2073858358/1617793967.svg",
-    author: "Sarah Miller",
-    role: "Customer Service Director",
-    text: "We've been working with Staff Stack for three years now and couldn't be happier with our dedicated support team. They've become an integral part of our operations. Their dedication, expertise, and professionalism make them a valuable asset.",
+    company: "Performance Media Co",
+    vertical: "Paid Media",
+    author: "Marcus Williams",
+    role: "Head of Operations",
+    text: "Our strategists were drowning in campaign builds and reporting. The ad ops assistant we hired handles all the execution work now. Our strategist time freed up by 15+ hours per week — exactly what we needed to take on more clients.",
     rating: 5,
   },
   {
     id: "3",
-    company: "FinTech Innovations",
-    logo: "https://ext.same-assets.com/2073858358/3553358302.svg",
-    author: "Michael Chen",
-    role: "COO",
-    text: "Staff Stack helped us quickly scale our business with highly qualified staff. The transition was smooth, and we now have a talented team that feels like an extension of our company rather than a separate entity.",
+    company: "Shopify Plus Agency",
+    vertical: "Shopify",
+    author: "James Park",
+    role: "Technical Director",
+    text: "Project overflow was killing our deadlines. We brought on a StackCertified Shopify developer who hit the ground running — their certification included fixing a real bug under time pressure. That's exactly the test that matters for our work.",
     rating: 5,
   },
   {
     id: "4",
-    company: "Creative Digital Agency",
-    logo: "https://ext.same-assets.com/2073858358/3387356777.svg",
+    company: "Email Growth Partners",
+    vertical: "Retention",
     author: "Emily Rodriguez",
-    role: "Creative Director",
-    text: "The creative team we hired through Staff Stack has transformed our brand presence. They consistently deliver exceptional quality and fresh ideas that have significantly boosted our engagement metrics.",
+    role: "Managing Partner",
+    text: "The QA specialist we hired catches issues our team was missing. Links, rendering, UTMs — they have a checklist for everything. Our error rate dropped significantly in the first month. Worth every penny.",
+    rating: 5,
+  },
+  {
+    id: "5",
+    company: "Conversion Lab Agency",
+    vertical: "Paid Media",
+    author: "David Kim",
+    role: "CEO",
+    text: "We needed reporting capacity fast. The analyst we got can build Looker dashboards, automate reports, and actually understands attribution. They proved it in their certification — not just talked about it in an interview.",
     rating: 5,
   },
 ];
 
-const brands = [
-  {
-    id: "forbes1",
-    name: "Forbes",
-    url: "https://ext.same-assets.com/1414563758/2522500107.svg",
-  },
-  {
-    id: "inc",
-    name: "Inc",
-    url: "https://ext.same-assets.com/1414563758/2458401565.svg",
-  },
-  {
-    id: "usatoday",
-    name: "USA Today",
-    url: "https://ext.same-assets.com/1414563758/2338476488.svg",
-  },
-  {
-    id: "clutch",
-    name: "Clutch",
-    url: "https://ext.same-assets.com/1414563758/822725178.svg",
-  },
-  {
-    id: "forbes2",
-    name: "Forbes",
-    url: "https://ext.same-assets.com/2941768483/535086739.png",
-  },
-];
+const verticalColors: Record<string, string> = {
+  Retention: "bg-purple-100 text-purple-700",
+  "Paid Media": "bg-blue-100 text-blue-700",
+  Shopify: "bg-green-100 text-green-700",
+};
 
 export function TestimonialsSection() {
   return (
@@ -84,11 +71,10 @@ export function TestimonialsSection() {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-lexend font-bold mb-4">
-            What Our Clients Say
+            What Agency Leaders Say
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-inter">
-            Hear from businesses like yours who have transformed their
-            operations with our offshore staffing solutions.
+            Agencies using StackCertified operators to add capacity without adding chaos.
           </p>
         </div>
 
@@ -100,49 +86,54 @@ export function TestimonialsSection() {
           className="w-full"
         >
           <CarouselContent>
-            {testimonials.map((testimonial, _index) => (
+            {testimonials.map((testimonial) => (
               <CarouselItem
                 key={testimonial.id}
                 className="md:basis-1/2 lg:basis-1/3 pl-4"
               >
                 <div className="h-full">
-                  <Card className="border-none shadow-xs h-full">
+                  <Card className="border-none shadow-sm h-full">
                     <CardContent className="p-6">
                       <div className="space-y-4">
-                        <div className="flex items-center gap-2">
-                          {Array(5)
-                            .fill(0)
-                            .map((_, i) => (
-                              <Star
-                                key={`star-${testimonial.id}-${i}`}
-                                className={`h-4 w-4 ${
-                                  i < testimonial.rating
-                                    ? "fill-yellow-400 text-yellow-400"
-                                    : "text-muted-foreground/30"
-                                }`}
-                              />
-                            ))}
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            {Array(5)
+                              .fill(0)
+                              .map((_, i) => (
+                                <Star
+                                  key={`star-${testimonial.id}-${i}`}
+                                  className={`h-4 w-4 ${
+                                    i < testimonial.rating
+                                      ? "fill-yellow-400 text-yellow-400"
+                                      : "text-muted-foreground/30"
+                                  }`}
+                                />
+                              ))}
+                          </div>
+                          <span
+                            className={`text-xs px-2 py-1 rounded-full font-inter ${verticalColors[testimonial.vertical]}`}
+                          >
+                            {testimonial.vertical}
+                          </span>
                         </div>
-                        <p className="italic text-muted-foreground font-inter">
+                        <p className="text-muted-foreground font-inter text-sm leading-relaxed">
                           "{testimonial.text}"
                         </p>
-                        <div className="flex items-center gap-3 pt-4">
-                          <Avatar>
-                            <AvatarImage
-                              src={testimonial.logo}
-                              alt={testimonial.company}
-                              crossOrigin="anonymous"
-                            />
-                            <AvatarFallback>
-                              {testimonial.company.charAt(0)}
+                        <div className="flex items-center gap-3 pt-4 border-t">
+                          <Avatar className="h-10 w-10">
+                            <AvatarFallback className="bg-brand/10 text-brand font-lexend font-medium">
+                              {testimonial.author
+                                .split(" ")
+                                .map((n) => n[0])
+                                .join("")}
                             </AvatarFallback>
                           </Avatar>
                           <div>
-                            <h4 className="font-lexend font-medium">
+                            <h4 className="font-lexend font-medium text-sm">
                               {testimonial.author}
                             </h4>
-                            <p className="text-muted-foreground text-sm font-inter">
-                              {testimonial.role}
+                            <p className="text-muted-foreground text-xs font-inter">
+                              {testimonial.role}, {testimonial.company}
                             </p>
                           </div>
                         </div>
@@ -160,25 +151,28 @@ export function TestimonialsSection() {
         </Carousel>
 
         <div className="mt-16 pt-8 border-t">
-          <h3 className="text-center text-lg font-lexend font-medium mb-8">
-            Trusted by Leading Companies
+          <h3 className="text-center text-lg font-lexend font-medium mb-6">
+            Trusted by Agencies Across Three Verticals
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {brands.map((brand) => (
-              <div
-                key={brand.id}
-                className="w-24 md:w-32 opacity-70 hover:opacity-100 transition-opacity"
-              >
-                <img
-                  src={brand.url}
-                  alt={brand.name}
-                  width={120}
-                  height={40}
-                  className="mx-auto"
-                  crossOrigin="anonymous"
-                />
-              </div>
-            ))}
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+              <span className="w-2 h-2 bg-purple-500 rounded-full" />
+              <span className="text-sm font-inter text-purple-700">
+                Retention & Klaviyo
+              </span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full">
+              <span className="w-2 h-2 bg-blue-500 rounded-full" />
+              <span className="text-sm font-inter text-blue-700">
+                Paid Media Ops
+              </span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full">
+              <span className="w-2 h-2 bg-green-500 rounded-full" />
+              <span className="text-sm font-inter text-green-700">
+                Shopify Dev
+              </span>
+            </div>
           </div>
         </div>
       </div>

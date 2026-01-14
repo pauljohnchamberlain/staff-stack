@@ -1,20 +1,18 @@
-"use client";
-
+import type { Metadata } from "next";
 import {
   ArrowRight,
-  BarChart3,
-  Check,
+  Award,
   CheckCircle,
-  FileSearch,
-  Globe,
-  MonitorCheck,
+  ClipboardCheck,
+  Clock,
+  MessageSquare,
+  Rocket,
   Shield,
-  UserCheck,
-  Users,
+  Sparkles,
+  UserSearch,
+  Zap,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import { useId } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -23,643 +21,415 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+
+export const metadata: Metadata = {
+  title: "How It Works | Staff Stack",
+  description:
+    "Learn how Staff Stack's StackCertified process works. From role request to shipping work in 7 days — operators tested on real agency tasks, not generic assessments.",
+};
+
+const processSteps = [
+  {
+    id: 1,
+    title: "Tell Us Your Role",
+    description:
+      "Share the role you need — Klaviyo builder, ad ops assistant, Shopify developer, reporting analyst, or any agency operator position. We'll match your requirements to our certification tracks.",
+    icon: UserSearch,
+    details: [
+      "15-minute intake call or async brief",
+      "Role requirements mapped to certification track",
+      "Timeline and expectations aligned",
+    ],
+  },
+  {
+    id: 2,
+    title: "We Match & Certify",
+    description:
+      "We source candidates from our talent pool and put them through StackCertified testing — role-specific practical tests that mirror actual agency work.",
+    icon: Award,
+    details: [
+      "Timed practical tests (Klaviyo flow build, ad account audit, etc.)",
+      "AI workflow proof: prompt → output → edits → deliverable",
+      "Communication simulation: Loom + written updates",
+    ],
+  },
+  {
+    id: 3,
+    title: "You Review & Select",
+    description:
+      "Interview pre-certified operators with their full scorecard. See exactly what they can do before you commit — test results, sample outputs, and tool fluency ratings.",
+    icon: ClipboardCheck,
+    details: [
+      "Scorecard with test scores and sample work",
+      "Video interview with candidate",
+      "You make the final call",
+    ],
+  },
+  {
+    id: 4,
+    title: "Operator Ships in 7 Days",
+    description:
+      "Your StackCertified operator starts with onboarding complete. Weekly KPI check-ins, QA systems, and our replacement guarantee keep things running smoothly.",
+    icon: Rocket,
+    details: [
+      "Onboarding handled by our team",
+      "Weekly performance check-ins",
+      "14-day replacement guarantee",
+    ],
+  },
+];
+
+const certificationComponents = [
+  {
+    title: "Practical Tests",
+    description:
+      "Role-specific, timed assessments that mirror real agency work. Build a Klaviyo flow, audit a Meta account, fix a Shopify bug.",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "AI Workflow Proof",
+    description:
+      "Every operator demonstrates they can work with AI tools: prompt → output → edits → final deliverable. Modern operators for modern workflows.",
+    icon: Sparkles,
+  },
+  {
+    title: "Communication Simulation",
+    description:
+      "2-minute Loom walkthrough, 5-bullet written update, escalation message. Prove they can communicate clearly before placement.",
+    icon: MessageSquare,
+  },
+  {
+    title: "Shareable Scorecard",
+    description:
+      "Full transparency: test scores, sample outputs, tool fluency checklist. See exactly what you're getting before you hire.",
+    icon: Award,
+  },
+];
+
+const stackOpsFeatures = [
+  {
+    title: "QA Checklist Library",
+    description:
+      "Role-specific quality checklists your operator uses to catch errors before delivery.",
+    icon: CheckCircle,
+  },
+  {
+    title: "Weekly KPI Check-ins",
+    description:
+      "We review performance weekly and address any issues before they become problems.",
+    icon: Clock,
+  },
+  {
+    title: "Performance Coaching",
+    description:
+      "Ongoing feedback and skill development to keep your operator improving.",
+    icon: Zap,
+  },
+  {
+    title: "Backup Bench",
+    description:
+      "If your operator is unavailable, we have certified backups ready to step in.",
+    icon: Shield,
+  },
+];
 
 export default function HowItWorksPage() {
-  const processId = useId();
-  const howItWorksId = useId();
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://staffstack.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "How It Works",
+        item: "https://staffstack.com/how-it-works",
+      },
+    ],
+  };
 
   return (
     <>
-      <section className="pt-24 pb-12 bg-linear-to-b from-sky-50 to-background">
-        <div className="container max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Building Offshore & Remote Teams in the Philippines
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8">
-                Discover our streamlined process for building your dedicated
-                remote team with ease. Our structured process makes it simple to
-                build your team. Staff Stack handles all the complexities while
-                you focus on your business.
-              </p>
-              <Button
-                size="lg"
-                className="bg-brand-accent hover:bg-brand-accent/90 text-white"
-                asChild
-              >
-                <Link href="#process">See How It Works</Link>
-              </Button>
-            </div>
-            <div className="relative">
-              <Image
-                src="https://ext.same-assets.com/413077933/3759590863.svg"
-                alt="Offshore team illustration"
-                width={600}
-                height={400}
-                className="rounded-lg"
-                crossOrigin="anonymous"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
 
-      <section className="py-16 bg-background">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="opacity-100">
-              <h2 className="text-3xl font-bold mb-6">Our Process</h2>
-              <p className="text-muted-foreground mb-8">
-                Our streamlined process ensures you get the right talent for
-                your business with minimal hassle.
-              </p>
-              <ol className="relative border-l border-brand/30 space-y-8 pl-6 ml-3">
-                {[
-                  {
-                    title: "Initial Consultation",
-                    description:
-                      "We begin with a thorough consultation to understand your business needs, culture, and specific role requirements.",
-                  },
-                  {
-                    title: "Talent Sourcing",
-                    description:
-                      "Our recruitment specialists source and screen candidates from our extensive talent pool, ensuring only the best fit your criteria.",
-                  },
-                  {
-                    title: "Candidate Presentation",
-                    description:
-                      "We introduce you to shortlisted candidates for interviews and skill assessments, so you can make the final selection.",
-                  },
-                  {
-                    title: "Onboarding & Setup",
-                    description:
-                      "Once you've chosen your team members, we handle all onboarding, equipment provisioning, and workspace setup.",
-                  },
-                  {
-                    title: "Ongoing Management",
-                    description:
-                      "We provide HR, payroll, IT support, and productivity monitoring, so you can focus on your core business.",
-                  },
-                ].map((step, index) => (
-                  <li key={`step-${index + 1}`} className="mb-2">
-                    <span className="absolute -left-4 flex items-center justify-center w-8 h-8 bg-brand text-white rounded-full font-bold text-lg shadow-sm">
-                      {index + 1}
-                    </span>
-                    <div className="ml-6">
-                      <h3 className="font-semibold text-lg mb-1">
-                        {step.title}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {step.description}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-            <div className="lg:mt-12">
-              <Image
-                src="https://ext.same-assets.com/413077933/2596823443.svg"
-                alt="Offshore team chart"
-                width={600}
-                height={400}
-                className="rounded-lg"
-                crossOrigin="anonymous"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div id={processId}>
-        <section className="py-16 bg-white" id={howItWorksId}>
+      <main className="pt-24">
+        {/* Hero */}
+        <section className="py-20 bg-linear-to-br from-brand-dark via-brand to-brand-light text-white">
           <div className="container">
-            <div className="text-center mb-12 max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-4">How It Works</h2>
-              <p className="text-muted-foreground">
-                Our proven process for building dedicated remote teams has
-                helped over 250+ businesses reduce costs and scale efficiently.
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 bg-brand-accent/20 px-4 py-2 rounded-full mb-6">
+                <Award className="h-4 w-4 text-brand-accent" />
+                <span className="text-sm font-medium font-inter">
+                  StackCertified Process
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6">
+                From Role Request to{" "}
+                <span className="text-brand-accent">Shipping Work</span> in 7 Days
+              </h1>
+              <p className="text-xl opacity-90 font-inter mb-8">
+                Not generic hiring. Role-specific certification that proves
+                operators can do the actual work before they start.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-brand-accent hover:bg-brand-accent/90 text-white font-lexend font-medium"
+                  asChild
+                >
+                  <Link href="/contact-us">Get Your First Operator</Link>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-transparent border-white text-white hover:bg-white/10 font-lexend font-medium"
+                  asChild
+                >
+                  <Link href="/stackcertified">See Certification Details</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Steps */}
+        <section className="py-20 bg-background">
+          <div className="container">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                The 4-Step <span className="text-brand">Process</span>
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto font-inter">
+                Simple, fast, and focused on getting you operators who actually
+                ship work — not just fill a seat.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
-              {[
-                {
-                  id: 1,
-                  title: "Define Requirements",
-                  description:
-                    "You provide us with job descriptions, skills, and qualifications needed.",
-                  icon: <FileSearch className="h-6 w-6" />,
-                },
-                {
-                  id: 2,
-                  title: "We Recruit & Screen",
-                  description:
-                    "Our team sources candidates that match your requirements.",
-                  icon: <Users className="h-6 w-6" />,
-                },
-                {
-                  id: 3,
-                  title: "Interview & Select",
-                  description:
-                    "You interview pre-screened candidates and choose the best fits.",
-                  icon: <UserCheck className="h-6 w-6" />,
-                },
-                {
-                  id: 4,
-                  title: "Onboarding & Support",
-                  description:
-                    "We handle equipment, HR, and facilities for your team.",
-                  icon: <MonitorCheck className="h-6 w-6" />,
-                },
-              ].map((step) => (
+            <div className="space-y-8 max-w-4xl mx-auto">
+              {processSteps.map((step, index) => (
                 <div
                   key={step.id}
-                  className="bg-white rounded-lg p-6 shadow-xs relative border border-muted overflow-hidden group hover:border-brand hover:shadow-md transition-all"
+                  className="bg-white rounded-xl p-8 shadow-sm border hover:shadow-md transition-shadow"
                 >
-                  <div className="flex flex-col h-full">
-                    <div className="flex-none">
-                      <div className="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4 text-brand">
-                        {step.icon}
+                  <div className="flex flex-col md:flex-row gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl font-lexend font-bold text-brand bg-brand/10 w-12 h-12 rounded-full flex items-center justify-center">
+                          {step.id}
+                        </span>
+                        <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center">
+                          <step.icon className="h-6 w-6 text-brand" />
+                        </div>
                       </div>
-                      <h3 className="text-xl font-semibold mb-3">
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-xl font-lexend font-semibold mb-2">
                         {step.title}
                       </h3>
-                    </div>
-                    <p className="text-muted-foreground mb-4 grow">
-                      {step.description}
-                    </p>
-                    <div className="text-sm font-medium text-brand flex items-center">
-                      Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                      <p className="text-muted-foreground font-inter mb-4">
+                        {step.description}
+                      </p>
+                      <ul className="space-y-2">
+                        {step.details.map((detail) => (
+                          <li
+                            key={detail}
+                            className="flex items-center gap-2 text-sm font-inter"
+                          >
+                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                            <span>{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </section>
 
-            <div className="bg-muted/30 rounded-xl p-8 mt-16">
-              <h3 className="text-xl font-bold mb-6 text-center">
-                What's Included in Our Service
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {[
-                  "Comprehensive talent sourcing",
-                  "Rigorous skills assessment",
-                  "Cultural fit evaluation",
-                  "Seamless onboarding process",
-                  "Quality assurance monitoring",
-                  "Employee benefits and incentives",
-                  "Security compliance and protocols",
-                ].map((item, _idx) => (
-                  <div
-                    key={`service-${item.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="flex-none">
-                      <div className="h-6 w-6 rounded-full bg-brand/20 flex items-center justify-center text-brand">
-                        <Check className="h-3 w-3" />
+        {/* StackCertified Section */}
+        <section className="py-20 bg-muted/30">
+          <div className="container">
+            <div className="text-center mb-16">
+              <Award className="h-12 w-12 text-brand mx-auto mb-4" />
+              <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                What <span className="text-brand">StackCertified</span> Means
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto font-inter">
+                Every operator earns their certification through practical
+                testing — not resumes, not interviews alone, not generic
+                assessments.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {certificationComponents.map((item) => (
+                <Card key={item.title} className="border-0 shadow-sm">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center">
+                        <item.icon className="h-5 w-5 text-brand" />
                       </div>
+                      <CardTitle className="text-lg font-lexend">
+                        {item.title}
+                      </CardTitle>
                     </div>
-                    <p className="text-muted-foreground">{item}</p>
-                  </div>
-                ))}
-              </div>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base font-inter">
+                      {item.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center mt-10">
+              <Button
+                className="bg-brand hover:bg-brand-light text-white font-lexend font-medium"
+                asChild
+              >
+                <Link href="/stackcertified">
+                  Learn More About Certification
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
         </section>
-      </div>
 
-      <section className="py-20 bg-background">
-        <div className="container max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Full-<span className="text-brand">Managed</span> Operations
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              We handle all the administrative and operational aspects of your
-              offshore team so you can focus on your core business objectives.
-            </p>
-          </div>
+        {/* StackOps Section */}
+        <section className="py-20 bg-background">
+          <div className="container">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                <span className="text-brand">StackOps</span>: Ongoing Delivery
+                Support
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto font-inter">
+                Certification is just the start. StackOps is the delivery
+                infrastructure that keeps your operators performing.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <Card className="border-2 border-brand/20 shadow-xs">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <CheckCircle className="h-6 w-6 text-brand" />
-                  <span>World-Class Infrastructure</span>
-                </CardTitle>
-                <CardDescription>
-                  State-of-the-art facilities with enterprise-grade technology
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>
-                      Enterprise-grade hardware, workstations and connectivity
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>
-                      Backup power systems with 99.9% uptime guarantee
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>Redundant fiber internet connections</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>
-                      Premium office environment with modern amenities
-                    </span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-brand/20 shadow-xs">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Shield className="h-6 w-6 text-brand" />
-                  <span>Data Security</span>
-                </CardTitle>
-                <CardDescription>
-                  Enterprise-level security measures for your peace of mind
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>
-                      ISO 27001 certified information security management
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>Secure VPN solutions and end-to-end encryption</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>GDPR and data privacy compliance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>Regular security audits and penetration testing</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-brand/20 shadow-xs">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <BarChart3 className="h-6 w-6 text-brand" />
-                  <span>Transparent Productivity</span>
-                </CardTitle>
-                <CardDescription>
-                  Real-time monitoring and performance tracking
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>Customizable productivity monitoring dashboards</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>Regular performance reports and analytics</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>Time tracking and attendance management</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>Quality assurance and continuous improvement</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-brand/20 shadow-xs">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Users className="h-6 w-6 text-brand" />
-                  <span>Full HR Management</span>
-                </CardTitle>
-                <CardDescription>
-                  Comprehensive human resource services and support
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>
-                      Recruitment, onboarding, and retention strategies
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>Payroll administration and benefits management</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>Performance management and career development</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                    </div>
-                    <span>Employee engagement and wellness programs</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-slate-50">
-        <div className="container max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Flexible <span className="text-brand">Offshore</span> Staffing
-              Solutions
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Choose the staffing model that best fits your business needs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-2 border-brand/20 shadow-xs">
-              <CardHeader className="text-center pb-2">
-                <div className="w-16 h-16 mx-auto mb-4 bg-blue-50 rounded-full flex items-center justify-center">
-                  <Globe className="h-8 w-8 text-blue-500" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {stackOpsFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="bg-white rounded-xl p-6 shadow-sm border text-center"
+                >
+                  <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <feature.icon className="h-6 w-6 text-brand" />
+                  </div>
+                  <h3 className="font-lexend font-semibold mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground font-inter">
+                    {feature.description}
+                  </p>
                 </div>
-                <CardTitle>Remote Staff</CardTitle>
-                <CardDescription>
-                  Fully remote team members who work from home
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Enterprise-grade equipment provided</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Secure home office setup</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Productivity monitoring software</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Backup internet connections</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Full HR and technical support</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+              ))}
+            </div>
 
-            <Card className="border-2 border-brand/20 shadow-xs">
-              <CardHeader className="text-center pb-2">
-                <div className="w-16 h-16 mx-auto mb-4 bg-green-50 rounded-full flex items-center justify-center">
-                  <Users className="h-8 w-8 text-green-500" />
+            <div className="text-center mt-10">
+              <Button variant="outline" className="font-lexend" asChild>
+                <Link href="/stackops">
+                  Learn About StackOps
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-muted/30">
+          <div className="container max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                Common Questions
+              </h2>
+            </div>
+
+            <div className="space-y-6">
+              {[
+                {
+                  q: "How long does it take to get an operator?",
+                  a: "Most operators are ready to start within 7 days of your initial request. For specialized roles, it may take slightly longer to ensure we find the right certified match.",
+                },
+                {
+                  q: "What if the operator doesn't work out?",
+                  a: "Our StackGuarantee includes a 14-day replacement guarantee. If your operator isn't the right fit, we'll find a replacement at no additional cost.",
+                },
+                {
+                  q: "What roles can you fill?",
+                  a: "We specialize in agency operator roles: Klaviyo builders, email designers, ad ops assistants, reporting analysts, Shopify developers, QA testers, and more. If it's an agency execution role, we likely have a certification track for it.",
+                },
+                {
+                  q: "Do I manage the operator directly?",
+                  a: "Yes — your operator works for you and follows your direction on day-to-day tasks. We handle the employment, HR, weekly performance check-ins, and provide ongoing support through StackOps.",
+                },
+                {
+                  q: "What's included in the monthly fee?",
+                  a: "Everything: operator salary, StackCertified onboarding, weekly KPI check-ins, QA systems access, escalation support, and our replacement guarantee. No hidden fees.",
+                },
+              ].map((faq) => (
+                <div
+                  key={faq.q}
+                  className="bg-white rounded-xl p-6 shadow-sm border"
+                >
+                  <h3 className="font-lexend font-semibold mb-2">{faq.q}</h3>
+                  <p className="text-muted-foreground font-inter">{faq.a}</p>
                 </div>
-                <CardTitle>Hybrid Staff</CardTitle>
-                <CardDescription>
-                  Flexible schedule combining office and remote work
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Split days between office and home</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Dedicated desk at our facility</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Equipment for both locations</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Scheduled team collaboration days</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Customizable schedule options</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+              ))}
+            </div>
 
-            <Card className="border-2 border-brand/20 shadow-xs">
-              <CardHeader className="text-center pb-2">
-                <div className="w-16 h-16 mx-auto mb-4 bg-purple-50 rounded-full flex items-center justify-center">
-                  <Shield className="h-8 w-8 text-purple-500" />
-                </div>
-                <CardTitle>Office-Based Staff</CardTitle>
-                <CardDescription>
-                  Dedicated team members working from our secure facilities
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Premium office environment</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Enhanced security protocols</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Direct supervision and management</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Team building and company culture</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="h-5 w-5 shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                    </div>
-                    <span>Private meeting rooms and facilities</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="text-center mt-8">
+              <Link
+                href="/faq"
+                className="text-brand font-lexend font-medium inline-flex items-center hover:underline"
+              >
+                View all FAQs
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="py-20 bg-brand-accent/5">
-        <div className="container max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Common questions about our offshore staffing process
-            </p>
+        {/* CTA */}
+        <section className="py-20 bg-brand text-white">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center">
+              <Sparkles className="h-12 w-12 text-brand-accent mx-auto mb-6" />
+              <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
+                Ready to Add Capacity?
+              </h2>
+              <p className="text-xl opacity-90 font-inter mb-8">
+                StackCertified operators for your agency, ready in 7 days. More
+                client capacity without more chaos.
+              </p>
+              <Button
+                size="lg"
+                className="bg-brand-accent hover:bg-brand-accent/90 text-white font-lexend font-medium"
+                asChild
+              >
+                <Link href="/contact-us">Get Your First Operator</Link>
+              </Button>
+            </div>
           </div>
-
-          <div className="bg-white rounded-xl shadow-sm p-8">
-            <h4 className="font-medium mb-2">What is outsourcing?</h4>
-            <p className="text-muted-foreground mb-6">
-              Outsourcing is the business practice of hiring a party outside a
-              company to perform services or create goods that traditionally
-              were performed in-house by the company's own employees and staff.
-              Staff Stack provides dedicated staff that work exclusively for
-              your business, unlike traditional outsourcing where resources may
-              be shared.
-            </p>
-            <Separator className="my-4" />
-            <h4 className="font-medium mb-2">
-              What's the difference between outsourcing and offshoring?
-            </h4>
-            <p className="text-muted-foreground mb-6">
-              Outsourcing refers to contracting out a business process to
-              another party, while offshoring specifically refers to getting
-              work done in a different country, usually to benefit from lower
-              costs. Staff Stack combines both by providing dedicated offshore
-              staff based in the Philippines who work exclusively for your
-              business.
-            </p>
-            <Separator className="my-4" />
-            <h4 className="font-medium mb-2">What is offshore outsourcing?</h4>
-            <p className="text-muted-foreground mb-6">
-              Offshore outsourcing, or offshoring, is the practice of hiring an
-              external organization to perform some business functions in a
-              country other than the one where the products or services are
-              developed or manufactured. With Staff Stack, you get dedicated
-              Philippine-based staff who are fully integrated with your team.
-            </p>
-            <Separator className="my-4" />
-            <h4 className="font-medium mb-2">
-              How long does it take to build my team?
-            </h4>
-            <p className="text-muted-foreground mb-6">
-              The timeline depends on your specific requirements and the roles
-              you're looking to fill. For most positions, we can present
-              qualified candidates within 2-3 weeks. Once you select your
-              preferred candidates, onboarding typically takes an additional
-              week. For specialized or senior roles, the recruitment process may
-              take longer to ensure we find the perfect match.
-            </p>
-            <Separator className="my-4" />
-            <h4 className="font-medium mb-2">
-              How do I manage remote staff effectively?
-            </h4>
-            <p className="text-muted-foreground mb-0">
-              Effective management of remote staff involves clear communication,
-              setting expectations, regular check-ins, and utilizing appropriate
-              technology tools. Staff Stack provides productivity monitoring
-              software, regular reports, and management support to help you
-              track performance. We also handle all administrative aspects,
-              allowing you to focus on managing the work itself rather than HR
-              functions.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-brand text-white">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to build your offshore team?
-          </h2>
-          <p className="mb-8 max-w-2xl mx-auto opacity-90">
-            Let's discuss how Staff Stack can help grow and manage your business
-            with dedicated offshore professionals.
-          </p>
-          <Button
-            size="lg"
-            className="bg-white text-brand hover:bg-white/90"
-            asChild
-          >
-            <Link href="/contact-us">Get Started Today</Link>
-          </Button>
-        </div>
-      </section>
+        </section>
+      </main>
     </>
   );
 }

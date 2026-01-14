@@ -1,39 +1,33 @@
 "use client";
 
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 const footerLinks = [
   {
-    title: "Services",
+    title: "For Agencies",
     items: [
-      { name: "IT & Development", href: "/services#it-development" },
-      { name: "Creative & Design", href: "/services#creative-design" },
-      { name: "Customer Service", href: "/services#customer-service" },
-      { name: "Digital Marketing", href: "/services#digital-marketing" },
-      { name: "Finance & Accounting", href: "/services#finance-accounting" },
-      { name: "Virtual Assistants", href: "/services#virtual-assistants" },
+      { name: "Retention & Klaviyo", href: "/agencies/retention" },
+      { name: "Paid Media Ops", href: "/agencies/paid-media" },
+      { name: "Shopify Dev", href: "/agencies/shopify" },
+      { name: "All Agency Verticals", href: "/agencies" },
+    ],
+  },
+  {
+    title: "The Stack",
+    items: [
+      { name: "StackCertified", href: "/stackcertified" },
+      { name: "StackOps", href: "/stackops" },
+      { name: "StackGuarantee", href: "/stackguarantee" },
     ],
   },
   {
     title: "Company",
     items: [
-      { name: "About Us", href: "/about" },
       { name: "How It Works", href: "/how-it-works" },
-      { name: "Blog", href: "/blog" },
-      { name: "Careers", href: "/jobs" },
+      { name: "About Us", href: "/about" },
+      { name: "What Agencies Say", href: "/about/testimonials" },
       { name: "Contact Us", href: "/contact-us" },
-    ],
-  },
-  {
-    title: "Industries",
-    items: [
-      { name: "Technology", href: "/industries#technology" },
-      { name: "Finance", href: "/industries#finance" },
-      { name: "Healthcare", href: "/industries#healthcare" },
-      { name: "E-commerce", href: "/industries#ecommerce" },
-      { name: "Real Estate", href: "/industries#realestate" },
-      { name: "Legal", href: "/industries#legal" },
     ],
   },
 ];
@@ -43,7 +37,7 @@ export function Footer() {
     <footer className="bg-slate-900 text-slate-200 pt-16 pb-8">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Brand and Contact */}
+          {/* Brand and Tagline */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <span className="font-lexend font-medium text-2xl tracking-tight text-white">
@@ -51,22 +45,22 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-slate-400 mb-6 max-w-md font-inter">
-              Your trusted partner for building dedicated offshore teams in the
-              Philippines. We handle the complexities while you focus on growth.
+              Delivery infrastructure for agencies. StackCertified operators,
+              StackOps quality systems, StackGuarantee peace of mind.
             </p>
+            <div className="bg-brand/10 border border-brand/20 rounded-lg p-4 mb-6">
+              <p className="text-sm text-slate-300 font-inter">
+                <span className="text-brand-accent font-medium">
+                  AI-native operators
+                </span>{" "}
+                — onboarded, tested, and ready in 7 days. More client capacity
+                without more chaos.
+              </p>
+            </div>
             <div className="space-y-2 text-slate-400 font-inter">
               <p>
                 <strong className="text-white font-lexend">Email:</strong>{" "}
-                support@staffstack.co
-              </p>
-              <p>
-                <strong className="text-white font-lexend">Phone:</strong> +1
-                (800) 123-4567
-              </p>
-              <p>
-                <strong className="text-white font-lexend">Address:</strong>{" "}
-                18th Floor, Citibank Square, Eastwood City, Quezon City,
-                Philippines
+                hello@staffstack.co
               </p>
             </div>
           </div>
@@ -94,38 +88,43 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="flex items-center justify-between pt-8 pb-8 border-t border-border">
-          <span className="font-lexend">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 pb-8 border-t border-slate-800">
+          <span className="font-lexend text-slate-400 text-sm">
             © 2025 Staff Stack. All rights reserved.
           </span>
-          <div className="flex space-x-6">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+          <div className="flex items-center gap-6">
+            <Link
+              href="/privacy"
+              className="text-slate-400 hover:text-white text-sm font-lexend transition-colors"
             >
-              <span className="sr-only">Twitter</span>
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-slate-400 hover:text-white text-sm font-lexend transition-colors"
             >
-              <span className="sr-only">Facebook</span>
-              <Facebook className="h-5 w-5" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <span className="sr-only">LinkedIn</span>
-              <Linkedin className="h-5 w-5" />
-            </a>
+              Terms of Service
+            </Link>
+            <div className="flex space-x-4 ml-4">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
+                <span className="sr-only">Twitter</span>
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
+                <span className="sr-only">LinkedIn</span>
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

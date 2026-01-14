@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Award, Clock, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -33,7 +33,8 @@ const contactFormSchema = z.object({
   email: z.string().email({ error: "Please enter a valid email address." }),
   company: z.string().min(1, { error: "Company name is required." }),
   phone: z.string().min(6, { error: "Please enter a valid phone number." }),
-  service: z.string().min(1, { error: "Please select a service category." }),
+  service: z.string().min(1, { error: "Please select an agency vertical." }),
+  teamSize: z.string().optional(),
   message: z
     .string()
     .min(10, { error: "Message must be at least 10 characters." }),
@@ -65,7 +66,6 @@ const locations = [
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Breadcrumb schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -93,6 +93,7 @@ export default function ContactPage() {
       company: "",
       phone: "",
       service: "",
+      teamSize: "",
       message: "",
     },
   });
@@ -118,7 +119,6 @@ export default function ContactPage() {
         });
         form.reset();
       } else {
-        // Handle specific error cases
         if (response.status === 429) {
           toast.error("Too many requests", {
             description: "Please wait a moment before submitting again.",
@@ -152,7 +152,7 @@ export default function ContactPage() {
           __html: JSON.stringify(breadcrumbSchema),
         }}
       />
-      <section className="pt-16 pb-16 bg-linear-to-r from-brand-dark via-brand to-brand-light text-white overflow-hidden relative">
+      <section className="pt-16 pb-16 bg-linear-to-br from-brand-dark via-brand to-brand-light text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
           <motion.div
             className="absolute h-64 w-64 rounded-full bg-brand-accent"
@@ -171,27 +171,37 @@ export default function ContactPage() {
 
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-brand-accent/20 px-4 py-2 rounded-full mb-6"
+            >
+              <Award className="h-4 w-4 text-brand-accent" />
+              <span className="text-sm font-medium font-inter">
+                Get Your First Operator
+              </span>
+            </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-4xl md:text-5xl font-bold mb-4"
+              className="text-4xl md:text-5xl font-lexend font-bold mb-4"
             >
-              Get in <span className="text-brand-accent">Touch</span>
+              Let's Talk <span className="text-brand-accent">Capacity</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-xl opacity-90"
+              className="text-xl opacity-90 font-inter"
             >
-              We'd love to hear from you! Reach out to discuss your offshore
-              staffing needs.
+              Tell us about your agency and the roles you need. We'll match you
+              with StackCertified operators ready in 7 days.
             </motion.p>
           </div>
         </div>
 
-        {/* Wave SVG Divider */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg
             viewBox="0 0 1200 120"
@@ -211,9 +221,11 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white p-8 rounded-xl shadow-xs"
+              className="bg-white p-8 rounded-xl shadow-sm"
             >
-              <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
+              <h2 className="text-2xl font-lexend font-bold mb-6">
+                Get Your First Operator
+              </h2>
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
@@ -225,7 +237,9 @@ export default function ContactPage() {
                       name="fullName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Full Name</FormLabel>
+                          <FormLabel className="font-inter">
+                            Full Name
+                          </FormLabel>
                           <FormControl>
                             <Input placeholder="Your name" {...field} />
                           </FormControl>
@@ -238,7 +252,7 @@ export default function ContactPage() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel className="font-inter">Email</FormLabel>
                           <FormControl>
                             <Input
                               placeholder="Your email"
@@ -258,9 +272,11 @@ export default function ContactPage() {
                       name="company"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Company</FormLabel>
+                          <FormLabel className="font-inter">
+                            Agency Name
+                          </FormLabel>
                           <FormControl>
-                            <Input placeholder="Your company" {...field} />
+                            <Input placeholder="Your agency" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -271,7 +287,9 @@ export default function ContactPage() {
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Phone Number</FormLabel>
+                          <FormLabel className="font-inter">
+                            Phone Number
+                          </FormLabel>
                           <FormControl>
                             <Input placeholder="Your phone number" {...field} />
                           </FormControl>
@@ -281,57 +299,84 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <FormField
-                    control={form.control}
-                    name="service"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Service Category</FormLabel>
-                        <Select
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                        >
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a service category" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="it-development">
-                              IT & Development
-                            </SelectItem>
-                            <SelectItem value="creative-design">
-                              Creative & Design
-                            </SelectItem>
-                            <SelectItem value="customer-service">
-                              Customer Service
-                            </SelectItem>
-                            <SelectItem value="digital-marketing">
-                              Digital Marketing
-                            </SelectItem>
-                            <SelectItem value="finance-accounting">
-                              Finance & Accounting
-                            </SelectItem>
-                            <SelectItem value="virtual-assistants">
-                              Virtual Assistants
-                            </SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="service"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-inter">
+                            Agency Vertical
+                          </FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select your vertical" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="retention">
+                                Retention & Klaviyo
+                              </SelectItem>
+                              <SelectItem value="paid-media">
+                                Paid Media Ops
+                              </SelectItem>
+                              <SelectItem value="shopify">
+                                Shopify Dev
+                              </SelectItem>
+                              <SelectItem value="multiple">
+                                Multiple / Other
+                              </SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="teamSize"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-inter">
+                            Current Team Size
+                          </FormLabel>
+                          <Select
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select team size" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="1-5">1-5 people</SelectItem>
+                              <SelectItem value="6-15">6-15 people</SelectItem>
+                              <SelectItem value="16-30">16-30 people</SelectItem>
+                              <SelectItem value="31+">31+ people</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
 
                   <FormField
                     control={form.control}
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Message</FormLabel>
+                        <FormLabel className="font-inter">
+                          Tell Us About the Role(s) You Need
+                        </FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="Tell us about your staffing needs"
+                            placeholder="E.g., 'We need a Klaviyo email builder who can handle 10+ campaigns/week' or 'Looking for a Shopify developer for ongoing support tickets'"
                             className="min-h-32"
                             {...field}
                           />
@@ -344,10 +389,10 @@ export default function ContactPage() {
                   <div className="flex justify-end">
                     <Button
                       type="submit"
-                      className="bg-brand hover:bg-brand-light text-white w-full md:w-auto"
+                      className="bg-brand hover:bg-brand-light text-white font-lexend w-full md:w-auto"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                      {isSubmitting ? "Sending..." : "Get Started"}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </div>
@@ -362,8 +407,10 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="space-y-8"
             >
-              <div className="bg-white p-8 rounded-xl shadow-xs">
-                <h2 className="text-2xl font-bold mb-6">Our Locations</h2>
+              <div className="bg-white p-8 rounded-xl shadow-sm">
+                <h2 className="text-2xl font-lexend font-bold mb-6">
+                  Our Locations
+                </h2>
                 <div className="grid gap-8">
                   {locations.map((location) => (
                     <div key={location.id} className="flex flex-col space-y-4">
@@ -377,26 +424,36 @@ export default function ContactPage() {
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-brand/80 to-transparent" />
                         <div className="absolute bottom-4 left-4 text-white">
-                          <h3 className="font-bold text-lg">{location.city}</h3>
+                          <h3 className="font-lexend font-bold text-lg">
+                            {location.city}
+                          </h3>
                         </div>
                       </div>
 
                       <div className="space-y-2">
                         <div className="flex items-start gap-3">
                           <MapPin className="h-5 w-5 text-brand mt-1" />
-                          <span className="text-sm">{location.address}</span>
+                          <span className="text-sm font-inter">
+                            {location.address}
+                          </span>
                         </div>
                         <div className="flex items-start gap-3">
                           <Phone className="h-5 w-5 text-brand mt-1" />
-                          <span className="text-sm">{location.phone}</span>
+                          <span className="text-sm font-inter">
+                            {location.phone}
+                          </span>
                         </div>
                         <div className="flex items-start gap-3">
                           <Mail className="h-5 w-5 text-brand mt-1" />
-                          <span className="text-sm">{location.email}</span>
+                          <span className="text-sm font-inter">
+                            {location.email}
+                          </span>
                         </div>
                         <div className="flex items-start gap-3">
                           <Clock className="h-5 w-5 text-brand mt-1" />
-                          <span className="text-sm">{location.hours}</span>
+                          <span className="text-sm font-inter">
+                            {location.hours}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -405,20 +462,34 @@ export default function ContactPage() {
               </div>
 
               <div className="bg-linear-to-r from-brand to-brand-light text-white p-8 rounded-xl">
-                <h3 className="text-xl font-bold mb-3">
-                  International Clients
+                <h3 className="text-xl font-lexend font-bold mb-3">
+                  What Happens Next?
                 </h3>
-                <p className="mb-6">
-                  We work with businesses globally. Our team is available during
-                  your business hours through our flexible work arrangements.
-                </p>
-                <Button
-                  variant="outline"
-                  className="bg-white/10 border-white/30 hover:bg-white/20 w-full"
-                  asChild
-                >
-                  <Link href="/services">Learn more about our services</Link>
-                </Button>
+                <ul className="space-y-3 font-inter">
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-accent font-bold">1.</span>
+                    <span>
+                      We'll schedule a 15-minute call to understand your needs
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-accent font-bold">2.</span>
+                    <span>
+                      We match and certify operators for your specific roles
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-accent font-bold">3.</span>
+                    <span>
+                      You interview with their scorecard — see exactly what they
+                      can do
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-brand-accent font-bold">4.</span>
+                    <span>Your operator starts shipping work within 7 days</span>
+                  </li>
+                </ul>
               </div>
             </motion.div>
           </div>
@@ -433,28 +504,28 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-3xl font-bold mb-6"
+              className="text-3xl font-lexend font-bold mb-6"
             >
-              Frequently Asked Questions
+              Common Questions
             </motion.h2>
 
             <div className="grid gap-6 mt-8 text-left">
               {[
                 {
-                  q: "How quickly can you staff our positions?",
-                  a: "Typically, we can present qualified candidates within 1-2 weeks. The entire hiring process from initial request to onboarding usually takes 3-4 weeks, depending on the role complexity and specific requirements.",
+                  q: "How quickly can I get an operator?",
+                  a: "Most operators are ready to start within 7 days. We'll match you with StackCertified candidates who've already passed role-specific tests, so there's no waiting around for training.",
                 },
                 {
-                  q: "What happens if the staff member doesn't work out?",
-                  a: "We provide a 30-day replacement guarantee. If any staff member doesn't meet your expectations within the first 30 days, we'll replace them at no additional cost. Our thorough vetting process helps ensure this rarely happens.",
+                  q: "What if the operator doesn't work out?",
+                  a: "Our StackGuarantee includes a 14-day replacement guarantee. If your operator isn't the right fit, we'll find a replacement at no additional cost. Our certification process makes this rare.",
                 },
                 {
-                  q: "How do you handle time zone differences?",
-                  a: "Our staff are flexible and can be scheduled to work during your business hours, regardless of your time zone. Many of our clients appreciate the ability to have work continue even after their local team has gone home.",
+                  q: "What roles can you fill for agencies?",
+                  a: "We specialize in agency execution roles: Klaviyo email builders, email designers, QA specialists, ad ops assistants, reporting analysts, creative editors, Shopify developers, and more.",
                 },
                 {
-                  q: "What kind of infrastructure and equipment do you provide?",
-                  a: "We provide all necessary workspace, computers, high-speed internet with backup connections, and supporting infrastructure. We can also accommodate specific software or hardware requirements for specialized roles.",
+                  q: "How is this different from hiring freelancers?",
+                  a: "StackCertified operators are full-time, dedicated to your agency, and backed by our StackOps delivery infrastructure — QA systems, weekly check-ins, backup bench, and escalation support. Not just a body in a seat.",
                 },
               ].map((faq, index) => (
                 <motion.div
@@ -463,10 +534,12 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-xl shadow-xs"
+                  className="bg-white p-6 rounded-xl shadow-sm"
                 >
-                  <h3 className="font-bold text-lg mb-2">{faq.q}</h3>
-                  <p className="text-muted-foreground">{faq.a}</p>
+                  <h3 className="font-lexend font-bold text-lg mb-2">
+                    {faq.q}
+                  </h3>
+                  <p className="text-muted-foreground font-inter">{faq.a}</p>
                 </motion.div>
               ))}
             </div>

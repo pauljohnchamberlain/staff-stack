@@ -22,7 +22,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Hire Remote Staff in Manila, Philippines | Staff Stack",
   description:
-    "Build your remote team with talented professionals in Manila, Philippines. Access top IT developers, customer service, and admin staff at 60% cost savings.",
+    "Build your remote team with talented professionals in Manila, Philippines. Access skilled operators for agency work, ready in 7 days.",
   keywords: [
     "Manila offshore staffing",
     "hire remote staff Manila",
@@ -144,9 +144,9 @@ export default function ManilaLocationPage() {
         "Strong Western business culture integration with American-style education and work practices.",
     },
     {
-      title: "Cost Effective",
+      title: "Scalable Capacity",
       description:
-        "Competitive rates while maintaining high quality standards - typically 60-70% cost savings.",
+        "Add delivery capacity without the overhead of local hiring — operators who ship work consistently.",
     },
     {
       title: "24/7 Operations",

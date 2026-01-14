@@ -17,131 +17,127 @@ import { Input } from "@/components/ui/input";
 export const metadata: Metadata = {
   title: "Blog | Staff Stack",
   description:
-    "Stay informed with the latest insights, trends, and best practices in outsourcing, remote team management, and the Philippines IT industry.",
+    "Insights on agency operations, AI-native workflows, and building delivery capacity. Learn how agencies scale with StackCertified operators.",
 };
 
 const blogCategories = [
-  { name: "All Categories", count: 38 },
-  { name: "Offshore Staffing", count: 12 },
-  { name: "Remote Teams", count: 10 },
-  { name: "Business Strategy", count: 8 },
-  { name: "Industry Insights", count: 5 },
+  { name: "All Categories", count: 24 },
+  { name: "Agency Operations", count: 8 },
+  { name: "AI Workflows", count: 6 },
+  { name: "Delivery Capacity", count: 5 },
   { name: "Case Studies", count: 3 },
+  { name: "Industry Trends", count: 2 },
 ];
 
 const featuredPost = {
   id: 1,
-  title: "How Offshore Teams Can Drive Innovation for Technology Companies",
+  title: "Why Agencies Are Moving from VAs to Certified Operators",
   excerpt:
-    "Discover how leading tech companies are leveraging offshore development teams to accelerate innovation and gain a competitive edge in today's fast-paced market.",
+    "The traditional VA model is breaking down for agencies with complex delivery needs. Learn why StackCertified operators are becoming the new standard for agency capacity.",
   imageUrl: "/images/blog/team-collaboration.jpg",
-  category: "Offshore Staffing",
-  publishDate: "May 14, 2025",
-  author: "Sarah Johnson",
+  category: "Agency Operations",
+  publishDate: "January 10, 2026",
+  author: "Staff Stack Team",
   readTime: "7 min read",
 };
 
 const recentPosts = [
   {
     id: 2,
-    title:
-      "5 Key Benefits of Hiring Remote Financial Analysts for Your Business",
+    title: "AI Workflow Proof: What It Means and Why It Matters",
     excerpt:
-      "Financial analysis is a critical function for businesses of all sizes. Learn how remote financial analysts can provide expertise while reducing costs.",
+      "Every StackCertified operator demonstrates they can work with AI tools. Here's what our AI workflow certification actually tests.",
     imageUrl: "/images/blog/financial-analysis.jpg",
-    category: "Remote Teams",
-    publishDate: "May 10, 2025",
-    author: "Michael Chen",
+    category: "AI Workflows",
+    publishDate: "January 6, 2026",
+    author: "Staff Stack Team",
     readTime: "5 min read",
   },
   {
     id: 3,
-    title: "Building a Successful Customer Support Team with Offshore Staff",
+    title: "Building a QA System That Actually Catches Errors",
     excerpt:
-      "Customer support can make or break your business. Discover how to build, train, and manage an effective offshore customer support team.",
+      "Campaign errors cost agencies clients. Learn how StackOps QA checklists reduce error rates and improve delivery quality.",
     imageUrl: "/images/blog/customer-support.jpg",
-    category: "Offshore Staffing",
-    publishDate: "May 5, 2025",
-    author: "Jessica Torres",
+    category: "Delivery Capacity",
+    publishDate: "January 2, 2026",
+    author: "Staff Stack Team",
     readTime: "6 min read",
   },
   {
     id: 4,
-    title:
-      "The Philippines: Why It's the Premier Destination for IT Outsourcing",
+    title: "Case Study: How a Klaviyo Agency Shipped 40% More Campaigns",
     excerpt:
-      "With a highly educated workforce, strong English skills, and competitive costs, the Philippines has become a top choice for IT outsourcing.",
+      "A retention agency added two StackCertified email builders. Here's how they increased campaign volume without sacrificing quality.",
     imageUrl: "/images/blog/philippines.jpg",
-    category: "Industry Insights",
-    publishDate: "April 28, 2025",
-    author: "David Reyes",
+    category: "Case Studies",
+    publishDate: "December 28, 2025",
+    author: "Staff Stack Team",
     readTime: "8 min read",
   },
   {
     id: 5,
-    title: "Essential Tools for Managing Your Remote Development Team",
+    title: "The Communication Simulation: Why We Test Before Placement",
     excerpt:
-      "The right tools can make remote team management seamless. Explore the essential software and systems for effective remote development team coordination.",
+      "Loom walkthroughs, written updates, and escalation messages — how we verify operators can communicate clearly before they start.",
     imageUrl: "/images/blog/remote-tools.jpg",
-    category: "Remote Teams",
-    publishDate: "April 22, 2025",
-    author: "Lisa Wang",
-    readTime: "6 min read",
+    category: "Agency Operations",
+    publishDate: "December 22, 2025",
+    author: "Staff Stack Team",
+    readTime: "5 min read",
   },
   {
     id: 6,
-    title:
-      "Case Study: How E-commerce Giant Scaled Operations with Offshore Staff",
+    title: "Paid Media Ops: The Role Agencies Didn't Know They Needed",
     excerpt:
-      "This case study examines how a growing e-commerce company used offshore staff to scale operations during peak seasons while maintaining customer satisfaction.",
+      "Ad ops assistants handle the execution work so strategists can focus on strategy. Here's what this role actually does day-to-day.",
     imageUrl: "/images/blog/ecommerce.jpg",
-    category: "Case Studies",
-    publishDate: "April 15, 2025",
-    author: "Marcus Johnson",
-    readTime: "10 min read",
+    category: "Delivery Capacity",
+    publishDate: "December 18, 2025",
+    author: "Staff Stack Team",
+    readTime: "6 min read",
   },
 ];
 
 const popularPosts = [
   {
     id: 7,
-    title: "10 Tips for Successfully Onboarding Offshore Team Members",
-    publishDate: "April 8, 2025",
-    category: "Offshore Staffing",
+    title: "How to Onboard a StackCertified Operator in 7 Days",
+    publishDate: "December 12, 2025",
+    category: "Agency Operations",
   },
   {
     id: 8,
-    title: "Cost Comparison: In-house vs. Offshore Development Teams",
-    publishDate: "March 30, 2025",
-    category: "Business Strategy",
+    title: "Practical Tests vs. Generic Assessments: What's the Difference?",
+    publishDate: "December 5, 2025",
+    category: "AI Workflows",
   },
   {
     id: 9,
-    title: "How to Overcome Cultural Differences in Global Teams",
-    publishDate: "March 22, 2025",
-    category: "Remote Teams",
+    title: "The 14-Day Replacement Guarantee: How It Works",
+    publishDate: "November 28, 2025",
+    category: "Agency Operations",
   },
   {
     id: 10,
-    title: "The Future of Work: Trends Shaping Remote and Offshore Staffing",
-    publishDate: "March 15, 2025",
-    category: "Industry Insights",
+    title: "Weekly KPI Check-ins: What We Track and Why",
+    publishDate: "November 20, 2025",
+    category: "Delivery Capacity",
   },
 ];
 
 export default function BlogPage() {
   return (
     <>
-      <section className="pt-24 pb-10 bg-linear-to-b from-sky-50 to-background">
+      <section className="pt-24 pb-10 bg-gradient-to-b from-brand/5 to-background">
         <div className="container max-w-6xl">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 relative">
+            <h1 className="text-4xl md:text-5xl font-lexend font-bold mb-6 relative">
               Staff Stack <span className="text-brand">Blog</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8">
-              Industry insights, tips, and news about offshore staffing, remote
-              teams, and growing your business with dedicated offshore
-              professionals.
+            <p className="text-lg text-muted-foreground mb-8 font-inter">
+              Insights on agency operations, AI-native workflows, and building
+              delivery capacity with StackCertified operators.
             </p>
           </div>
         </div>
@@ -154,7 +150,9 @@ export default function BlogPage() {
             <div className="md:w-3/4">
               {/* Featured Article */}
               <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">Featured Article</h2>
+                <h2 className="text-2xl font-lexend font-bold mb-6">
+                  Featured Article
+                </h2>
                 <Card className="overflow-hidden border-0 shadow-md">
                   <div className="relative h-80 w-full">
                     <Image
@@ -172,32 +170,32 @@ export default function BlogPage() {
                       >
                         {featuredPost.category}
                       </Badge>
-                      <span className="text-muted-foreground text-sm flex items-center gap-1">
+                      <span className="text-muted-foreground text-sm flex items-center gap-1 font-inter">
                         <Calendar className="h-3 w-3" />{" "}
                         {featuredPost.publishDate}
                       </span>
                     </div>
-                    <CardTitle className="text-2xl hover:text-brand transition-colors">
+                    <CardTitle className="text-2xl font-lexend hover:text-brand transition-colors">
                       <Link href={`/blog/${featuredPost.id}`}>
                         {featuredPost.title}
                       </Link>
                     </CardTitle>
-                    <CardDescription className="text-base">
+                    <CardDescription className="text-base font-inter">
                       {featuredPost.excerpt}
                     </CardDescription>
                   </CardHeader>
                   <CardFooter className="border-t pt-4 flex justify-between">
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground font-inter">
                       <User className="h-3 w-3" />
                       <span>{featuredPost.author}</span>
                     </div>
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground font-inter">
                       <Clock className="h-3 w-3" />
                       <span>{featuredPost.readTime}</span>
                     </div>
                     <Link
                       href={`/blog/${featuredPost.id}`}
-                      className="text-sm font-medium text-brand hover:text-brand/80 flex items-center gap-1"
+                      className="text-sm font-medium text-brand hover:text-brand/80 flex items-center gap-1 font-lexend"
                     >
                       Read Article <ArrowRight className="h-4 w-4" />
                     </Link>
@@ -207,7 +205,9 @@ export default function BlogPage() {
 
               {/* Recent Articles */}
               <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">Recent Articles</h2>
+                <h2 className="text-2xl font-lexend font-bold mb-6">
+                  Recent Articles
+                </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {recentPosts.map((post) => (
                     <Card
@@ -230,23 +230,23 @@ export default function BlogPage() {
                           >
                             {post.category}
                           </Badge>
-                          <span className="text-muted-foreground text-xs flex items-center gap-1">
+                          <span className="text-muted-foreground text-xs flex items-center gap-1 font-inter">
                             <Calendar className="h-3 w-3" /> {post.publishDate}
                           </span>
                         </div>
-                        <CardTitle className="text-lg hover:text-brand transition-colors">
+                        <CardTitle className="text-lg font-lexend hover:text-brand transition-colors">
                           <Link href={`/blog/${post.id}`}>{post.title}</Link>
                         </CardTitle>
-                        <CardDescription className="text-sm line-clamp-3 mt-1">
+                        <CardDescription className="text-sm line-clamp-3 mt-1 font-inter">
                           {post.excerpt}
                         </CardDescription>
                       </CardHeader>
                       <CardFooter className="border-t pt-3 flex justify-between">
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground font-inter">
                           <User className="h-3 w-3" />
                           <span>{post.author}</span>
                         </div>
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground font-inter">
                           <Clock className="h-3 w-3" />
                           <span>{post.readTime}</span>
                         </div>
@@ -257,7 +257,7 @@ export default function BlogPage() {
                 <div className="mt-8 flex justify-center">
                   <Button
                     variant="outline"
-                    className="text-brand border-brand hover:bg-brand/5"
+                    className="text-brand border-brand hover:bg-brand/5 font-lexend"
                   >
                     View All Articles
                   </Button>
@@ -269,16 +269,23 @@ export default function BlogPage() {
             <div className="md:w-1/4">
               {/* Search */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold mb-3">Search</h3>
+                <h3 className="text-lg font-lexend font-semibold mb-3">
+                  Search
+                </h3>
                 <div className="relative">
-                  <Input placeholder="Search articles..." className="pr-10" />
+                  <Input
+                    placeholder="Search articles..."
+                    className="pr-10 font-inter"
+                  />
                   <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 </div>
               </div>
 
               {/* Categories */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold mb-3">Categories</h3>
+                <h3 className="text-lg font-lexend font-semibold mb-3">
+                  Categories
+                </h3>
                 <div className="bg-muted/40 rounded-lg p-4">
                   <ul className="space-y-2">
                     {blogCategories.map((category) => (
@@ -288,7 +295,7 @@ export default function BlogPage() {
                       >
                         <Link
                           href={`/blog/category/${category.name.toLowerCase().replace(/\s+/g, "-")}`}
-                          className="text-muted-foreground hover:text-foreground transition-colors"
+                          className="text-muted-foreground hover:text-foreground transition-colors font-inter"
                         >
                           {category.name}
                         </Link>
@@ -303,7 +310,9 @@ export default function BlogPage() {
 
               {/* Popular Posts */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold mb-3">Popular Posts</h3>
+                <h3 className="text-lg font-lexend font-semibold mb-3">
+                  Popular Posts
+                </h3>
                 <div className="bg-muted/40 rounded-lg p-4">
                   <ul className="space-y-4">
                     {popularPosts.map((post) => (
@@ -313,11 +322,11 @@ export default function BlogPage() {
                       >
                         <Link
                           href={`/blog/${post.id}`}
-                          className="font-medium hover:text-brand transition-colors text-sm block mb-1"
+                          className="font-medium hover:text-brand transition-colors text-sm block mb-1 font-lexend"
                         >
                           {post.title}
                         </Link>
-                        <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                        <div className="flex items-center gap-3 text-xs text-muted-foreground font-inter">
                           <span className="flex items-center gap-1">
                             <Calendar className="h-3 w-3" /> {post.publishDate}
                           </span>
@@ -333,21 +342,23 @@ export default function BlogPage() {
 
               {/* Subscribe */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold mb-3">Subscribe</h3>
+                <h3 className="text-lg font-lexend font-semibold mb-3">
+                  Subscribe
+                </h3>
                 <Card>
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-base">
-                      Get Latest Updates
+                    <CardTitle className="text-base font-lexend">
+                      Agency Capacity Insights
                     </CardTitle>
-                    <CardDescription>
-                      Subscribe to our newsletter for the latest industry
-                      insights.
+                    <CardDescription className="font-inter">
+                      Get weekly insights on agency operations, AI workflows,
+                      and delivery capacity.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      <Input placeholder="Your email" />
-                      <Button className="w-full bg-brand hover:bg-brand/90">
+                      <Input placeholder="Your email" className="font-inter" />
+                      <Button className="w-full bg-brand hover:bg-brand/90 font-lexend">
                         Subscribe
                       </Button>
                     </div>
@@ -362,19 +373,19 @@ export default function BlogPage() {
       <section className="py-16">
         <div className="container max-w-6xl">
           <div className="text-center p-8 md:p-12 bg-brand rounded-2xl text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to build your offshore team?
+            <h3 className="text-2xl md:text-3xl font-lexend font-bold mb-4">
+              Ready to add delivery capacity?
             </h3>
-            <p className="mb-6 text-white/80 max-w-2xl mx-auto">
-              Let's discuss how Staff Stack can help grow and manage your
-              business with dedicated offshore professionals.
+            <p className="mb-6 text-white/80 max-w-2xl mx-auto font-inter">
+              StackCertified operators for your agency. Tested on real work.
+              Ready in 7 days.
             </p>
             <Button
               size="lg"
-              className="bg-white text-brand hover:bg-white/90"
+              className="bg-brand-accent hover:bg-brand-accent/90 text-white font-lexend"
               asChild
             >
-              <Link href="/contact-us">Get Started Today</Link>
+              <Link href="/contact-us">Get Your First Operator</Link>
             </Button>
           </div>
         </div>

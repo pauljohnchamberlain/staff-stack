@@ -1,184 +1,71 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  BarChart3,
-  Calculator,
-  HardHat,
-  Headphones,
-  HeartPulse,
-  LineChart,
-  Mail,
-  Monitor,
-  Paintbrush,
-} from "lucide-react";
+import { ArrowRight, Code, Mail, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const categories = [
   {
-    id: "it",
-    name: "Information Technology",
-    icon: Monitor,
-    color: "bg-blue-100 text-blue-600",
-    description:
-      "Technical specialists for software development, web applications, and IT systems support.",
-    roles: [
-      "Full Stack Developer",
-      "DevOps Engineer",
-      "UI/UX Designer",
-      "QA Tester",
-      "Database Administrator",
-      "Data Scientist",
-      "IT Support Specialist",
-      "System Administrator",
-    ],
-  },
-  {
-    id: "creative",
-    name: "Creative & Design",
-    icon: Paintbrush,
+    id: "retention",
+    name: "Retention & Klaviyo",
+    icon: Mail,
     color: "bg-purple-100 text-purple-600",
     description:
-      "Creative professionals to elevate your brand's visual appeal and content strategy.",
+      "Production capacity for email, SMS, and CRO agencies. Ship more campaigns without breaking deadlines.",
+    promise: "Ship X campaigns/week with <Y% QA error rate",
     roles: [
-      "Graphic Designer",
-      "Content Writer",
-      "Video Editor",
-      "Animator",
-      "Illustrator",
-      "Social Media Designer",
-      "Presentation Designer",
-      "3D Modeler",
+      "Klaviyo Email Builder",
+      "Email Designer (Figma → Email)",
+      "QA Specialist (Links, Rendering, UTMs)",
+      "Copywriter",
+      "Flow Strategist",
+      "Campaign Manager",
+      "Segmentation Analyst",
+      "SMS Specialist",
     ],
+    link: "/agencies/retention",
   },
   {
-    id: "customer",
-    name: "Customer Service",
-    icon: Headphones,
+    id: "paid-media",
+    name: "Paid Media Ops",
+    icon: TrendingUp,
+    color: "bg-blue-100 text-blue-600",
+    description:
+      "Ad ops and creative throughput for media buying agencies. Free up strategists to focus on strategy.",
+    promise: "Reduce founder/strategist time by X hrs/week",
+    roles: [
+      "Ad Ops Assistant",
+      "Reporting Analyst (Looker/Sheets)",
+      "Creative Editor (Variants + Hooks)",
+      "UTM & Pixel Specialist",
+      "Campaign Builder",
+      "Landing Page QA",
+      "Media Buyer Assistant",
+      "GA4 Analyst",
+    ],
+    link: "/agencies/paid-media",
+  },
+  {
+    id: "shopify",
+    name: "Shopify Dev",
+    icon: Code,
     color: "bg-green-100 text-green-600",
     description:
-      "Support teams to handle customer inquiries, technical support, and service excellence.",
+      "Implementation and support capacity for Shopify agencies. Handle overflow without missing deadlines.",
+    promise: "Project overflow handled, deadlines hit",
     roles: [
-      "Customer Support Representative",
-      "Technical Support Specialist",
-      "Help Desk Analyst",
-      "Live Chat Agent",
-      "Email Support Specialist",
-      "Customer Success Manager",
-      "Account Manager",
-      "Multilingual Support",
-    ],
-  },
-  {
-    id: "finance",
-    name: "Finance & Accounting",
-    icon: Calculator,
-    color: "bg-amber-100 text-amber-600",
-    description:
-      "Financial experts to manage accounting, bookkeeping, and financial analysis.",
-    roles: [
-      "Accountant",
-      "Bookkeeper",
-      "Financial Analyst",
-      "Accounts Payable Specialist",
-      "Accounts Receivable Specialist",
-      "Tax Specialist",
-      "Payroll Administrator",
-      "Auditor",
-    ],
-  },
-  {
-    id: "marketing",
-    name: "Digital Marketing",
-    icon: LineChart,
-    color: "bg-red-100 text-red-600",
-    description:
-      "Marketing professionals to grow your online presence and drive customer acquisition.",
-    roles: [
-      "SEO Specialist",
-      "PPC Campaign Manager",
-      "Social Media Manager",
-      "Content Marketer",
-      "Email Marketing Specialist",
-      "Marketing Analyst",
-      "Growth Hacker",
-      "CRM Specialist",
-    ],
-  },
-  {
-    id: "admin",
-    name: "Virtual Assistants",
-    icon: Mail,
-    color: "bg-sky-100 text-sky-600",
-    description:
-      "Administrative support staff to handle everyday tasks and keep your business organized.",
-    roles: [
-      "Executive Assistant",
-      "Admin Assistant",
-      "Data Entry Specialist",
-      "Research Assistant",
-      "Travel Coordinator",
-      "Calendar Management",
-      "Email Management",
-      "Project Coordinator",
-    ],
-  },
-  {
-    id: "professional",
-    name: "Professional Services",
-    icon: BarChart3,
-    color: "bg-teal-100 text-teal-600",
-    description:
-      "Specialized professionals for legal, HR, and business operations support.",
-    roles: [
-      "HR Assistant",
-      "Recruitment Specialist",
-      "Legal Assistant",
-      "Compliance Officer",
-      "Business Analyst",
+      "Shopify Developer",
+      "Theme Customization Specialist",
+      "QA Tester",
+      "Support Developer",
       "Project Manager",
-      "Operations Coordinator",
-      "Corporate Trainer",
+      "App Integration Specialist",
+      "Store Migration Specialist",
+      "Liquid Developer",
     ],
-  },
-  {
-    id: "healthcare",
-    name: "Healthcare Support",
-    icon: HeartPulse,
-    color: "bg-rose-100 text-rose-600",
-    description:
-      "Healthcare administrative staff to support your medical practice operations.",
-    roles: [
-      "Medical Transcriptionist",
-      "Medical Billing Specialist",
-      "Insurance Verification",
-      "Medical Records Specialist",
-      "Healthcare Coordinator",
-      "Patient Care Coordinator",
-      "Medical Administrative Assistant",
-      "Telemedicine Coordinator",
-    ],
-  },
-  {
-    id: "engineering",
-    name: "Engineering & Architecture",
-    icon: HardHat,
-    color: "bg-indigo-100 text-indigo-600",
-    description:
-      "Technical experts in engineering, design, and architectural support.",
-    roles: [
-      "CAD Designer",
-      "Architectural Draftsman",
-      "Civil Engineering Assistant",
-      "Mechanical Designer",
-      "Structural Modeler",
-      "Energy Analyst",
-      "BIM Specialist",
-      "Electrical Designer",
-    ],
+    link: "/agencies/shopify",
   },
 ];
 
@@ -209,30 +96,26 @@ export function ServiceCategories() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-lexend font-bold mb-4">
-            Offshore Staffing <span className="text-brand">Categories</span>
+            Built for <span className="text-brand">Agency Verticals</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-inter">
-            There are hundreds of roles we can recruit for you in the
-            Philippines. Below is a list of some of the most popular ones that
-            clients request.
+            We specialize in three agency types. Each vertical has dedicated
+            certification tracks, role-specific tests, and pre-built SOPs.
           </p>
         </motion.div>
 
-        <Tabs defaultValue="it" className="w-full">
+        <Tabs defaultValue="retention" className="w-full">
           <div className="relative mb-8 pb-2 overflow-x-auto hide-scrollbar">
             <TabsList className="w-auto inline-flex">
               {categories.map((category) => (
                 <TabsTrigger
                   key={category.id}
                   value={category.id}
-                  className="px-4 py-2 min-w-32 text-center data-[state=active]:bg-brand data-[state=active]:text-white font-lexend"
+                  className="px-6 py-3 min-w-40 text-center data-[state=active]:bg-brand data-[state=active]:text-white font-lexend"
                 >
                   <span className="flex items-center gap-2">
                     <category.icon className="h-4 w-4" />
-                    <span className="hidden md:inline">{category.name}</span>
-                    <span className="md:hidden">
-                      {category.name.split(" ")[0]}
-                    </span>
+                    <span>{category.name}</span>
                   </span>
                 </TabsTrigger>
               ))}
@@ -262,13 +145,18 @@ export function ServiceCategories() {
                   <p className="text-muted-foreground mb-4 font-inter">
                     {category.description}
                   </p>
+                  <div className="bg-brand/5 border border-brand/20 rounded-lg p-3 mb-4">
+                    <p className="text-sm font-inter text-brand font-medium">
+                      Promise: {category.promise}
+                    </p>
+                  </div>
                   <Button
                     variant="outline"
                     className="group font-lexend font-medium"
                     asChild
                   >
-                    <Link href={`/services#${category.id}`}>
-                      Learn more
+                    <Link href={category.link}>
+                      View {category.name} details
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
@@ -279,7 +167,7 @@ export function ServiceCategories() {
                   className="col-span-1 md:col-span-3 bg-white rounded-xl p-6 shadow-xs"
                 >
                   <h4 className="text-lg font-lexend font-medium mb-4">
-                    Popular {category.name} Roles
+                    StackCertified {category.name} Roles
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     {category.roles.map((role, index) => (
@@ -310,8 +198,9 @@ export function ServiceCategories() {
             className="bg-brand hover:bg-brand-light text-white font-lexend font-medium"
             asChild
           >
-            <Link href="/services">
-              View all staffing options <ArrowRight className="ml-2 h-4 w-4" />
+            <Link href="/agencies">
+              Explore all agency verticals{" "}
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </motion.div>
