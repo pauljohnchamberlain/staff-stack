@@ -411,8 +411,10 @@ export function getVerticalInfo(verticalId: AgencyVertical) {
 export function getAllSkillsForVertical(vertical: AgencyVertical): string[] {
   const roles = getRolesByVertical(vertical);
   const skills = new Set<string>();
-  roles.forEach((role) => {
-    role.skills.forEach((skill) => skills.add(skill.name));
-  });
+  for (const role of roles) {
+    for (const skill of role.skills) {
+      skills.add(skill.name);
+    }
+  }
   return Array.from(skills);
 }

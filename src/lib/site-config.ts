@@ -8,7 +8,7 @@ export const siteConfig = {
   email: "support@staffstack.co",
 } as const;
 
-export function getCanonicalUrl(path: string = ""): string {
+export function getCanonicalUrl(path = ""): string {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   return `${siteConfig.url}${cleanPath === "/" ? "" : cleanPath}`;
 }

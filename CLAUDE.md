@@ -1,6 +1,9 @@
-# Staff Stack
+## URLs
+- Production: https://staffstack.com
+- Dev: https://staff-stack.kaizenbrands.com
+- Local: http://localhost:3021
 
-**Production URL:** https://staffstack.co
+# Staff Stack
 
 ## Guidelines
 

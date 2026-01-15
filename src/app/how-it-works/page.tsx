@@ -195,7 +195,7 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="space-y-8 max-w-4xl mx-auto">
-              {processSteps.map((step, index) => (
+              {processSteps.map((step) => (
                 <div
                   key={step.id}
                   className="bg-white rounded-xl p-8 shadow-sm border hover:shadow-md transition-shadow"
