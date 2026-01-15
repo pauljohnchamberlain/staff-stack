@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown, Menu, Award, Zap, Shield, Code, Mail, TrendingUp } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -111,9 +112,14 @@ export function Header() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
           >
-            <span className="font-lexend font-medium text-2xl tracking-tight text-[#0f2c4a]">
-              Staff Stack
-            </span>
+            <Image
+              src="/images/logo.png"
+              alt="Staff Stack"
+              width={180}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </motion.div>
         </Link>
 
@@ -362,9 +368,13 @@ export function Header() {
             <SheetContent className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col gap-8 py-6">
                 <Link href="/" className="flex items-center gap-2">
-                  <span className="font-lexend font-medium text-2xl tracking-tight text-[#0f2c4a]">
-                    Staff Stack
-                  </span>
+                  <Image
+                    src="/images/logo.png"
+                    alt="Staff Stack"
+                    width={160}
+                    height={36}
+                    className="h-9 w-auto"
+                  />
                 </Link>
 
                 <div className="flex flex-col gap-6">
