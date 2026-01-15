@@ -17,7 +17,7 @@ Disallow: /_next/
 Disallow: /404
 
 # Sitemap location
-Sitemap: https://staffstack.com/sitemap.xml
+Sitemap: https://staffstack.co/sitemap.xml
 
 # AI Crawlers - Allow access
 User-agent: GPTBot
@@ -48,7 +48,7 @@ Create `/src/app/sitemap.ts`:
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://staffstack.com'
+  const baseUrl = 'https://staffstack.co'
   
   // Main pages
   const mainPages = [
@@ -139,8 +139,8 @@ import ClientBody from "./ClientBody";
 
 const siteConfig = {
   name: "Staff Stack",
-  url: "https://staffstack.com",
-  ogImage: "https://staffstack.com/og-image.jpg",
+  url: "https://staffstack.co",
+  ogImage: "https://staffstack.co/og-image.jpg",
   description: "Staff Stack helps businesses build remote and offshore teams in the Philippines with talented professionals across IT, creative, customer service, and more.",
   keywords: [
     "offshore staffing",
@@ -244,7 +244,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Offshore Staffing Services | Staff Stack",
     description: "Build your dream team with our comprehensive offshore staffing services. Access top talent in IT, customer service, creative, and admin roles.",
-    url: "https://staffstack.com/services",
+    url: "https://staffstack.co/services",
   },
 };
 
@@ -261,8 +261,8 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Staff Stack",
-  url: "https://staffstack.com",
-  logo: "https://staffstack.com/logo.png",
+  url: "https://staffstack.co",
+  logo: "https://staffstack.co/logo.png",
   description: "Leading offshore staffing provider in the Philippines",
   address: {
     "@type": "PostalAddress",
@@ -286,9 +286,9 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Staff Stack",
-  image: "https://staffstack.com/office.jpg",
-  "@id": "https://staffstack.com",
-  url: "https://staffstack.com",
+  image: "https://staffstack.co/office.jpg",
+  "@id": "https://staffstack.co",
+  url: "https://staffstack.co",
   telephone: "+63-2-1234-5678",
   address: {
     "@type": "PostalAddress",
@@ -454,8 +454,8 @@ Staff Stack is a leading offshore staffing provider specializing in building rem
 - Administration & Support
 
 ## Contact Information
-Website: https://staffstack.com
-Email: info@staffstack.com
+Website: https://staffstack.co
+Email: info@staffstack.co
 Phone: +63-2-1234-5678
 Location: Manila, Philippines
 
@@ -484,7 +484,7 @@ For dynamic pages, add canonical URLs:
 ```typescript
 // In your page components or generateMetadata function
 export async function generateMetadata({ params }): Promise<Metadata> {
-  const canonicalUrl = `https://staffstack.com/blog/${params.id}`;
+  const canonicalUrl = `https://staffstack.co/blog/${params.id}`;
   
   return {
     alternates: {
@@ -598,6 +598,6 @@ curl https://yourdomain.com/sitemap.xml
 ## Support
 
 For SEO implementation support, contact:
-- Technical issues: dev@staffstack.com
-- Content optimization: marketing@staffstack.com
-- Analytics setup: data@staffstack.com
+- Technical issues: dev@staffstack.co
+- Content optimization: marketing@staffstack.co
+- Analytics setup: data@staffstack.co

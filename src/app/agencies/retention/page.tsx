@@ -14,6 +14,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Retention & Klaviyo Agency Staff | Staff Stack",
@@ -100,6 +101,16 @@ const certificationTests = [
 export default function RetentionAgencyPage() {
   return (
     <main className="pt-24">
+      {/* Breadcrumbs */}
+      <div className="container pt-4">
+        <Breadcrumbs
+          items={[
+            { label: "Agencies", href: "/agencies" },
+            { label: "Retention", href: "/agencies/retention" },
+          ]}
+        />
+      </div>
+
       {/* Hero */}
       <section className="py-20 bg-linear-to-br from-purple-900 via-purple-700 to-purple-500 text-white">
         <div className="container">

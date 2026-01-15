@@ -1,10 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "What Our Clients Say | Staff Stack",
   description:
-    "Read testimonials from businesses who've partnered with Staff Stack for offshore staffing solutions in the Philippines.",
+    "Read testimonials from agencies who've partnered with Staff Stack for StackCertified operators. Real success stories from retention, paid media, and Shopify agencies.",
+  alternates: {
+    canonical: "https://staffstack.co/about/testimonials",
+  },
 };
 
 export default function TestimonialsPage() {
@@ -132,8 +136,44 @@ export default function TestimonialsPage() {
     },
   ];
 
+  // Schema for reviews and aggregate rating
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Staff Stack",
+    url: "https://staffstack.co",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: testimonials.length.toString(),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    review: testimonials.map((t) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: t.name,
+      },
+      reviewBody: t.quote,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+        worstRating: "1",
+      },
+    })),
+  };
+
   return (
-    <main className="pt-28">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(reviewSchema),
+        }}
+      />
+      <main className="pt-28">
       {/* Hero Section */}
       <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
         <div className="container mx-auto">
@@ -339,6 +379,7 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

@@ -22,6 +22,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "StackCertified Roles | Staff Stack",
@@ -36,6 +37,9 @@ export const metadata: Metadata = {
     "QA specialist",
     "reporting analyst",
   ],
+  alternates: {
+    canonical: "https://staffstack.co/services",
+  },
 };
 
 const rolesByVertical = [
@@ -212,23 +216,36 @@ const getColorClasses = (color: string) => {
 };
 
 export default function ServicesPage() {
-  const breadcrumbSchema = {
+  // Service schema for SEO
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://staffstack.com",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Roles",
-        item: "https://staffstack.com/services",
-      },
-    ],
+    "@type": "Service",
+    serviceType: "Offshore Staffing",
+    provider: {
+      "@type": "Organization",
+      name: "Staff Stack",
+      url: "https://staffstack.co",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: "Worldwide",
+    },
+    description:
+      "StackCertified operators for digital agencies. Pre-tested talent for retention, paid media, and Shopify operations — ready in 7 days.",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "StackCertified Roles",
+      itemListElement: rolesByVertical.flatMap((vertical) =>
+        vertical.roles.map((role) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: role.title,
+            description: role.description,
+          },
+        }))
+      ),
+    },
   };
 
   return (
@@ -236,12 +253,17 @@ export default function ServicesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
+          __html: JSON.stringify(serviceSchema),
         }}
       />
 
+      {/* Breadcrumbs */}
+      <div className="container pt-4">
+        <Breadcrumbs items={[{ label: "Roles", href: "/services" }]} />
+      </div>
+
       {/* Hero */}
-      <section className="py-20 bg-linear-to-br from-brand-dark via-brand to-brand-light text-white">
+      <section className="py-16 bg-linear-to-br from-brand-dark via-brand to-brand-light text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-brand-accent/20 px-4 py-2 rounded-full mb-6">

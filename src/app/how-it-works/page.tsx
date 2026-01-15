@@ -21,6 +21,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Breadcrumbs } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "How It Works | Staff Stack",
@@ -134,36 +135,14 @@ const stackOpsFeatures = [
 ];
 
 export default function HowItWorksPage() {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://staffstack.com",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "How It Works",
-        item: "https://staffstack.com/how-it-works",
-      },
-    ],
-  };
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
+    <main className="pt-24">
+      {/* Breadcrumbs */}
+      <div className="container pt-4">
+        <Breadcrumbs items={[{ label: "How It Works", href: "/how-it-works" }]} />
+      </div>
 
-      <main className="pt-24">
-        {/* Hero */}
+      {/* Hero */}
         <section className="py-20 bg-linear-to-br from-brand-dark via-brand to-brand-light text-white">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
@@ -429,7 +408,6 @@ export default function HowItWorksPage() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   );
 }

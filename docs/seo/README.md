@@ -150,9 +150,9 @@ Copy-paste ready solutions for immediate implementation:
 
 ## 📞 Support Contacts
 
-- **Technical Issues:** dev@staffstack.com
-- **Content Questions:** content@staffstack.com
-- **Analytics Setup:** data@staffstack.com
+- **Technical Issues:** dev@staffstack.co
+- **Content Questions:** content@staffstack.co
+- **Analytics Setup:** data@staffstack.co
 
 ## 🔄 Update Schedule
 

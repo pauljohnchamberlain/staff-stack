@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Staff Stack | Start Your Offshore Team Today",
+  title: "Contact Us | Get Your First Operator",
   description:
-    "Ready to build your offshore team in the Philippines? Contact Staff Stack for a free consultation and discover how we can help scale your business.",
+    "Contact Staff Stack to get your first StackCertified operator. Tell us about your agency and the roles you need. Operators ready in 7 days with 14-day replacement guarantee.",
   keywords: [
     "contact Staff Stack",
-    "offshore staffing consultation",
-    "start offshore team",
-    "Philippines staffing contact",
-    "remote team consultation",
-    "offshore staffing quotes",
+    "hire offshore operator",
+    "agency staffing contact",
+    "get quote offshore staffing",
+    "remote team Philippines contact",
   ],
   openGraph: {
-    title: "Contact Staff Stack | Start Your Offshore Team Today",
+    title: "Contact Us | Get Your First Operator | Staff Stack",
     description:
-      "Ready to build your offshore team in the Philippines? Contact Staff Stack for a free consultation and discover how we can help scale your business.",
+      "Get your first StackCertified operator. AI-native delivery staff for agencies, ready in 7 days.",
+    url: "https://staffstack.co/contact-us",
+  },
+  alternates: {
+    canonical: "https://staffstack.co/contact-us",
   },
 };
 

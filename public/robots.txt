@@ -1,5 +1,5 @@
 # Robots.txt for Staff Stack
-# https://staffstack.com
+# https://staffstack.co
 
 # Allow all crawlers by default
 User-agent: *
@@ -9,7 +9,7 @@ Disallow: /_next/
 Disallow: /404
 
 # Sitemap location
-Sitemap: https://staffstack.com/sitemap.xml
+Sitemap: https://staffstack.co/sitemap.xml
 
 # AI Crawlers - Allow access for AI search engines
 User-agent: GPTBot

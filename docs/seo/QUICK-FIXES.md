@@ -11,7 +11,7 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
-Sitemap: https://staffstack.com/sitemap.xml
+Sitemap: https://staffstack.co/sitemap.xml
 
 User-agent: GPTBot
 Allow: /
@@ -33,31 +33,31 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://staffstack.com',
+      url: 'https://staffstack.co',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: 'https://staffstack.com/about',
+      url: 'https://staffstack.co/about',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://staffstack.com/services',
+      url: 'https://staffstack.co/services',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: 'https://staffstack.com/contact-us',
+      url: 'https://staffstack.co/contact-us',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://staffstack.com/blog',
+      url: 'https://staffstack.co/blog',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
@@ -74,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://staffstack.com'),
+  metadataBase: new URL('https://staffstack.co'),
   title: {
     default: 'Staff Stack | Remote Teams in the Philippines',
     template: '%s | Staff Stack'
@@ -83,10 +83,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://staffstack.com',
+    url: 'https://staffstack.co',
     siteName: 'Staff Stack',
     images: [{
-      url: 'https://staffstack.com/og-image.jpg',
+      url: 'https://staffstack.co/og-image.jpg',
       width: 1200,
       height: 630,
     }],
@@ -137,8 +137,8 @@ const nextConfig = {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Staff Stack",
-      "url": "https://staffstack.com",
-      "logo": "https://staffstack.com/logo.png",
+      "url": "https://staffstack.co",
+      "logo": "https://staffstack.co/logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+63-2-1234-5678",
@@ -204,7 +204,7 @@ const faqSchema = {
 ```typescript
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://staffstack.com/current-page-path',
+    canonical: 'https://staffstack.co/current-page-path',
   },
 }
 ```
@@ -225,8 +225,8 @@ We are an offshore staffing provider in the Philippines.
 - Administrative Support
 
 ## Contact
-Website: https://staffstack.com
-Email: info@staffstack.com
+Website: https://staffstack.co
+Email: info@staffstack.co
 Phone: +63-2-1234-5678
 
 ## Why Choose Us
@@ -399,7 +399,7 @@ npm run deploy
   "scripts": {
     "seo:check": "next build && next-sitemap",
     "seo:validate": "npx schema-validator",
-    "seo:lighthouse": "npx lighthouse https://staffstack.com --view"
+    "seo:lighthouse": "npx lighthouse https://staffstack.co --view"
   }
 }
 ```
@@ -420,4 +420,4 @@ npm run deploy
 3. Check Google Search Console after 24-48 hours
 4. Monitor Google Analytics for traffic changes
 
-**Support:** For questions, contact dev@staffstack.com
+**Support:** For questions, contact dev@staffstack.co

@@ -14,6 +14,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Shopify Dev Agency Staff | Staff Stack",
@@ -107,6 +108,16 @@ const certificationTests = [
 export default function ShopifyAgencyPage() {
   return (
     <main className="pt-24">
+      {/* Breadcrumbs */}
+      <div className="container pt-4">
+        <Breadcrumbs
+          items={[
+            { label: "Agencies", href: "/agencies" },
+            { label: "Shopify", href: "/agencies/shopify" },
+          ]}
+        />
+      </div>
+
       {/* Hero */}
       <section className="py-20 bg-linear-to-br from-green-900 via-green-700 to-green-500 text-white">
         <div className="container">

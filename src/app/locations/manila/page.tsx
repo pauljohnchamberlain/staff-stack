@@ -18,6 +18,7 @@ import {
   Building2,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Hire Remote Staff in Manila, Philippines | Staff Stack",
@@ -35,37 +36,11 @@ export const metadata: Metadata = {
     title: "Hire Remote Staff in Manila, Philippines | Staff Stack",
     description:
       "Access Manila's top talent pool for IT development, customer service, and professional services. Build your dedicated remote team today.",
-    url: "https://staffstack.com/locations/manila",
+    url: "https://staffstack.co/locations/manila",
   },
 };
 
 export default function ManilaLocationPage() {
-  // Breadcrumb schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://staffstack.com",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Locations",
-        item: "https://staffstack.com/locations",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Manila",
-        item: "https://staffstack.com/locations/manila",
-      },
-    ],
-  };
-
   const manilaStats = {
     population: "13.5 million",
     timeZone: "GMT+8 (Philippine Standard Time)",
@@ -160,10 +135,10 @@ export default function ManilaLocationPage() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Staff Stack Manila",
-    image: "https://staffstack.com/manila-office.jpg",
-    "@id": "https://staffstack.com/locations/manila",
-    url: "https://staffstack.com/locations/manila",
-    telephone: "+63-2-1234-5678",
+    image: "https://staffstack.co/manila-office.jpg",
+    "@id": "https://staffstack.co/locations/manila",
+    url: "https://staffstack.co/locations/manila",
+    telephone: "+63 2 8791 7462",
     address: {
       "@type": "PostalAddress",
       streetAddress: "123 Business District",
@@ -205,14 +180,7 @@ export default function ManilaLocationPage() {
   };
 
   return (
-    <>
-      {/* Breadcrumb Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
+    <main className="pt-24">
       {/* LocalBusiness Schema for Manila */}
       <script
         type="application/ld+json"
@@ -221,8 +189,17 @@ export default function ManilaLocationPage() {
         }}
       />
 
-      <main className="pt-28">
-        {/* Hero Section */}
+      {/* Breadcrumbs */}
+      <div className="container pt-4">
+        <Breadcrumbs
+          items={[
+            { label: "Locations", href: "/offices" },
+            { label: "Manila", href: "/locations/manila" },
+          ]}
+        />
+      </div>
+
+      {/* Hero Section */}
         <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
           <div className="container mx-auto">
             <div className="max-w-4xl">
@@ -523,7 +500,6 @@ export default function ManilaLocationPage() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   );
 }

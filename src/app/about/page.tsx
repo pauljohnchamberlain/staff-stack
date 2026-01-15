@@ -13,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Breadcrumbs } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "About Us | Staff Stack",
@@ -94,35 +95,12 @@ const agencyVerticals = [
 ];
 
 export default function AboutPage() {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://staffstack.com",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "About",
-        item: "https://staffstack.com/about",
-      },
-    ],
-  };
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
-
-      <main className="pt-24">
+    <main className="pt-24">
+      {/* Breadcrumbs */}
+      <div className="container pt-4">
+        <Breadcrumbs items={[{ label: "About", href: "/about" }]} />
+      </div>
         {/* Hero */}
         <section className="py-20 bg-gradient-to-br from-brand-dark via-brand to-brand-light text-white">
           <div className="container">
@@ -444,7 +422,6 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   );
 }

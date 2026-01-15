@@ -156,9 +156,9 @@ We work with all major technologies and platforms including:
 - GDPR compliance
 
 ## Contact Information
-- Website: https://staffstack.com
-- Email: info@staffstack.com
-- Phone: +63-2-1234-5678
+- Website: https://staffstack.co
+- Email: info@staffstack.co
+- Phone: +63 2 8791 7462
 - Location: Manila, Philippines
 - Office Hours: 24/7 operations
 
@@ -210,4 +210,4 @@ Key points to remember:
 Last Updated: December 2024
 Next Review: January 2025
 
-For the most current information, please visit https://staffstack.com
+For the most current information, please visit https://staffstack.co

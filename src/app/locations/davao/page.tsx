@@ -18,6 +18,7 @@ import {
   Building2,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Hire Remote Staff in Davao, Philippines | Staff Stack",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     title: "Hire Remote Staff in Davao, Philippines | Staff Stack",
     description:
       "Access Davao's emerging talent pool for IT development, customer service, and professional services. Build your dedicated remote team today.",
-    url: "https://staffstack.com/locations/davao",
+    url: "https://staffstack.co/locations/davao",
   },
 };
 
@@ -134,10 +135,10 @@ export default function DavaoLocationPage() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Staff Stack Davao",
-    image: "https://staffstack.com/davao-office.jpg",
-    "@id": "https://staffstack.com/locations/davao",
-    url: "https://staffstack.com/locations/davao",
-    telephone: "+63-82-1234-5678",
+    image: "https://staffstack.co/davao-office.jpg",
+    "@id": "https://staffstack.co/locations/davao",
+    url: "https://staffstack.co/locations/davao",
+    telephone: "+63 82 321 4567",
     address: {
       "@type": "PostalAddress",
       streetAddress: "789 Business District",
@@ -179,7 +180,7 @@ export default function DavaoLocationPage() {
   };
 
   return (
-    <>
+    <main className="pt-24">
       {/* LocalBusiness Schema for Davao */}
       <script
         type="application/ld+json"
@@ -188,8 +189,17 @@ export default function DavaoLocationPage() {
         }}
       />
 
-      <main className="pt-28">
-        {/* Hero Section */}
+      {/* Breadcrumbs */}
+      <div className="container pt-4">
+        <Breadcrumbs
+          items={[
+            { label: "Locations", href: "/offices" },
+            { label: "Davao", href: "/locations/davao" },
+          ]}
+        />
+      </div>
+
+      {/* Hero Section */}
         <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
           <div className="container mx-auto">
             <div className="max-w-4xl">
@@ -488,7 +498,6 @@ export default function DavaoLocationPage() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   );
 }

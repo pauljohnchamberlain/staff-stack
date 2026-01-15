@@ -14,6 +14,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Paid Media Ops Agency Staff | Staff Stack",
@@ -100,6 +101,16 @@ const certificationTests = [
 export default function PaidMediaAgencyPage() {
   return (
     <main className="pt-24">
+      {/* Breadcrumbs */}
+      <div className="container pt-4">
+        <Breadcrumbs
+          items={[
+            { label: "Agencies", href: "/agencies" },
+            { label: "Paid Media", href: "/agencies/paid-media" },
+          ]}
+        />
+      </div>
+
       {/* Hero */}
       <section className="py-20 bg-linear-to-br from-blue-900 via-blue-700 to-blue-500 text-white">
         <div className="container">

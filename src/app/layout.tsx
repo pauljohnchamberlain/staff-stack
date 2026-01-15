@@ -1,11 +1,30 @@
 import type { Metadata } from "next";
+import { Inter, Lexend, Montserrat } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const lexend = Lexend({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-lexend",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
+
 const siteConfig = {
   name: "Staff Stack",
-  url: "https://staffstack.com",
-  ogImage: "https://staffstack.com/og-image.jpg",
+  url: "https://staffstack.co",
+  ogImage: "https://staffstack.co/og-image.jpg",
   description:
     "Staff Stack helps businesses build remote and offshore teams in the Philippines with talented professionals across IT, creative, customer service, and more.",
   keywords: [
@@ -82,8 +101,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Staff Stack",
-  url: "https://staffstack.com",
-  logo: "https://staffstack.com/logo.png",
+  url: "https://staffstack.co",
+  logo: "https://staffstack.co/logo.png",
   description: "Leading offshore staffing provider in the Philippines",
   address: {
     "@type": "PostalAddress",
@@ -92,7 +111,7 @@ const organizationSchema = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+63-2-1234-5678",
+    telephone: "+63 2 8791 7462",
     contactType: "sales",
     availableLanguage: ["English", "Filipino"],
   },
@@ -109,7 +128,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${inter.variable} ${lexend.variable} ${montserrat.variable}`}
+    >
       <head>
         {/* Google Tag Manager */}
         <script

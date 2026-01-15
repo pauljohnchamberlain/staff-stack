@@ -1,27 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/seo";
 
 export default function FAQPage() {
-  // Breadcrumb schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://staffstack.com",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "FAQ",
-        item: "https://staffstack.com/faq",
-      },
-    ],
-  };
-
   const faqCategories = [
     {
       title: "Getting Started",
@@ -174,14 +155,7 @@ export default function FAQPage() {
   };
 
   return (
-    <>
-      {/* Breadcrumb Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
+    <main className="pt-24">
       {/* FAQ Schema for SEO */}
       <script
         type="application/ld+json"
@@ -189,8 +163,13 @@ export default function FAQPage() {
           __html: JSON.stringify(faqSchema),
         }}
       />
-      <main className="pt-28">
-        {/* Hero Section */}
+
+      {/* Breadcrumbs */}
+      <div className="container pt-4">
+        <Breadcrumbs items={[{ label: "FAQ", href: "/faq" }]} />
+      </div>
+
+      {/* Hero Section */}
         <section className="bg-linear-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
           <div className="container mx-auto">
             <div className="max-w-4xl">
@@ -350,7 +329,6 @@ export default function FAQPage() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   );
 }

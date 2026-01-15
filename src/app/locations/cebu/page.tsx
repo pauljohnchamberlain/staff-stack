@@ -18,6 +18,7 @@ import {
   Building2,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Hire Remote Staff in Cebu, Philippines | Staff Stack",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     title: "Hire Remote Staff in Cebu, Philippines | Staff Stack",
     description:
       "Access Cebu's growing talent pool for IT development, customer service, and professional services. Build your dedicated remote team today.",
-    url: "https://staffstack.com/locations/cebu",
+    url: "https://staffstack.co/locations/cebu",
   },
 };
 
@@ -134,10 +135,10 @@ export default function CebuLocationPage() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Staff Stack Cebu",
-    image: "https://staffstack.com/cebu-office.jpg",
-    "@id": "https://staffstack.com/locations/cebu",
-    url: "https://staffstack.com/locations/cebu",
-    telephone: "+63-32-1234-5678",
+    image: "https://staffstack.co/cebu-office.jpg",
+    "@id": "https://staffstack.co/locations/cebu",
+    url: "https://staffstack.co/locations/cebu",
+    telephone: "+63 32 342 8765",
     address: {
       "@type": "PostalAddress",
       streetAddress: "456 IT Park",
@@ -179,7 +180,7 @@ export default function CebuLocationPage() {
   };
 
   return (
-    <>
+    <main className="pt-24">
       {/* LocalBusiness Schema for Cebu */}
       <script
         type="application/ld+json"
@@ -188,8 +189,17 @@ export default function CebuLocationPage() {
         }}
       />
 
-      <main className="pt-28">
-        {/* Hero Section */}
+      {/* Breadcrumbs */}
+      <div className="container pt-4">
+        <Breadcrumbs
+          items={[
+            { label: "Locations", href: "/offices" },
+            { label: "Cebu", href: "/locations/cebu" },
+          ]}
+        />
+      </div>
+
+      {/* Hero Section */}
         <section className="bg-gradient-to-r from-[#0f2c4a] to-[#0a2240] text-white py-16 md:py-20">
           <div className="container mx-auto">
             <div className="max-w-4xl">
@@ -486,7 +496,6 @@ export default function CebuLocationPage() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   );
 }
