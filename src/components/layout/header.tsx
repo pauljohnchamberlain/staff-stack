@@ -115,9 +115,9 @@ export function Header() {
             <Image
               src="/images/logo-cropped.png"
               alt="Staff Stack"
-              width={180}
-              height={48}
-              className="h-9 w-auto"
+              width={220}
+              height={60}
+              className="h-[60px] w-auto"
               priority
             />
           </motion.div>
@@ -371,9 +371,9 @@ export function Header() {
                   <Image
                     src="/images/logo-cropped.png"
                     alt="Staff Stack"
-                    width={160}
-                    height={42}
-                    className="h-8 w-auto"
+                    width={180}
+                    height={48}
+                    className="h-12 w-auto"
                   />
                 </Link>
 
