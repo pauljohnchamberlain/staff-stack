@@ -130,7 +130,7 @@ export function Header() {
               <NavigationMenuItem>
                 <NavTrigger>For Agencies</NavTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[650px] bg-[#0f2c4a]">
+                  <div className="w-[750px] bg-[#0f2c4a]">
                     <div className="px-5 py-4">
                       <h3 className="text-white font-lexend font-medium tracking-tight">
                         For Agencies
@@ -205,7 +205,7 @@ export function Header() {
               <NavigationMenuItem>
                 <NavTrigger>The Stack</NavTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[650px] bg-[#0f2c4a]">
+                  <div className="w-[750px] bg-[#0f2c4a]">
                     <div className="px-5 py-4">
                       <h3 className="text-white font-lexend font-medium tracking-tight">
                         The Stack System
