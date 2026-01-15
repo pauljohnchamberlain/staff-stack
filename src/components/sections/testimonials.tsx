@@ -123,7 +123,7 @@ export function TestimonialsSection() {
                           "{testimonial.text}"
                         </p>
                         <div className="flex items-center gap-3 pt-4 border-t">
-                          <Avatar className="h-10 w-10">
+                          <Avatar className="h-14 w-14">
                             {"image" in testimonial && testimonial.image && (
                               <AvatarImage src={testimonial.image} alt={testimonial.author} />
                             )}
