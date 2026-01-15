@@ -193,12 +193,10 @@ export function WhyChooseUs() {
 
           <div className="rounded-xl overflow-hidden shadow-lg relative aspect-video">
             <Image
-              src="https://ext.same-assets.com/2688779156/3300813873.jpeg"
-              alt="Staff Stack StackCertified Process"
+              src="/images/team-beach-outing.png"
+              alt="Staff Stack team outing at a tropical beach in the Philippines"
               fill
               className="object-cover"
-              unoptimized={true}
-              crossOrigin="anonymous"
             />
           </div>
         </motion.div>
