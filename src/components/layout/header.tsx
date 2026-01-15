@@ -113,11 +113,11 @@ export function Header() {
             transition={{ duration: 0.3 }}
           >
             <Image
-              src="/images/logo.png"
+              src="/images/logo-cropped.png"
               alt="Staff Stack"
               width={180}
-              height={40}
-              className="h-10 w-auto"
+              height={48}
+              className="h-9 w-auto"
               priority
             />
           </motion.div>
@@ -369,11 +369,11 @@ export function Header() {
               <div className="flex flex-col gap-8 py-6">
                 <Link href="/" className="flex items-center gap-2">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/logo-cropped.png"
                     alt="Staff Stack"
                     width={160}
-                    height={36}
-                    className="h-9 w-auto"
+                    height={42}
+                    className="h-8 w-auto"
                   />
                 </Link>
 
