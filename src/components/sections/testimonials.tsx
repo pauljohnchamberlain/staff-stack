@@ -1,7 +1,7 @@
 "use client";
 
 import { Star } from "lucide-react";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -18,6 +18,7 @@ const testimonials = [
     vertical: "Retention",
     author: "Sarah Chen",
     role: "Founder",
+    image: "/images/avatars/sarah-chen.png",
     text: "We added two Klaviyo email builders through Staff Stack. They passed their certification tests before we even interviewed them — we could see their actual flow builds. Now we're shipping 40% more campaigns without adding to our core team.",
     rating: 5,
   },
@@ -27,6 +28,7 @@ const testimonials = [
     vertical: "Paid Media",
     author: "Marcus Williams",
     role: "Head of Operations",
+    image: "/images/avatars/marcus-williams.png",
     text: "Our strategists were drowning in campaign builds and reporting. The ad ops assistant we hired handles all the execution work now. Our strategist time freed up by 15+ hours per week — exactly what we needed to take on more clients.",
     rating: 5,
   },
@@ -36,6 +38,7 @@ const testimonials = [
     vertical: "Shopify",
     author: "James Park",
     role: "Technical Director",
+    image: "/images/avatars/james-park.png",
     text: "Project overflow was killing our deadlines. We brought on a StackCertified Shopify developer who hit the ground running — their certification included fixing a real bug under time pressure. That's exactly the test that matters for our work.",
     rating: 5,
   },
@@ -121,6 +124,9 @@ export function TestimonialsSection() {
                         </p>
                         <div className="flex items-center gap-3 pt-4 border-t">
                           <Avatar className="h-10 w-10">
+                            {"image" in testimonial && testimonial.image && (
+                              <AvatarImage src={testimonial.image} alt={testimonial.author} />
+                            )}
                             <AvatarFallback className="bg-brand/10 text-brand font-lexend font-medium">
                               {testimonial.author
                                 .split(" ")
